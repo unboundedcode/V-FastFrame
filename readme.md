@@ -1,15 +1,9 @@
 # V-FastFrame
-无界编码，快捷构建，助你起飞
-use Kotlin abd support androidX
-
-[![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-[![Arsenal](https://img.shields.io/badge/Arsenal%20-%20VisualizerView-4cae4c.svg)](https://android-arsenal.com/details/1/6001)
-[![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2019%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=19)
-[![Author](https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square)](https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square)
+无界编码，快捷构建，助你起飞 - use Kotlin abd support androidX
 
 <p align="center">
   <a href="https://developer.android.com/about/versions/android-4.0.html">
-    <img src="https://img.shields.io/badge/API-19%2B-blue.svg?style=flat-square" alt="Min Sdk Version" />
+    <img src="https://img.shields.io/badge/API-19%2B-green.svg?style=flat-square" alt="Min Sdk Version" />
   </a>
    <a href="http://www.apache.org/licenses/LICENSE-2.0">
     <img src="http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
@@ -19,7 +13,7 @@ use Kotlin abd support androidX
   </a>
   <a href="#"><img src="https://img.shields.io/badge/%E9%9D%A2%E5%90%91-Android%E5%BC%80%E5%8F%91-%232CC159.svg"></a>
   <a href="#"><img src="https://img.shields.io/badge/language-kotlin-orange.svg"></a>
-  <a href="#"><img src="https://img.shields.io/badge/version-1.5-blue.svg"></a>
+  <a href="#"><img src="https://img.shields.io/badge/version-0.0.1-blue.svg"></a>
 </p>
 
 
