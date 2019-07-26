@@ -6,6 +6,7 @@ import android.widget.ImageView
 import cn.bingoogolapple.bgabanner.BGABanner
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
+import com.leifu.mvpkotlin.util.PreferenceUtil
 import com.vension.fastframe.module_wan.Constant
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.bean.Article
@@ -19,8 +20,6 @@ import kotlinx.android.synthetic.main.item_recy_wan_home_banner.view.*
 import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
 import kv.vension.vframe.ext.showToast
 import kv.vension.vframe.glide.ImageLoader
-import kv.vension.vframe.utils.NetWorkUtil
-import kv.vension.vframe.utils.SpUtils
 
 /**
  * ===================================================================
@@ -35,7 +34,7 @@ class MenuTabHomeFragment : AbsCompatMVPRefreshFragment<Article, HomeContract.Vi
     companion object {
         fun getInstance(): MenuTabHomeFragment = MenuTabHomeFragment()
     }
-    private var isLogin: Boolean = SpUtils.getBoolean(Constant.LOGIN_KEY, false)
+    private var isLogin: Boolean by PreferenceUtil(Constant.LOGIN_KEY, false)
     private lateinit var bannerDatas: ArrayList<Banner>
     private var bannerView: View? = null
     private var isRefresh = true
@@ -108,10 +107,6 @@ class MenuTabHomeFragment : AbsCompatMVPRefreshFragment<Article, HomeContract.Vi
                 when(view.id){
                     R.id.iv_like -> {
                         if (isLogin) {
-                            if (!NetWorkUtil.isNetworkAvailable()) {
-                                showToast(resources.getString(R.string.no_network_view_hint))
-                                return@setOnItemChildClickListener
-                            }
                             val collect = item.collect
                             item.collect = !collect
                             mAdapter.setData(position, item)
