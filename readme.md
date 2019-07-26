@@ -6,7 +6,7 @@
     <img src="http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
   </a>
     <a href="#">
-    <img src="https://img.shields.io/badge/Author-Vension-black.svg?style=flat-square" alt="Author" />
+    <img src="https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square" alt="Author" />
   </a>
   <a href="#"><img src="https://img.shields.io/badge/%E9%9D%A2%E5%90%91-Android%E5%BC%80%E5%8F%91-%232CC159.svg"></a>
   <a href="#"><img src="https://img.shields.io/badge/language-kotlin-orange.svg"></a>
