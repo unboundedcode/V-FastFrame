@@ -2,37 +2,27 @@
 无界编码，快捷构建，助你起飞
 use Kotlin abd support androidX
 
+[![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Arsenal](https://img.shields.io/badge/Arsenal%20-%20VisualizerView-4cae4c.svg)](https://android-arsenal.com/details/1/6001)
+[![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2019%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=19)
+[![Author](https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square)](https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square)
+
 <p align="center">
-   <a href="#">
-   [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://www.apache.org/licenses/LICENSE-2.0)
-  </a>
-  <a href="https://travis-ci.org/JessYanCoding/MVPArms">
-    <img src="https://travis-ci.org/JessYanCoding/MVPArms.svg?branch=master" alt="Build Status" />
-  </a>
   <a href="https://developer.android.com/about/versions/android-4.0.html">
-    <img src="https://img.shields.io/badge/API-14%2B-blue.svg?style=flat-square" alt="Min Sdk Version" />
+    <img src="https://img.shields.io/badge/API-19%2B-blue.svg?style=flat-square" alt="Min Sdk Version" />
   </a>
-  <a href="http://www.apache.org/licenses/LICENSE-2.0">
+   <a href="http://www.apache.org/licenses/LICENSE-2.0">
     <img src="http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
   </a>
-  <a href="https://www.jianshu.com/u/1d0c0bc634db">
-    <img src="https://img.shields.io/badge/Author-JessYan-orange.svg?style=flat-square" alt="Author" />
+    <a href="#">
+    <img src="https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square" alt="Author" />
   </a>
-  <a href="https://shang.qq.com/wpa/qunwpa?idkey=7e59e59145e6c7c68932ace10f52790636451f01d1ecadb6a652b1df234df753">
-    <img src="https://img.shields.io/badge/QQ%E7%BE%A4-455850365%20%7C%20301733278-orange.svg?style=flat-square" alt="QQ Group" />
-  </a>
-</p>
-
-<p>
   <a href="#"><img src="https://img.shields.io/badge/%E9%9D%A2%E5%90%91-Android%E5%BC%80%E5%8F%91-%232CC159.svg"></a>
   <a href="#"><img src="https://img.shields.io/badge/language-kotlin-orange.svg"></a>
   <a href="#"><img src="https://img.shields.io/badge/version-1.5-blue.svg"></a>
 </p>
 
-[![Arsenal](https://img.shields.io/badge/Arsenal%20-%20VisualizerView-4cae4c.svg)](https://android-arsenal.com/details/1/6001)
-[![JCenter](https://api.bintray.com/packages/vension/vensionCenter/V-VisualizerView/images/download.svg)](https://bintray.com/vension/vensionCenter/V-VisualizerView/_latestVersion)
-[![MinSdk](https://img.shields.io/badge/%20MinSdk%20-%2016%2B%20-f0ad4e.svg)](https://android-arsenal.com/api?level=16)
-[![Author](https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square)](https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square)
+
 
 ## Remark
 
@@ -40,11 +30,12 @@ use Kotlin abd support androidX
 
 
 ## Screenshots
-* fastframe
+
+#### fastframe
 <a href="screenshots/fastframe_1.png"><img src="screenshots/fastframe_1.png" width="30%"/></a>
 <a href="screenshots/fastframe_2.png"><img src="screenshots/fastframe_2.png" width="30%"/></a>
 
-* wanAndroid
+#### wanAndroid
 <a href="screenshots/wan/wan_1.png"><img src="screenshots/wan/wan_1.png" width="30%"/></a>
 <a href="screenshots/wan/wan_2.png"><img src="screenshots/wan/wan_2.png" width="30%"/></a>
 <a href="screenshots/wan/wan_3.png"><img src="screenshots/wan/wan_3.png" width="30%"/></a>
@@ -54,7 +45,7 @@ use Kotlin abd support androidX
 <a href="screenshots/wan/wan_7.png"><img src="screenshots/wan/wan_7.png" width="30%"/></a>
 <a href="screenshots/wan/wan_8.png"><img src="screenshots/wan/wan_8.png" width="30%"/></a>
 
-* 微课
+#### 微课
 <a href="screenshots/wk/one.png"><img src="screenshots/wk/one.png" width="30%"/></a> 
 <a href="screenshots/wk/two.png"><img src="screenshots/wk/two.png" width="30%"/></a>
 <a href="screenshots/wk/three.png"><img src="screenshots/wk/three.png" width="30%"/></a>
