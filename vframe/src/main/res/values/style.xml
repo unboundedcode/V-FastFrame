@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppTheme" parent="BaseTheme.activityAnimation"></style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"/>
+
+    <!-- Base application theme. -->
+    <style name="BaseTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!--colorPrimary对应ActionBar的颜色-->
+        <item name="colorPrimary">@color/colorAppTheme</item>
+        <!--colorPrimaryDark对应状态栏的颜色-->
+        <item name="colorPrimaryDark">@color/colorAppTheme</item>
+        <!--colorAccent 对应EditText编辑时、RadioButton选中、CheckBox等选中时的颜色-->
+        <item name="colorAccent">@color/colorAppTheme</item>
+        <!--关闭启动窗口-->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
+
+    <style name="WindowAnimationFadeInOut">
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
+    </style>
+
+    <style name="BaseTheme.activityAnimation" parent="BaseTheme">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_right_out</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_left_in</item>
+    </style>
+
+
+    <style name="NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="BaseTheme">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="TranslucentTheme" parent="BaseTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="SwipeBackTheme" parent="BaseTheme">
+        <!--<item name="android:windowIsTranslucent">true</item>-->
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <!-- ************************** 自定义Style ********************************** -->
+
+    <style name="TextAppearance.Design.Tab" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">?android:textColorSecondary</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="TabTextStyle" parent="TextAppearance.Design.Tab">
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <!-- 浮动窗口动画 -->
+    <style name="anim_float_view">
+        <item name="android:windowEnterAnimation">@anim/push_up_in</item>
+        <item name="android:windowExitAnimation">@anim/push_up_out</item>
+    </style>
+
+    <style name="LoadingDialogStyle">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <style name="WindowTheme">
+        <!--<item name="android:windowEnterAnimation">@anim/anim_alpha_action_v_1</item>-->
+        <!--<item name="android:windowExitAnimation">@anim/anim_alpha_action_inv</item>-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="DialogTheme" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+        <item name="android:windowSoftInputMode">stateUnspecified|adjustPan</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowCloseOnTouchOutside">true</item>
+    </style>
+
+    <!-- 默认的dialog弹窗 由里向外放大回弹效果-->
+    <style name="DialogTheme.Animation" parent="DialogTheme">
+        <item name="android:windowEnterAnimation">@anim/modal_in</item>
+        <item name="android:windowExitAnimation">@anim/modal_out</item>
+    </style>
+
+
+    <style name="DialogFragmentTheme.Animation" parent="DialogTheme.Animation">
+        <item name="android:windowFullscreen">true</item>
+        <item name="windowMinWidthMinor">90%</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <!--默认的Layout Padding Top>Left风格-->
+    <style name="padding_left_16dp_top_10dp">
+        <item name="android:paddingTop">@dimen/dp_10</item>
+        <item name="android:paddingBottom">@dimen/dp_10</item>
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingRight">@dimen/dp_16</item>
+    </style>
+
+    <style name="padding_left_16dp_top_12dp">
+        <item name="android:paddingTop">@dimen/dp_12</item>
+        <item name="android:paddingBottom">@dimen/dp_12</item>
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingRight">@dimen/dp_16</item>
+    </style>
+
+    <!--默认的Layout Padding Left>Top风格-->
+    <style name="padding_left_16dp_top_20dp">
+        <item name="android:paddingTop">@dimen/dp_20</item>
+        <item name="android:paddingBottom">@dimen/dp_20</item>
+        <item name="android:paddingLeft">@dimen/dp_16</item>
+        <item name="android:paddingRight">@dimen/dp_16</item>
+    </style>
+
+    <!--默认的Layout Padding Left>Top风格-->
+    <style name="padding_left_12dp_top_6dp">
+        <item name="android:paddingTop">@dimen/dp_6</item>
+        <item name="android:paddingBottom">@dimen/dp_6</item>
+        <item name="android:paddingLeft">@dimen/dp_12</item>
+        <item name="android:paddingRight">@dimen/dp_12</item>
+    </style>
+
+
+    <!--默认的Layout Padding Top>Left风格-->
+    <style name="padding_top_16dp_left_10dp">
+        <item name="android:paddingTop">@dimen/dp_16</item>
+        <item name="android:paddingBottom">@dimen/dp_16</item>
+        <item name="android:paddingLeft">@dimen/dp_10</item>
+        <item name="android:paddingRight">@dimen/dp_10</item>
+    </style>
+
+    <!--默认的padding风格-->
+    <style name="padding_left_6dp_top_3dp">
+        <item name="android:paddingTop">@dimen/dp_3</item>
+        <item name="android:paddingBottom">@dimen/dp_3</item>
+        <item name="android:paddingLeft">@dimen/dp_6</item>
+        <item name="android:paddingRight">@dimen/dp_6</item>
+    </style>
+
+    <!--默认的padding风格-->
+    <style name="padding_left_4dp_top_2dp">
+        <item name="android:paddingTop">@dimen/dp_2</item>
+        <item name="android:paddingBottom">@dimen/dp_2</item>
+        <item name="android:paddingLeft">@dimen/dp_4</item>
+        <item name="android:paddingRight">@dimen/dp_4</item>
+    </style>
+
+    <!--默认的padding风格-->
+    <style name="padding_top_6dp_left_3dp">
+        <item name="android:paddingTop">@dimen/dp_6</item>
+        <item name="android:paddingBottom">@dimen/dp_6</item>
+        <item name="android:paddingLeft">@dimen/dp_3</item>
+        <item name="android:paddingRight">@dimen/dp_3</item>
+    </style>
+
+
+
+    <!--默认的横线分割线风格-->
+    <style name="Line_Horizontal_06dp">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0.6dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <!--默认的竖线分割线风格-->
+    <style name="Line_Vertical_06dp">
+        <item name="android:layout_width">0.6dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="Line_Horizontal_1dp">
+        <item name="android:background">#dddddd</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dip</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Line_Vertical_1dp">
+        <item name="android:background">#dddddd</item>
+        <item name="android:layout_width">1dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+
+    <style name="Line_Vertical_06dp.color_DDDDDD" parent="Line_Vertical_06dp">
+        <item name="android:background">#dddddd</item>
+    </style>
+
+    <style name="Line_Horizontal_06dp.color_DDDDDD" parent="Line_Horizontal_06dp">
+        <item name="android:background">#dddddd</item>
+    </style>
+
+
+    <style name="WrapMatch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="MatchWrap">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapWrap">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MatchMatch">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="MatchAuto">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="AutoMatch">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="WrapAuto">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">0dp</item>
+    </style>
+
+    <style name="AutoWrap">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapMatch.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="WrapMatch.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MatchWrap.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MatchWrap.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="WrapWrap.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="WrapWrap.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MatchMatch.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MatchMatch.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MatchAuto.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MatchAuto.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="AutoMatch.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AutoMatch.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="WrapAuto.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="WrapAuto.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="AutoWrap.Vertical">
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AutoWrap.Horizontal">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MatchOne">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+    </style>
+
+    <style name="OneMatch">
+        <item name="android:layout_width">1px</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+</resources>

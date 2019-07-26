@@ -1,0 +1,9 @@
+<resources >
+
+    <style name="CustomAppTheme_textinputLayout" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorControlNormal">@color/colorAppText</item>
+        <item name="colorControlActivated">@color/colorWanMain</item>
+        <item name="colorControlHighlight">@color/colorWanMain</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+</resources>

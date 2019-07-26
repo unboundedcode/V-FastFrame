@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/qb_px_10">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/qb_px_250"
+                android:background="@drawable/account_bg">
+
+            <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/qb_px_10"
+                    android:lineSpacingMultiplier="1.5"
+                    android:maxEms="12"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    android:text="wk123456"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/sp_24"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@+id/user_intro"
+                    app:layout_constraintStart_toStartOf="@+id/user_intro"/>
+
+            <TextView
+                    android:id="@+id/user_intro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/qb_px_30"
+                    android:layout_marginStart="@dimen/qb_px_18"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:text="读万卷书行万里路"
+                    android:textColor="@color/text_color"
+                    app:layout_constraintBottom_toTopOf="@+id/mine_btn"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+            <ImageView
+                    android:id="@+id/right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ic_right_black"
+                    app:layout_constraintBottom_toBottomOf="@+id/user_intro"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/user_name"/>
+
+            <kv.vension.vframe.views.ShapeImageView
+                    android:id="@+id/siv_avatar"
+                    android:layout_width="@dimen/qb_px_72"
+                    android:layout_height="@dimen/qb_px_72"
+                    android:layout_marginEnd="@dimen/qb_px_20"
+                    app:layout_constraintBottom_toBottomOf="@+id/right"
+                    app:layout_constraintEnd_toStartOf="@+id/right"
+                    app:layout_constraintTop_toTopOf="@+id/right"
+                    android:scaleType="centerCrop"
+                    app:srcCompat="@drawable/avatar_teacher_default"
+                    app:siv_type="1"
+                    app:siv_borderWidth="2dp"
+                    app:siv_borderColor="@color/color_white"/>
+
+            <LinearLayout
+                    android:id="@+id/mine_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/qb_px_30"
+                    app:layout_constraintBottom_toBottomOf="parent">
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/qb_px_10"
+                        android:drawableTop="@drawable/ic_mine_address"
+                        android:gravity="center"
+                        android:text="@string/mine_address"
+                        android:textColor="@color/text_color"/>
+
+                <TextView
+                        android:id="@+id/layout_cacheRecord"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/qb_px_10"
+                        android:drawableTop="@drawable/ic_mine_download"
+                        android:gravity="center"
+                        android:text="@string/mine_download"
+                        android:textColor="@color/text_color"/>
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/qb_px_10"
+                        android:drawableTop="@drawable/ic_mine_key_course"
+                        android:gravity="center"
+                        android:text="@string/mine_course"
+                        android:textColor="@color/text_color"/>
+
+                <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:drawablePadding="@dimen/qb_px_10"
+                        android:drawableTop="@drawable/ic_mine_order"
+                        android:gravity="center"
+                        android:text="@string/mine_order"
+                        android:textColor="@color/text_color"/>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/padding_left_16dp_top_20dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableRight="@drawable/ic_right_black"
+                android:text="@string/mine_coupon"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"/>
+
+        <View style="@style/Line_Horizontal_06dp.color_DDDDDD"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/padding_left_16dp_top_20dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableRight="@drawable/ic_right_black"
+                android:text="@string/mine_group_booking"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"/>
+
+        <View style="@style/Line_Horizontal_06dp.color_DDDDDD"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"/>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/padding_left_16dp_top_20dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableRight="@drawable/ic_right_black"
+                android:text="@string/mine_group_booking"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"/>
+        <View style="@style/Line_Horizontal_06dp.color_DDDDDD"
+              android:layout_marginLeft="20dp"
+              android:layout_marginRight="20dp"/>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground">
+
+            <TextView
+                    android:id="@+id/tv_mine_counsel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    style="@style/padding_left_16dp_top_20dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/mine_counsel"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:id="@+id/item_counsel_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/qb_px_10"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/ic_right_black"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/mine_counsel_time"
+                    android:textColor="@color/bottom_textUnSelectColor"/>
+
+            <View style="@style/Line_Horizontal_06dp.color_DDDDDD"
+                  android:layout_alignParentBottom="true"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginRight="20dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:foreground="?attr/selectableItemBackground">
+
+            <TextView
+                    android:id="@+id/tv_mine_service"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    style="@style/padding_left_16dp_top_20dp"
+                    android:layout_centerVertical="true"
+                    android:text="@string/mine_service"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold"/>
+
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="@dimen/qb_px_10"
+                    android:drawablePadding="10dp"
+                    android:drawableRight="@drawable/ic_right_black"
+                    android:layout_alignParentRight="true"
+                    android:text="@string/mine_counsel_time"
+                    android:textColor="@color/bottom_textUnSelectColor"/>
+
+            <View style="@style/Line_Horizontal_06dp.color_DDDDDD"
+                  android:layout_alignParentBottom="true"
+                  android:layout_marginLeft="20dp"
+                  android:layout_marginRight="20dp"/>
+        </RelativeLayout>
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/padding_left_16dp_top_20dp"
+                android:foreground="?attr/selectableItemBackground"
+                android:drawableRight="@drawable/ic_right_black"
+                android:text="@string/mine_setting"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/sp_16"
+                android:textStyle="bold"/>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

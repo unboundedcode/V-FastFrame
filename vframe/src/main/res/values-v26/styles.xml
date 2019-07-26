@@ -1,0 +1,22 @@
+<resources>
+
+    <style name="AppTheme" parent="BaseTheme.activityAnimation">
+    </style>
+
+
+    <style name="TranslucentTheme" parent="BaseTheme">
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <!-- 适配android手机系统8.0(api26)，Only fullscreen opaque activities can request orientation -->
+        <!--用背景图消除启动白屏-->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+
+    <style name="SwipeBackTheme" parent="TranslucentTheme"/>
+
+</resources>

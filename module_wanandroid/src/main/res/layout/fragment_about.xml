@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/myNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:ignore="ResourceName">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+        <com.github.florent37.shapeofview.shapes.ArcView
+                android:id="@+id/shapeofview_ArcView"
+                android:layout_width="match_parent"
+                android:layout_height="380dp"
+                android:elevation="10dip"
+                app:shape_arc_position="bottom"
+                app:shape_arc_height="-50dp">
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <com.flaviofaria.kenburnsview.KenBurnsView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/img_splash"/>
+
+                <TextView
+                android:id="@+id/about_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sp_14" />
+
+            </RelativeLayout>
+            <!-- YOUR CONTENT -->
+
+        </com.github.florent37.shapeofview.shapes.ArcView>
+
+        <TextView
+                android:id="@+id/about_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dp_16"
+                android:textColor="@color/colorAppText"
+                tools:text="@string/about_content" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,36 @@
+apply from: "../component_build.gradle"
+
+android {
+
+    resourcePrefix "course_" //给 Module 内的资源名增加前缀, 避免资源名冲突
+    flavorDimensions "verison"
+
+    productFlavors {
+        //打包assembleVersionDevDebug
+        versionDev{
+            dimension "verison"
+        }
+        //gradlew clean assembleVersionTestDebug
+        versionTest {
+            dimension "verison"
+        }
+        // gradlew clean assembleVersionOnlineRelease
+        versionOnline{
+            dimension "verison"
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //Flycotablayout
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //轮播图
+    implementation 'com.github.pinguo-zhouwei:MZBannerView:v2.0.2'
+    //ijkplayer
+    implementation 'tv.danmaku.ijk.media:ijkplayer-java:0.8.8'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-armv7a:0.8.8'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-armv5:0.8.8'
+    implementation 'tv.danmaku.ijk.media:ijkplayer-x86:0.8.8'
+}

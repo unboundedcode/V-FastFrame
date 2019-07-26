@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">VFrame</string>
+
+    <!--param1:版本号 param2：当前年份-->
+    <string name="welcome_hint_version" formatted="false">Copyright  © %s-%s  %s</string>
+    <string name="welcome_hint" formatted="false">V_%s\nCopyright  © %s-%s  %s</string>
+
+    <string name="loading_view_hint">加载中...</string>
+    <string name="empty_view_hint">暂无数据</string>
+    <string name="error_view_hint">加载失败</string>
+    <string name="no_network_view_hint">网络异常</string>
+    <string name="network_unavailable_tip">网络连接不可用,请检查网络设置!</string>
+
+</resources>

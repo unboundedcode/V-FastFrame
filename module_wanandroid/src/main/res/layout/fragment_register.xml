@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:ignore="ResourceName">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_24"
+            android:paddingRight="@dimen/dp_24"
+            android:paddingTop="@dimen/dp_60">
+
+        <kv.vension.vframe.views.ShapeImageView
+                android:layout_width="@dimen/avatar_width"
+                android:layout_height="@dimen/avatar_height"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/kv"
+                app:siv_type="1"
+                app:siv_borderWidth="2dp"
+                app:siv_borderColor="@color/color_white"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_12"
+                android:theme="@style/CustomAppTheme_textinputLayout"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+            <EditText
+                    android:id="@+id/et_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/username"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorAppText"
+                    android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/CustomAppTheme_textinputLayout"
+                android:layout_marginTop="@dimen/dp_12"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+            <EditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorAppText"
+                    android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/CustomAppTheme_textinputLayout"
+                android:layout_marginTop="@dimen/dp_12"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+            <EditText
+                    android:id="@+id/et_password2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/enter_password_again"
+                    android:textColorHint="@color/color_999999"
+                    android:textSize="@dimen/sp_14"
+                    android:textColor="@color/colorAppText"
+                    android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_24"
+                android:gravity="center"
+                android:padding="@dimen/dp_12"
+                android:elevation="6dp"
+                android:background="@drawable/shape_bg_main_wan"
+                android:text="@string/register"
+                android:textSize="@dimen/sp_14"
+                android:textColor="@color/white" />
+
+        <TextView
+                android:id="@+id/tv_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_24"
+                android:gravity="center"
+                android:text="@string/have_account"
+                android:textColor="@color/color_999999"
+                android:textSize="@dimen/sp_14" />
+
+    </LinearLayout>
+</ScrollView>

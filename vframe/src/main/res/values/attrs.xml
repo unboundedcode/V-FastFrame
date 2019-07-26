@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--流式布局-->
+    <declare-styleable name="FlowLayout">
+        <attr name="kv_max_select" format="integer" />
+        <attr name="kv_tag_gravity">
+            <enum name="left" value="-1" />
+            <enum name="center" value="0" />
+            <enum name="right" value="1" />
+        </attr>
+    </declare-styleable>
+
+    <!--观察者按钮-->
+    <declare-styleable name="ObserverButton">
+        <!--默认背景-->
+        <attr name="defaultBgColor" format="color|reference" />
+        <attr name="defaultBgResource" format="color|reference" />
+        <!--可以点击的背景-->
+        <attr name="pressBgColor" format="color|reference" />
+        <attr name="pressBgResource" format="color|reference" />
+        <!--默认字体颜色-->
+        <attr name="defaultTextColor" format="color" />
+        <!--可以点击的字体颜色-->
+        <attr name="pressTextColor" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RatingView">
+        <attr name="starsNum" format="integer" />
+        <attr name="starWidth" format="dimension" />
+        <attr name="starHeight" format="dimension" />
+        <attr name="starDistance" format="dimension" />
+        <attr name="starBackground" format="reference" />
+        <attr name="starDrawBackground" format="reference" />
+        <attr name="isIndicator" format="boolean" />
+        <!--默认星星数(可为小数)，取值范围[0-starNum]-->
+        <attr name="defaultStarNum" format="float" />
+        <!--每颗星星代表的分值-->
+        <attr name="valuePerStar" format="integer" />
+    </declare-styleable>
+
+    <!--************** QMUIRadiusImageView ****************-->
+    <attr name="qmui_border_width" format="dimension"/>
+    <attr name="qmui_border_color" format="color"/>
+    <declare-styleable name="QMUIRadiusImageView">
+        <attr name="qmui_border_width"/>
+        <attr name="qmui_border_color"/>
+        <attr name="qmui_selected_mask_color" format="color"/>
+        <attr name="qmui_selected_border_color" format="color"/>
+        <attr name="qmui_selected_border_width" format="dimension"/>
+        <attr name="qmui_corner_radius" format="dimension"/>
+        <attr name="qmui_is_oval" format="boolean"/>
+        <attr name="qmui_is_circle" format="boolean"/>
+        <attr name="qmui_is_touch_select_mode_enabled" format="boolean"/>
+    </declare-styleable>
+    <attr name="QMUIRadiusImageViewStyle" format="reference"/>
+
+    <!-- 自定义折叠 TextView -->
+    <declare-styleable name="ExpandableTextView">
+        <attr name="exTv_maxCollapsedLines" format="integer" />
+        <attr name="exTv_animDuration" format="integer" />
+        <attr name="exTv_animAlphaStart" format="float" />
+        <attr name="exTv_expandDrawable" format="reference" />
+        <attr name="exTv_collapseDrawable" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MatchImageView">
+        <attr name="is_match" format="boolean"/>
+    </declare-styleable>
+
+    <declare-styleable name="CircleTextView">
+        <attr name="ct_strokeColor" format="color"/>
+        <attr name="ct_bgColor" format="color"/>
+        <attr name="ct_strokeWidth" format="dimension"/>
+    </declare-styleable>
+
+    <!--启动页广告圆形倒计时控件-->
+    <declare-styleable name="CircleCountDownView">
+        <!-- 默认圆实心的颜色 -->
+        <attr name="default_circle_solide_color" format="color"/>
+        <!-- 默认圆边框的颜色 -->
+        <attr name="default_circle_stroke_color" format="color"/>
+        <!-- 默认圆边框的宽度 -->
+        <attr name="default_circle_stroke_width" format="dimension"/>
+        <!-- 默认圆的半径 -->
+        <attr name="default_circle_radius" format="dimension"/>
+        <!-- 进度条的颜色 -->
+        <attr name="progress_color" format="color"/>
+        <!-- 进度条的宽度 -->
+        <attr name="progress_width" format="dimension"/>
+        <!-- 小圆的实心颜色 -->
+        <attr name="small_circle_solide_color" format="color"/>
+        <!-- 小圆的边框颜色 -->
+        <attr name="small_circle_stroke_color" format="color"/>
+        <!-- 小圆的边框宽度 -->
+        <attr name="small_circle_stroke_width" format="dimension"/>
+        <!-- 小圆的半径 -->
+        <attr name="small_circle_radius" format="dimension"/>
+        <!-- 文字的颜色 -->
+        <attr name="text_color" format="color"/>
+        <!-- 文字的字体大小 -->
+        <attr name="text_size" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="ShapeImageView">
+        <attr name="siv_type" />
+        <attr name="siv_borderColor" />
+        <attr name="siv_borderWidth" />
+        <attr name="siv_rectRoundRadius" />
+        <attr name="siv_isGradientBorder" format="boolean"/>
+        <attr name="siv_graStartColor" format="reference|color"/>
+        <attr name="siv_graCenterColor" format="reference|color"/>
+        <attr name="siv_graEndColor" format="reference|color"/>
+    </declare-styleable>
+
+    <declare-styleable name="MultiStateLayout">
+        <attr name="mul_loadingView" format="reference"/>
+        <attr name="mul_errorView" format="reference"/>
+        <attr name="mul_emptyView" format="reference"/>
+        <attr name="mul_noNetworkView" format="reference"/>
+        <attr name="mul_contentView" format="reference"/>
+    </declare-styleable>
+
+</resources>

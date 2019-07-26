@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/activity_login"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="30dp"
+              android:gravity="center"
+              android:background="@drawable/shape_gradient_bg_main_angle_315"
+              android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/account_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape_rect_bg_white_radius_5dp"
+            android:padding="@dimen/qb_px_10"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!$#%^*_-."
+            android:maxLength="18"
+            android:hint="请输入账号"
+            android:text="12341234"
+            android:textSize="@dimen/sp_16" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/password_edt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qb_px_20"
+            android:padding="@dimen/qb_px_10"
+            android:background="@drawable/shape_rect_bg_white_radius_5dp"
+            android:text="123456"
+            android:digits="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@!$#%^*_-."
+            android:maxLength="18"
+            android:hint="请输入密码"
+            android:inputType="textPassword"
+            android:textSize="@dimen/sp_16" />
+
+    <Button
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_50"
+            android:layout_marginTop="@dimen/qb_px_20"
+            android:textColor="@color/color_white"
+            android:background="@drawable/shape_gradient_bg_orange"
+            android:onClick="onClick"
+            android:text="登录"
+            android:textSize="@dimen/sp_18" />
+
+</LinearLayout>

@@ -1,0 +1,34 @@
+apply plugin: 'com.android.application'
+apply from: "../config_build.gradle"
+
+android {
+
+    defaultConfig {
+        applicationId "com.vension.fastframe.app"
+        flavorDimensions  "verison"
+    }
+
+    productFlavors {
+        //打包assembleVersionDevDebug
+        versionDev{
+            dimension "verison"
+        }
+        //gradlew clean assembleVersionTestDebug
+        versionTest {
+            dimension "verison"
+        }
+        // gradlew clean assembleVersionOnlineRelease
+        versionOnline{
+            dimension "verison"
+        }
+    }
+
+}
+
+dependencies {
+    if (!isBuildModule.toBoolean()) {
+        implementation project(path: ':module_wanandroid')
+        implementation project(path: ':module_course')
+        implementation project(path: ':module_news')
+    }
+}

@@ -1,0 +1,25 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.vension.fastframe.module_course">
+
+    <application
+            android:allowBackup="true">
+
+        <activity android:name=".ui.CourseMainActivity"
+                  android:exported="false"
+                  android:launchMode="singleTask"
+                  android:theme="@style/SwipeBackTheme"
+                  android:configChanges="orientation|screenSize|keyboardHidden"
+                  android:windowSoftInputMode="stateHidden|adjustResize"
+                  android:screenOrientation="portrait"/>
+
+        <activity
+                android:name=".ui.VideoPlayActivity"
+                android:configChanges="orientation|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+                android:exported="false"
+                android:screenOrientation="landscape"
+                android:theme="@style/TranslucentTheme"
+                android:windowSoftInputMode="stateAlwaysHidden"/>
+
+    </application>
+
+</manifest>

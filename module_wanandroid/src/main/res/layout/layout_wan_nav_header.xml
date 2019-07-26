@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/qb_px_200"
+        android:orientation="vertical"
+        android:gravity="bottom|center_horizontal"
+        android:paddingBottom="@dimen/qb_px_30"
+        android:clickable="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@drawable/shape_gradient_bg_nav_header_wan"
+        tools:ignore="ResourceName">
+
+    <kv.vension.vframe.views.ShapeImageView
+            android:id="@+id/siv_avatar"
+            android:layout_width="@dimen/avatar_width"
+            android:layout_height="@dimen/avatar_height"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/icon_default_avatar"
+            app:siv_type="1"
+            app:siv_borderWidth="2dp"
+            app:siv_borderColor="@color/color_white"/>
+
+    <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/login"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+</LinearLayout>

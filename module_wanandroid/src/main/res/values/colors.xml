@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--主背景色、主字体色-->
+    <color name="colorWanMain">#5E4096</color>
+
+</resources>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/colorAppTheme</color>
+    <color name="colorPrimaryDark">@color/colorAppTheme</color>
+    <color name="colorAccent">@color/colorAppTheme</color>
+
+    <!--主背景色、主字体色-->
+    <color name="colorAppTheme">#A98A5A</color>
+    <color name="colorAppThemeShallow">#EC960F</color>
+    <color name="colorAppLine">#eeeeee</color>
+    <color name="colorWindowBackground">#f2f2f2</color>
+    <color name="colorNavigationBar">@android:color/white</color>
+    <color name="colorAppText">#333333</color>
+    <color name="placeholder_color">#1A000000</color>
+
+    <!-- 常用色 -->
+    <color name="color_white">#FFFFFF</color>  <!-- 白色 -->
+    <color name="color_black">#000000</color>  <!-- 黑色 -->
+    <color name="color_red">#d01716</color>    <!-- 红色 -->
+    <color name="color_pink">#e91e63</color>
+    <color name="color_purple">#9c27b0</color>
+    <color name="color_deep_purple">#673ab7</color>
+    <color name="color_indigo">#3f51b5</color>
+    <color name="color_lime">#cddc39</color> <!-- 黄色 -->
+    <color name="color_yellow">#ffeb3b</color> <!-- 黄色 -->
+    <color name="color_gold">#FFD700</color>   <!-- 金色 -->
+    <color name="color_amber">#ffc107</color> <!-- 橙色 -->
+    <color name="color_orange">#ff9800</color> <!-- 橙色 -->
+    <color name="color_orange_deep">#ff5722</color> <!-- 橙色 -->
+    <color name="color_brown">#795548</color>
+    <color name="color_gray">#9e9e9e</color>   <!-- 灰色 -->
+    <color name="color_gray_blue">#607d8b</color>   <!-- 灰色 -->
+    <color name="color_green">#4caf50</color>  <!-- 绿色 -->
+    <color name="color_green_light">#8bc34a</color>
+    <color name="color_blue">#2196f3</color>   <!-- 蓝色 -->
+    <color name="color_Blue_light">#03a9f4</color>   <!-- 蓝色 -->
+    <color name="color_cyan">#00bcd4</color>
+    <color name="color_teal">#009688</color>
+
+    <color name="color_AAAAAA">#AAAAAA</color>
+    <color name="color_BBBBBB">#BBBBBB</color>
+    <color name="color_CCCCCC">#CCCCCC</color>
+    <color name="color_DDDDDD">#DDDDDD</color>
+    <color name="color_EEEEEE">#EEEEEE</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_666666">#666666</color>
+    <color name="color_999999">#999999</color>
+
+    <!-- 黑色透明度 -->
+    <color name="color_black_alpha_05">#0D000000</color>
+    <color name="color_black_alpha_10">#1A000000</color>
+    <color name="color_black_alpha_15">#26000000</color>
+    <color name="color_black_alpha_20">#33000000</color>
+    <color name="color_black_alpha_25">#40000000</color>
+    <color name="color_black_alpha_30">#4D000000</color>
+    <color name="color_black_alpha_35">#59000000</color>
+    <color name="color_black_alpha_40">#66000000</color>
+    <color name="color_black_alpha_45">#73000000</color>
+    <color name="color_black_alpha_50">#80000000</color>
+    <color name="color_black_alpha_55">#8C000000</color>
+    <color name="color_black_alpha_60">#99000000</color>
+    <color name="color_black_alpha_65">#A6000000</color>
+    <color name="color_black_alpha_70">#B3000000</color>
+    <color name="color_black_alpha_75">#BF000000</color>
+    <color name="color_black_alpha_80">#CC000000</color>
+    <color name="color_black_alpha_85">#D9000000</color>
+    <color name="color_black_alpha_90">#E6000000</color>
+    <color name="color_black_alpha_95">#F2000000</color>
+
+    <!-- 白色透明度 -->
+    <color name="color_white_alpha_00">#00ffffff</color>
+    <color name="color_white_alpha_10">#1Affffff</color>
+    <color name="color_white_alpha_20">#33ffffff</color>
+    <color name="color_white_alpha_30">#4Dffffff</color>
+    <color name="color_white_alpha_40">#66ffffff</color>
+    <color name="color_white_alpha_50">#80ffffff</color>
+    <color name="color_white_alpha_60">#9Affffff</color>
+    <color name="color_white_alpha_70">#B3ffffff</color>
+    <color name="color_white_alpha_80">#CCffffff</color>
+    <color name="color_white_alpha_90">#E5ffffff</color>
+    <color name="color_white_alpha_100">#FFffffff</color>
+
+    <!-- 灰色透明度 -->
+    <color name="color_gray_alpha_05">#FAFAFA</color>
+    <color name="color_gray_alpha_10">#F5F5F5</color>
+    <color name="color_gray_alpha_20">#EEEEEE</color>
+    <color name="color_gray_alpha_30">#E0E0E0</color>
+    <color name="color_gray_alpha_40">#bdbdbd</color>
+    <color name="color_gray_alpha_50">#9e9e9e</color>
+    <color name="color_gray_alpha_60">#757575</color>
+    <color name="color_gray_alpha_70">#616161</color>
+    <color name="color_gray_alpha_80">#424242</color>
+    <color name="color_gray_alpha_90">#212121</color>
+
+    <!-- 透明色透明度 -->
+    <color name="transparent_00">#00000000</color>
+    <color name="transparent_05">#0B000000</color>
+    <color name="transparent_10">#1A000000</color>
+    <color name="transparent_20">#33000000</color>
+    <color name="transparent_30">#4D000000</color>
+    <color name="transparent_40">#66000000</color>
+    <color name="transparent_50">#80000000</color>
+    <color name="transparent_60">#9A000000</color>
+    <color name="transparent_70">#B3000000</color>
+    <color name="transparent_80">#CC000000</color>
+    <color name="transparent_90">#E5000000</color>
+    <color name="transparent_100">#FF000000</color>
+
+</resources>

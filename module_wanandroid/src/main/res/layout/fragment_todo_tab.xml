@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fitsSystemWindows="false"
+            android:theme="@style/AppTheme.AppBarOverlay"
+            app:elevation="0dp">
+
+        <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWanMain"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                app:tabGravity="fill"
+                app:tabIndicatorColor="@color/white"
+                app:tabIndicatorHeight="@dimen/dp_2"
+                app:tabMaxWidth="0dp"
+                app:tabMode="fixed"
+                app:tabTextAppearance="@style/TabTextStyle" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/viewPager_todo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+
+    <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fab_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|right"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            app:layout_behavior="com.vension.fastframe.module_wan.widget.ScrollAwareFAB2Behavior"
+            app:menu_animationDelayPerItem="0"
+            app:menu_colorNormal="@color/colorWanMain"
+            app:menu_colorPressed="@color/colorWanMain"
+            app:menu_colorRipple="@color/colorWanMain"
+            app:menu_labels_ellipsize="end"
+            app:menu_labels_singleLine="true">
+
+
+        <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/icon_todo_add"
+                app:fabSize="mini"
+                app:fab_colorNormal="@color/colorWanMain"
+                app:fab_colorPressed="@color/colorWanMain"
+                app:fab_colorRipple="@color/colorWanMain"
+                app:fab_label="@string/add"/>
+
+        <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_todo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                app:fab_colorNormal="@color/colorWanMain"
+                app:fab_colorPressed="@color/colorWanMain"
+                app:fab_colorRipple="@color/colorWanMain"
+                app:fab_label="@string/notodo"
+                android:src="@drawable/icon_todo"/>
+
+        <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="mini"
+                app:fab_colorNormal="@color/colorWanMain"
+                app:fab_colorPressed="@color/colorWanMain"
+                app:fab_colorRipple="@color/colorWanMain"
+                app:fab_label="@string/completed"
+                android:src="@drawable/icon_todo_done"/>
+
+    </com.github.clans.fab.FloatingActionMenu>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

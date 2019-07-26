@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/tv_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="没有找到你的缓存"
+        android:drawableTop="@drawable/img_default_empty"
+        android:drawablePadding="12dp"
+        android:textColor="@color/font_gray"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <com.vension.fastframe.module_course.widget.progressbar.NumberProgressBar
+        android:id="@+id/progress_bar"
+        style="@style/NumberProgressBar_Beauty_Red"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:progress_max="100"
+        app:progress_text_visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/tv_cache_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingStart="@dimen/dp_10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/sp_14"
+        app:layout_constraintTop_toTopOf="@+id/progress_bar"
+        tools:ignore="MissingConstraints,RtlSymmetry"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

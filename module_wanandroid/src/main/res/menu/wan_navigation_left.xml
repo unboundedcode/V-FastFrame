@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/other">
+
+        <item
+                android:id="@+id/nav_collect"
+                android:icon="@drawable/ic_like_gray"
+                android:title="@string/nav_my_collect" />
+
+        <item
+                android:id="@+id/nav_todo"
+                android:icon="@drawable/ic_todo_gray"
+                android:title="@string/nav_todo" />
+
+        <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/ic_about_us_gray"
+                android:title="@string/nav_about_us" />
+
+    </group>
+
+    <group android:id="@+id/test">
+
+        <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout_gray"
+                android:title="@string/nav_logout" />
+
+    </group>
+
+</menu>

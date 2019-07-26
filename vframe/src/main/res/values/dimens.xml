@@ -1,0 +1,88 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 默认的Navigation高度 -->
+    <dimen name="navigationBarHeight">@dimen/qb_px_48</dimen>
+    <!-- 默认圆角角度 -->
+    <dimen name="radiusDefault">@dimen/qb_px_8</dimen>
+
+    <dimen name="avatar_width">80dp</dimen>
+    <dimen name="avatar_height">80dp</dimen>
+    <dimen name="statusBar_height">46dp</dimen>
+
+    <dimen name="textSize_small_10">10sp</dimen>
+    <dimen name="textSize_small">12sp</dimen>
+    <dimen name="textSize_content">14sp</dimen>
+    <dimen name="textSize_titleSmall">16sp</dimen>
+    <dimen name="textSize_title">18sp</dimen>
+
+    <!-- dp -->
+    <dimen name="dp_05">0.5dp</dimen>
+    <dimen name="dp_1">1dp</dimen>
+    <dimen name="dp_2">2dp</dimen>
+    <dimen name="dp_3">3dp</dimen>
+    <dimen name="dp_4">4dp</dimen>
+    <dimen name="dp_5">5dp</dimen>
+    <dimen name="dp_6">6dp</dimen>
+    <dimen name="dp_7">7dp</dimen>
+    <dimen name="dp_8">8dp</dimen>
+    <dimen name="dp_9">9dp</dimen>
+    <dimen name="dp_10">10dp</dimen>
+    <dimen name="dp_11">11dp</dimen>
+    <dimen name="dp_12">12dp</dimen>
+    <dimen name="dp_13">13dp</dimen>
+    <dimen name="dp_14">14dp</dimen>
+    <dimen name="dp_15">15dp</dimen>
+    <dimen name="dp_16">16dp</dimen>
+    <dimen name="dp_17">17dp</dimen>
+    <dimen name="dp_18">18dp</dimen>
+    <dimen name="dp_19">19dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
+    <dimen name="dp_24">24dp</dimen>
+    <dimen name="dp_26">26dp</dimen>
+    <dimen name="dp_28">28dp</dimen>
+    <dimen name="dp_30">30dp</dimen>
+    <dimen name="dp_36">36dp</dimen>
+    <dimen name="dp_50">50dp</dimen>
+    <dimen name="dp_54">54dp</dimen>
+    <dimen name="dp_60">60dp</dimen>
+    <dimen name="dp_80">80dp</dimen>
+    <dimen name="dp_90">90dp</dimen>
+    <dimen name="dp_100">100dp</dimen>
+    <dimen name="dp_110">110dp</dimen>
+    <dimen name="dp_120">120dp</dimen>
+    <dimen name="dp_168">168dp</dimen>
+    <dimen name="dp_180">180dp</dimen>
+    <dimen name="dp_200">200dp</dimen>
+
+    <!-- sp -->
+    <dimen name="sp_10">10sp</dimen>
+    <dimen name="sp_11">11sp</dimen>
+    <dimen name="sp_12">12sp</dimen>
+    <dimen name="sp_13">13sp</dimen>
+    <dimen name="sp_14">14sp</dimen>
+    <dimen name="sp_15">15sp</dimen>
+    <dimen name="sp_16">16sp</dimen>
+    <dimen name="sp_17">17sp</dimen>
+    <dimen name="sp_18">18sp</dimen>
+    <dimen name="sp_19">19sp</dimen>
+    <dimen name="sp_20">20sp</dimen>
+    <dimen name="sp_22">22sp</dimen>
+    <dimen name="sp_24">24sp</dimen>
+    <dimen name="sp_26">26sp</dimen>
+    <dimen name="sp_28">28sp</dimen>
+    <dimen name="sp_30">30sp</dimen>
+    <dimen name="sp_32">32sp</dimen>
+    <dimen name="sp_34">34sp</dimen>
+    <dimen name="sp_36">36sp</dimen>
+    <dimen name="sp_38">38sp</dimen>
+    <dimen name="sp_40">40sp</dimen>
+    <dimen name="sp_42">42sp</dimen>
+    <dimen name="sp_44">44sp</dimen>
+    <dimen name="sp_46">46sp</dimen>
+    <dimen name="sp_48">48sp</dimen>
+    <dimen name="sp_50">50sp</dimen>
+
+</resources>

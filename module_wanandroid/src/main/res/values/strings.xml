@@ -1,0 +1,149 @@
+<resources>
+    <string name="app_name">wanAndroid</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Nav Menu -->
+    <string name="menu_tab_wan_1">首页</string>
+    <string name="menu_tab_wan_2">项目</string>
+    <string name="menu_tab_wan_3">公众号</string>
+    <string name="menu_tab_wan_4">体系</string>
+    <string name="menu_tab_wan_5">导航</string>
+
+    <!-- Nav Action -->
+    <string name="nav_my_collect">收藏</string>
+    <string name="nav_todo">TODO工具</string>
+    <string name="nav_night_mode">夜间模式</string>
+    <string name="nav_setting">设置</string>
+    <string name="nav_about_us">关于我们</string>
+    <string name="nav_logout">退出登录</string>
+
+    <!-- Login -->
+    <string name="username">用户名</string>
+    <string name="password">密码</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="no_account">没有账号？去注册</string>
+    <string name="username_not_empty">用户名不能为空</string>
+    <string name="password_not_empty">密码不能为空</string>
+    <string name="have_account">已有账户？去登录</string>
+    <string name="enter_password_again">再输入一次密码</string>
+    <string name="confirm_password_not_empty">确认密码不能为空</string>
+    <string name="password_cannot_match">两次密码不相同</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_fail">登录失败</string>
+    <string name="register_success">注册成功</string>
+    <string name="register_fail">注册失败</string>
+    <string name="confirm_logout">确认退出登录？</string>
+    <string name="logout_success">已退出登录</string>
+    <string name="logout_ing">正在退出登录</string>
+    <string name="login_tint">请先登录</string>
+    <string name="login_ing">登录中...</string>
+    <string name="register_ing">注册中...</string>
+
+    <!-- Home -->
+    <string name="collect_success">收藏成功</string>
+    <string name="cancel_collect_success">已取消收藏</string>
+    <string name="new_fresh">新</string>
+    <string name="top_tip">置顶</string>
+
+    <!-- Menu Action -->
+    <string name="action_search">搜索</string>
+    <string name="action_share">分享</string>
+    <string name="action_like">收藏</string>
+    <string name="action_browser">用浏览器打开</string>
+
+    <string name="share_article_url">%1$s分享【%2$s】：%3$s</string>
+
+    <!-- TODO工具 -->
+    <string name="delete_success">删除成功</string>
+    <string name="delete">删除</string>
+    <string name="mark_done">标为已完成</string>
+    <string name="restore">复原</string>
+    <string name="completed">已完成</string>
+    <string name="confirm_delete">确认删除</string>
+    <string name="add">新增</string>
+    <string name="notodo">待办</string>
+    <string name="save">保存</string>
+    <string name="non_compulsory">非必填</string>
+    <string name="details">详情：</string>
+    <string name="compulsory">必填</string>
+    <string name="title">标题：</string>
+    <string name="date">日期：</string>
+    <string name="title_tip">标题不能为空！</string>
+    <string name="save_success">保存成功</string>
+    <string name="edit">编辑</string>
+    <string name="see">查看</string>
+    <string name="save_ing">正在保存...</string>
+    <string name="priority_0">一般</string>
+    <string name="priority_1">重要</string>
+
+    <!-- Search -->
+    <string name="search">搜索</string>
+    <string name="search_tint">发现更多干货</string>
+    <string name="hot_search">热门搜索</string>
+    <string name="clear_all">清空</string>
+    <string name="history_search">搜索历史</string>
+    <string name="search_null_tint">快来搜点干货吧</string>
+
+    <!-- AboutUs -->
+    <string name="about_us">关于我们</string>
+    <string name="about_developers_label">主要开发者</string>
+    <string name="about_developers">https://github.com/Vension</string>
+    <string name="about_libraries_label">开源许可</string>
+    <string name="about_libraries_summary">查看开源许可信息</string>
+    <string name="copyright">版权声明</string>
+    <string name="copyright_summary">仅作个人及非商业用途</string>
+    <string name="version">版本</string>
+    <!-- Setting -->
+    <string name="setting">设置</string>
+    <string name="basic_setting">基本设置</string>
+    <string name="switch_photo_mode">无图模式</string>
+    <string name="switch_no_photo_mode_summary">开启后在非Wifi环境下不加载图片</string>
+    <string name="switch_show_top_summary">开启后将不会显示首页置顶文章</string>
+    <string name="switch_show_top_title">是否显示首页置顶文章</string>
+    <string name="switch_night_mode">夜间模式</string>
+    <string name="switch_night_mode_summary">切换夜间皮肤</string>
+    <string name="clear_cache">清除缓存</string>
+    <string name="clear_cache_successfully">清理成功</string>
+    <string name="other_setting">其他设置</string>
+    <string name="about_settings">关于</string>
+    <string name="choose_theme_color">主题颜色</string>
+    <string name="choose_theme_color_summary">自定义主题颜色</string>
+    <string name="back">返回</string>
+    <string name="done">完成</string>
+    <string name="custom">自定义</string>
+    <string name="nav_bar_coloration">导航栏着色</string>
+    <string name="nav_bar_coloration_summary">导航栏颜色跟随主题颜色</string>
+    <string name="choose_icon">更换图标</string>
+    <string name="choose_icon_summary">重启App生效(可以将App从最近任务列表删除来重启)</string>
+    <string name="slidable_title">滑动返回</string>
+    <string name="slidable_summary">类似 iOS 左侧滑动返回</string>
+    <string name="auto_night_mode">自动切换夜间模式</string>
+    <string name="check_version_fail">检查新版本失败，请稍后重试</string>
+    <string name="check_version_ing">正在检查，请稍候...</string>
+    <string name="check_no_version">当前已是最新版本了</string>
+
+
+    <string name="about_content"><![CDATA[
+        <h2>网站内容</h2>
+        <p>\t\t本网站每天新增20~30篇优质文章，并加入到现有分类中，力求整理出一份优质而又详尽的知识体系，闲暇时间不妨上来学习下知识；除此以外，并为大家提供平时开发过程中常用的工具以及常用的网址导航。</p>
+        <p>\t\t当然这只是我们目前的功能，未来我们将提供更多更加便捷的功能…</p>
+        <p>\t\t如果您有任何好的建议：</p>
+            <br/>\t\t\t\t关于网站排版
+            <br/>\t\t\t\t关于新增常用网址以及工具
+            <br/>\t\t\t\t未来你希望增加的功能等
+        <p>\t\t可以在 <a href="https://github.com/hongyangAndroid/wanandroid" target="_blank">https://github.com/hongyangAndroid/xueandroid</a> 项目中以issue的形式提出，我将及时跟进。</p>
+        <p>\t\t如果您希望长期关注本站，可以加入我们的QQ群：<b>591683946</b></p>
+        <h2>源码位置</h2>
+        <p>\t\t本软件开源，如果你发现任何错误，不要犹豫，马上点击<a href="https://github.com/Vension" target="_blank">GitHub</a>，在上面发起<b>issue</b>或者提交<b>pull request</b>。</p>
+    ]]></string>
+
+
+    <string name="copyright_content">本APP所使用的所有API均由 玩Android 网站提供，仅供学习交流，不可用于任何商业用途。</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

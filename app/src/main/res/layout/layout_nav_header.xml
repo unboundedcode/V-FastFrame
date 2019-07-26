@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_180"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:clickable="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="@color/colorAppTheme">
+
+    <kv.vension.vframe.views.ShapeImageView
+            android:id="@+id/siv_avatar"
+            android:layout_width="@dimen/avatar_width"
+            android:layout_height="@dimen/avatar_height"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/kv"
+            app:siv_type="1"
+            app:siv_borderWidth="4dp"
+            app:siv_isGradientBorder="true"
+            app:siv_graStartColor="#009944"
+            app:siv_graCenterColor="#1994C2"
+            app:siv_graEndColor="#40BD78"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dp_8"
+            android:text="@string/app_name"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/sp_16"
+            android:textStyle="bold" />
+
+</LinearLayout>

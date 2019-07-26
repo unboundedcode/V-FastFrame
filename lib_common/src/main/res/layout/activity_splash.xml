@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@drawable/shape_bg_splash">
+
+    <kv.vension.vframe.views.CircleCountDownView
+            android:id="@+id/circleCountDownView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="15dp"
+            android:padding="5dp"
+            app:text_size="@dimen/sp_12"
+            app:default_circle_solide_color="@color/colorAppTheme"
+            app:progress_color="@color/color_white"
+            app:small_circle_stroke_color="@color/colorAppThemeShallow"
+            app:text_color="@color/color_white"/>
+
+
+    <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/qb_px_250"
+            android:text="@string/app_name"
+            android:textColor="@color/colorAppTheme"
+            android:textSize="@dimen/sp_36"
+            android:textStyle="bold" />
+    <TextView
+            android:id="@+id/txt_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            android:layout_marginTop="@dimen/qb_px_30"
+            android:text="无界编码，快捷构建，助你起飞"
+            android:textColor="@color/colorAppTheme"
+            android:textSize="@dimen/sp_16" />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:padding="15dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@color/color_white">
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher_round"/>
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/qb_px_15"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/colorAppTheme"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            <TextView
+                    android:id="@+id/tv_version"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/qb_px_10"
+                    android:text="@string/welcome_hint_version"
+                    android:textSize="@dimen/sp_10"
+                    android:textColor="@color/colorAppText"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
