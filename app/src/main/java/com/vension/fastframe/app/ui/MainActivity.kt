@@ -72,10 +72,10 @@ class MainActivity : AbsCompatActivity(){
         NavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_wanAndroid -> {//wanAndroid
-                    ARouter.getInstance().build(RouterConfig.PATH_MODULE_WANANDROID_MAINACTIVITY).navigation()
+                    ARouter.getInstance().build(RouterConfig.PATH_WAN_MAINACTIVITY).navigation()
                 }
                 R.id.nav_weike ->{//微课
-                    ARouter.getInstance().build(RouterConfig.PATH_MODULE_COURSE_MAINACTIVITY).navigation()
+                    ARouter.getInstance().build(RouterConfig.PATH_COURSE_MAINACTIVITY).navigation()
                 }
                 R.id.nav_news -> {//新闻
                     val builder = AlertDialog.Builder(this@MainActivity)
@@ -88,11 +88,11 @@ class MainActivity : AbsCompatActivity(){
                         when(which){
                             0 ->{
                                 ARouter.getInstance().build(RouterConfig.PATH_COMMON_LOGINACTIVITY)//指定跳到那个页面
-                                    .withString("targetUrl", RouterConfig.PATH_MODULE_WANANDROID_MAINACTIVITY)//传入目标页面路由地址  可以在指定页面跳入到目标页面
+                                    .withString("targetUrl", RouterConfig.PATH_WAN_MAINACTIVITY)//传入目标页面路由地址  可以在指定页面跳入到目标页面
                                     .navigation()
                             }
                             1 ->{
-                                ARouter.getInstance().build(RouterConfig.PATH_MODULE_NEWS_MAINACTIVITY).navigation()
+                                ARouter.getInstance().build(RouterConfig.PATH_NEWS_MAINACTIVITY).navigation()
                             }
                         }
                     }

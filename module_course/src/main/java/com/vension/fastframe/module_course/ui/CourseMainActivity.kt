@@ -33,7 +33,7 @@ import org.greenrobot.eventbus.ThreadMode
  * @desc:   character determines attitude, attitude determines destiny
  * ===================================================================
  */
-@Route(path = RouterConfig.PATH_MODULE_COURSE_MAINACTIVITY)
+@Route(path = RouterConfig.PATH_COURSE_MAINACTIVITY)
 class CourseMainActivity : AbsCompatMVPActivity<MainContract.View,MainPresenter>(), OnTabSelectListener ,MainContract.View{
 
     private var mCurrentPos: Int = -1

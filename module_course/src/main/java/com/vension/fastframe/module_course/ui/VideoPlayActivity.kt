@@ -26,7 +26,7 @@ import tv.danmaku.ijk.media.player.IMediaPlayer
  * ===================================================================
  */
 
-@Route(path = RouterConfig.PATH_MODULE_COURSE_VIDEOPLAYACTIVITY)
+@Route(path = RouterConfig.PATH_COURSE_VIDEOPLAYACTIVITY)
 class VideoPlayActivity : AbsCompatActivity(), VideoBackListener {
 
     private var mStartText = "初始化播放器..."

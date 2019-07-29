@@ -18,38 +18,37 @@ object RouterConfig {
     )
 
     /**
-     * App 启动页
+     * APP
      */
+    //启动页
     const val PATH_APP_SPLASHACTIVITY = "/app/SplashActivity"
-    /**
-     * App 主页
-     */
+    //主界面
     const val PATH_APP_MAINACTIVITY = "/app/AppMainActivity"
 
 
     /**
      * module_wanandroid 主页
      */
-    const val PATH_MODULE_WANANDROID_MAINACTIVITY = "/module_wanandroid/WanMainActivity"
+    const val PATH_WAN_MAINACTIVITY = "/wanandroid/WanMainActivity"
 
     /**
      * module_course
      */
     //微课主页
-    const val PATH_MODULE_COURSE_MAINACTIVITY = "/module_course/CourseMainActivity"
+    const val PATH_COURSE_MAINACTIVITY = "/course/CourseMainActivity"
     //微课视频播放页
-    const val PATH_MODULE_COURSE_VIDEOPLAYACTIVITY = "/module_course/VideoPlayActivity"
+    const val PATH_COURSE_VIDEOPLAYACTIVITY = "/course/VideoPlayActivity"
 
     /**
      * module_news 主页
      */
-    const val PATH_MODULE_NEWS_MAINACTIVITY = "/module_news/NewsMainActivity"
+    const val PATH_NEWS_MAINACTIVITY = "/news/NewsMainActivity"
 
 
     /**
      * common
      */
     //登录 注册
-    const val PATH_COMMON_LOGINACTIVITY = "/lib_common/LoginActivity"
+    const val PATH_COMMON_LOGINACTIVITY = "/common/LoginActivity"
 
 }

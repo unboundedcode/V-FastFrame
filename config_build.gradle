@@ -55,16 +55,6 @@ android {
         }
     }
 
-    if (isBuildModule.toBoolean()) {
-        // 3.0 gradle 批量打包 命令打包: ./gradlew assembleRelease
-        applicationVariants.all { variant ->
-            variant.outputs.all {
-                //得到当前时间的字符串 用于发包的时候拼接命名,关于语言的实现参考 groovy def定义无类型的变量 返回值无类型的方法
-                def formattedDate = new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
-                outputFileName = "V-FastFrame_${variant.mergedFlavor.versionName}_${formattedDate}.apk"
-            }
-        }
-    }
 
     //不进行代码静态检测
     lintOptions {
@@ -74,8 +64,8 @@ android {
 
     //支持java8
     compileOptions {
-        targetCompatibility JavaVersion.VERSION_1_8
         sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 

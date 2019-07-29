@@ -14,7 +14,7 @@ import lib.vension.fastframe.common.RouterConfig
  * ===================================================================
  */
 
-@Route(path = RouterConfig.PATH_MODULE_NEWS_MAINACTIVITY)
+@Route(path = RouterConfig.PATH_NEWS_MAINACTIVITY)
 class NewsMainActivity : AbsCompatActivity() {
 
 

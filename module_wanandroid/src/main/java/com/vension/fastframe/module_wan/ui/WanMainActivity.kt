@@ -46,7 +46,7 @@ import q.rorbin.badgeview.QBadgeView
  * ===================================================================
  */
 
-@Route(path = RouterConfig.PATH_MODULE_WANANDROID_MAINACTIVITY)
+@Route(path = RouterConfig.PATH_WAN_MAINACTIVITY)
 class WanMainActivity : AbsCompatMVPActivity<MainContract.View, MainContract.Presenter>(),MainContract.View {
 
     private var mHomeFragment: MenuTabHomeFragment? = null

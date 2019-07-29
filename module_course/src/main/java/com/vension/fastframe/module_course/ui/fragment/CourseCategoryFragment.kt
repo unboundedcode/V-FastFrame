@@ -61,7 +61,7 @@ class CourseCategoryFragment : AbsCompatMVPRefreshFragment<VideoBean,CourseCateg
         mAdapter?.setOnItemClickListener { adapter, view, position ->
             val item  = mAdapter?.getItem(position) as VideoBean
             item?.let {
-                ARouter.getInstance().build(RouterConfig.PATH_MODULE_COURSE_VIDEOPLAYACTIVITY)//指定跳到那个页面
+                ARouter.getInstance().build(RouterConfig.PATH_COURSE_VIDEOPLAYACTIVITY)//指定跳到那个页面
                     .withString("Url", item.videoUrl)
                     .withString("title", item.title)
                     .navigation()
