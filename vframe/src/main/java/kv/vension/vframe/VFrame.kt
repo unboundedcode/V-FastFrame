@@ -47,7 +47,6 @@ object VFrame {
         debug = isDebug
         mApplication = application
         mContext = application.applicationContext
-//        SpUtils.init(application.applicationContext,"VFrame.sp")
         FileCache.init(application.applicationContext)
         initLogger()//初始化Logger日志打印
         initCrash()//崩溃日志收集
