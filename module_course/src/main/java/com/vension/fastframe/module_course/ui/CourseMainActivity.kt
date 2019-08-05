@@ -73,7 +73,9 @@ class CourseMainActivity : AbsCompatMVPActivity<MainContract.View,MainPresenter>
 
     override fun onTabSelect(position: Int) {
         //底部按钮切换
-        switchFragmentIndex(position)
+        if(mFragments.isNotEmpty()){
+            switchFragmentIndex(position)
+        }
     }
 
     private fun switchFragmentIndex(index: Int) {

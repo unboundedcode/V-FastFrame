@@ -5,7 +5,6 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
-import androidx.appcompat.app.AlertDialog
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
@@ -19,7 +18,6 @@ import com.wuhenzhizao.titlebar.statusbar.StatusBarUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_toolbar_main.*
 import kv.vension.vframe.core.AbsCompatActivity
-import kv.vension.vframe.ext.Loge
 import kv.vension.vframe.ext.showToast
 import lib.vension.fastframe.common.RouterConfig
 import lib.vension.fastframe.common.test.TestFragment
@@ -78,25 +76,7 @@ class MainActivity : AbsCompatActivity(){
                     ARouter.getInstance().build(RouterConfig.PATH_COURSE_MAINACTIVITY).navigation()
                 }
                 R.id.nav_news -> {//新闻
-                    val builder = AlertDialog.Builder(this@MainActivity)
-                    builder.setIcon(R.mipmap.ic_launcher_round)
-                    builder.setTitle("选择进入方式")
-                    //    指定下拉列表的显示数据
-                    val cities = arrayOf("登录进入主页", "不登录进入主页")
-                    //    设置一个下拉的列表选择项
-                    builder.setItems(cities) { _, which ->
-                        when(which){
-                            0 ->{
-                                ARouter.getInstance().build(RouterConfig.PATH_COMMON_LOGINACTIVITY)//指定跳到那个页面
-                                    .withString("targetUrl", RouterConfig.PATH_WAN_MAINACTIVITY)//传入目标页面路由地址  可以在指定页面跳入到目标页面
-                                    .navigation()
-                            }
-                            1 ->{
-                                ARouter.getInstance().build(RouterConfig.PATH_NEWS_MAINACTIVITY).navigation()
-                            }
-                        }
-                    }
-                    builder.show()
+                    ARouter.getInstance().build(RouterConfig.PATH_NEWS_MAINACTIVITY).navigation()
                 }
                 R.id.nav_ShoppingMall ->{//商城
                     showToast("敬请期待")
@@ -124,7 +104,6 @@ class MainActivity : AbsCompatActivity(){
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         //记录fragment的位置,防止崩溃 activity被系统回收时，fragment错乱
-        Loge("appMain-recreate")
         outState.putInt("currTabIndex", mIndex)
     }
 
@@ -206,7 +185,7 @@ class MainActivity : AbsCompatActivity(){
                 mTabFragment_4?.let {
                     transaction.show(it)
                 } ?: TestFragment.getInstance("我的").let {
-                    mTabFragment_3 = it
+                    mTabFragment_4 = it
                     transaction.add(R.id.container_main, it, "mine")
                 }
             }

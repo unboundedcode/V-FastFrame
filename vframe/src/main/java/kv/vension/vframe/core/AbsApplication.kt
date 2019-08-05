@@ -42,11 +42,9 @@ abstract class AbsApplication : MultiDexApplication(){
         super.onCreate()
         instance = this
         appContext = applicationContext
-        //初始化Frame入口
-        VFrame.init(this,true)
-        //初始化侧滑返回
-        WxSwipeBackActivityManager.getInstance().init(this)
-        initComponents()
+        VFrame.init(this) //初始化Frame入口
+        WxSwipeBackActivityManager.getInstance().init(this) //初始化侧滑返回
+        initComponents()//初始化组件Application
     }
 
     /**

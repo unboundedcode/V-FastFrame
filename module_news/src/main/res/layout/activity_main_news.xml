@@ -1,19 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#713497"
-                tools:ignore="ResourceName">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              xmlns:tl="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:background="@color/colorWindowBackground"
+              tools:ignore="ResourceName">
 
-    <TextView
-            android:id="@+id/main_tv"
-            android:gravity="center"
-            android:textSize="@dimen/sp_20"
-            android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/color_white"
-            android:text="这是module_news的主页" />
+    <kv.vension.vframe.views.NoScrollViewPager
+            android:id="@+id/vp_newsMain"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
-</RelativeLayout>
+    <View style="@style/Line_Horizontal_1dp"/>
+
+    <com.flyco.tablayout.CommonTabLayout
+            android:id="@+id/newsCommonTabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_50"
+            tl:tl_iconHeight="21dp"
+            tl:tl_iconWidth="21dp"
+            tl:tl_indicator_color="@color/colorNewsMain"
+            tl:tl_indicator_height="1dp"
+            tl:tl_textSelectColor="@color/colorNewsMain"
+            tl:tl_textUnselectColor="#272636"
+            tl:tl_textsize="11sp"
+            tl:tl_underline_color="#DDDDDD"
+            tl:tl_underline_height="1dp"/>
+
+</LinearLayout>

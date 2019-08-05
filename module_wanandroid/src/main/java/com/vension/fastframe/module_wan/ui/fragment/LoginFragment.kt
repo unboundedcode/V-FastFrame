@@ -37,11 +37,10 @@ class LoginFragment : AbsCompatMVPFragment<LoginContract.View, LoginPresenter>()
         return R.layout.fragment_login
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        super.initToolBar(mCommonTitleBar)
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
+        super.initToolBar(mCommonTitleBar,"登录")
         mCommonTitleBar.run {
             setBackgroundColor(VFrame.getColor(R.color.colorWanMain))
-            centerTextView.text = "登录"
         }
     }
 

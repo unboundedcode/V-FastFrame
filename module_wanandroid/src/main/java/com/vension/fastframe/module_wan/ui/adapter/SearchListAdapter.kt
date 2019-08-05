@@ -22,7 +22,7 @@ import kv.vension.vframe.glide.ImageLoader
 class SearchListAdapter(private val context: Context?)
     : BaseQuickAdapter<Article, BaseViewHolder>(R.layout.item_recy_wan_home) {
 
-    override fun convert(helper: BaseViewHolder?, item: Article?) { item ?: return
+    override fun convert(helper: BaseViewHolder, item: Article?) { item ?: return
         helper ?: return
 
         if (item.envelopePic.isNotEmpty()) {

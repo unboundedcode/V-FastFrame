@@ -77,7 +77,7 @@ object NetWorkUtil {
     fun isConnected(): Boolean {
         val manager = VFrame.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         val info = manager.activeNetworkInfo
-        return info != null && !info.isConnected
+        return info != null && info.isConnected
     }
 
 

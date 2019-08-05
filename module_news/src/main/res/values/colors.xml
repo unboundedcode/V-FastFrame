@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorNewsMain">#00BCD4</color>
+
+    <color name="Gray1">#ff36373d</color>
+    <color name="Gray2">#ff404347</color>
+    <color name="Gray3">#ff939699</color>
+    <color name="Gray3A">#ffb0b3b8</color>
+    <color name="Gray4">#ffcdcfd1</color>
+    <color name="Gray7">#99cdcfd1</color>
+    <color name="Green">#ff3cdd23</color>
+    <color name="LGray1">#ffedeef0</color>
+    <color name="LGray2">#fff0f1f2</color>
+    <color name="LGray3">#fff2f3f5</color>
+    <color name="LGray4">#fff5f6f7</color>
+    <!-- Red -->
+    <color name="material_red_50">#fde0dc</color>
+    <color name="material_red_100">#f9bdbb</color>
+    <color name="material_red_200">#f69988</color>
+    <color name="material_red_300">#f36c60</color>
+    <color name="material_red_400">#e84e40</color>
+    <color name="material_red_500">#e51c23</color>
+    <color name="material_red_600">#dd191d</color>
+    <color name="material_red_700">#d01716</color>
+    <color name="material_red_800">#c41411</color>
+    <color name="material_red_900">#b0120a</color>
+    <color name="material_red_A100">#ff7997</color>
+    <color name="material_red_A200">#ff5177</color>
+    <color name="material_red_A400">#ff2d6f</color>
+    <color name="material_red_A700">#e00032</color>
+
+    <!-- Orange -->
+    <color name="material_orange_50">#fff3e0</color>
+    <color name="material_orange_100">#ffe0b2</color>
+    <color name="material_orange_200">#ffcc80</color>
+    <color name="material_orange_300">#ffb74d</color>
+    <color name="material_orange_400">#ffa726</color>
+    <color name="material_orange_500">#ff9800</color>
+    <color name="material_orange_600">#fb8c00</color>
+    <color name="material_orange_700">#f57c00</color>
+    <color name="material_orange_800">#ef6c00</color>
+    <color name="material_orange_900">#e65100</color>
+    <color name="material_orange_A100">#ffd180</color>
+    <color name="material_orange_A200">#ffab40</color>
+    <color name="material_orange_A400">#ff9100</color>
+    <color name="material_orange_A700">#ff6d00</color>
+
+    <color name="title_bg_red">#D83D3A</color>
+    <color name="color_orange_red">#f03f33</color>
+    <color name="black_font">#bb000000</color>
+
+</resources>

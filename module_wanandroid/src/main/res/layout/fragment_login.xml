@@ -20,9 +20,9 @@
                 android:layout_gravity="center_horizontal"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/kv"
-                app:siv_type="1"
-                app:siv_borderWidth="2dp"
-                app:siv_borderColor="@color/color_white"/>
+                app:siv_shape_type="SHAPE_CIRCLE"
+                app:siv_border_width="2dp"
+                app:siv_border_color="@color/color_white"/>
         
         <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"

@@ -17,7 +17,7 @@ import com.vension.fastframe.module_wan.bean.SearchHistoryBean
 class SearchHistoryAdapter(private val context: Context?, datas: MutableList<SearchHistoryBean>)
     : BaseQuickAdapter<SearchHistoryBean, BaseViewHolder>(R.layout.item_search_history, datas) {
 
-    override fun convert(helper: BaseViewHolder?, item: SearchHistoryBean?) {
+    override fun convert(helper: BaseViewHolder, item: SearchHistoryBean?) {
         helper ?: return
         item ?: return
 

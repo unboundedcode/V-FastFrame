@@ -463,7 +463,7 @@ object StatusBarUtil {
      * @param activity       fragment 对应的 activity
      * @param needOffsetView 需要向下偏移的 View
      */
-    fun setTranslucentForImageViewInFragment(activity: Activity, needOffsetView: View) {
+    fun setTranslucentForImageViewInFragment(activity: Activity, needOffsetView: View?) {
         setTranslucentForImageViewInFragment(activity, DEFAULT_STATUS_BAR_ALPHA, needOffsetView)
     }
 
@@ -484,8 +484,10 @@ object StatusBarUtil {
      * @param statusBarAlpha 状态栏透明度
      * @param needOffsetView 需要向下偏移的 View
      */
-    fun setTranslucentForImageViewInFragment(activity: Activity, statusBarAlpha: Int,
-                                             needOffsetView: View) {
+    fun setTranslucentForImageViewInFragment(
+        activity: Activity, statusBarAlpha: Int,
+        needOffsetView: View?
+    ) {
         setTranslucentForImageView(activity, statusBarAlpha, needOffsetView)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
             clearPreviousSetting(activity)
@@ -510,7 +512,7 @@ object StatusBarUtil {
     }
 
     /**
-     * 亮光模式
+     * 亮光模式 - 深色字体
      */
     @TargetApi(Build.VERSION_CODES.M)
     fun setLightMode(activity: Activity) {
@@ -522,7 +524,7 @@ object StatusBarUtil {
     }
 
     /**
-     * 暗淡模式
+     * 暗淡模式 - 白色字体
      */
     @TargetApi(Build.VERSION_CODES.M)
     fun setDarkMode(activity: Activity) {

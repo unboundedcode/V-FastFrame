@@ -20,8 +20,6 @@ object RouterConfig {
     /**
      * APP
      */
-    //启动页
-    const val PATH_APP_SPLASHACTIVITY = "/app/SplashActivity"
     //主界面
     const val PATH_APP_MAINACTIVITY = "/app/AppMainActivity"
 
@@ -48,6 +46,8 @@ object RouterConfig {
     /**
      * common
      */
+    //启动页
+    const val PATH_COMMON_SPLASHACTIVITY = "/common/SplashActivity"
     //登录 注册
     const val PATH_COMMON_LOGINACTIVITY = "/common/LoginActivity"
 

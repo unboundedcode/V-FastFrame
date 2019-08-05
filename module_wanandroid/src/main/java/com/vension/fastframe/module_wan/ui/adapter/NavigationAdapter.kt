@@ -28,7 +28,7 @@ class NavigationAdapter(context: Context?, datas: MutableList<NavigationBean>)
 
     private var mItemClickListener: OnItemClickListener? = null
 
-    override fun convert(helper: BaseViewHolder?, item: NavigationBean?) {
+    override fun convert(helper: BaseViewHolder, item: NavigationBean?) {
         item ?: return
 
         helper?.setText(R.id.item_navigation_tv, item.name)

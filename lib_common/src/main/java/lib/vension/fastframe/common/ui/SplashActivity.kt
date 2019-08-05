@@ -11,13 +11,17 @@ import android.view.animation.LinearInterpolator
 import android.widget.Toast
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_splash.*
 import kv.vension.vframe.core.AbsCompatActivity
+import kv.vension.vframe.glide.ImageLoader
+import kv.vension.vframe.net.rx.RxHandler
 import kv.vension.vframe.utils.TimeUtil
 import kv.vension.vframe.views.CircleCountDownView
+import lib.vension.fastframe.common.Constant
 import lib.vension.fastframe.common.R
 import lib.vension.fastframe.common.RouterConfig
-
+import java.util.concurrent.TimeUnit
 
 
 /**
@@ -28,7 +32,7 @@ import lib.vension.fastframe.common.RouterConfig
  * 描 述：启动页
  * ========================================================
  */
-@Route(path = RouterConfig.PATH_APP_SPLASHACTIVITY)
+@Route(path = RouterConfig.PATH_COMMON_SPLASHACTIVITY)
 class SplashActivity : AbsCompatActivity() {
 
     private lateinit var animatorSet: AnimatorSet
@@ -46,7 +50,7 @@ class SplashActivity : AbsCompatActivity() {
     }
 
     override fun initViewAndData(savedInstanceState: Bundle?) {
-        val welcomeHint = getString(R.string.welcome_hint_version,"2015", TimeUtil.getTime(System.currentTimeMillis(),"yyyy"), "V-FastFrame.com")
+        val welcomeHint = getString(R.string.welcome_hint,"2015", TimeUtil.getTime(System.currentTimeMillis(),"yyyy"), "V-FastFrame")
         tv_version.text = welcomeHint
 
         animatorSet = AnimatorSet().apply {
@@ -77,14 +81,6 @@ class SplashActivity : AbsCompatActivity() {
                     ObjectAnimator.ofFloat(tv_name, "translationY", -500f, 0f).apply {
                         duration = 2000L
                         interpolator = BounceInterpolator()
-                        addListener(object : AnimatorListenerAdapter() {
-                            override fun onAnimationStart(animation: Animator) {
-                            }
-
-                            override fun onAnimationEnd(animation: Animator) {
-                                circleCountDownView.visibility = View.VISIBLE
-                            }
-                        })
                     }
                 )
                 play(it).before(//显示倒计时
@@ -100,9 +96,12 @@ class SplashActivity : AbsCompatActivity() {
             }
             addListener(object : Animator.AnimatorListener {
                 override fun onAnimationRepeat(animation: Animator?) {}
+                @SuppressLint("CheckResult")
                 override fun onAnimationEnd(animation: Animator?) {
-                    startCountDown()//开始倒计时
-//                Observable.timer(500, TimeUnit.MILLISECONDS).subscribe { go2Main() }
+                    Observable.timer(500, TimeUnit.MILLISECONDS).compose(RxHandler.ioToMain()).subscribe {
+                        startLoadImg()//开始加载图片
+                        startCountDown()//开始倒计时
+                    }
                 }
                 override fun onAnimationCancel(animation: Animator?) {}
                 override fun onAnimationStart(animation: Animator?) {}
@@ -111,8 +110,19 @@ class SplashActivity : AbsCompatActivity() {
         }
     }
 
+
+    private fun startLoadImg(){
+        txt_des.visibility = View.GONE
+        tv_name.visibility = View.GONE
+        circleCountDownView.visibility = View.VISIBLE
+        aiv_splash.visibility = View.VISIBLE
+        val splashImg = Constant.getSplashImg()
+        ImageLoader.loadResource(this,splashImg,aiv_splash)
+    }
+
+
     /**开始倒计时*/
-    private val countDownTime = 3 * 1000
+    private val countDownTime = 4 * 1000
     private fun startCountDown() {
         circleCountDownView.setCountdownTime(countDownTime.toLong())
         circleCountDownView.startCountDownTime(object : CircleCountDownView.OnCountdownFinishListener{

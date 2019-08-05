@@ -6,21 +6,6 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:background="@drawable/shape_bg_splash">
 
-    <kv.vension.vframe.views.CircleCountDownView
-            android:id="@+id/circleCountDownView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_margin="15dp"
-            android:padding="5dp"
-            app:text_size="@dimen/sp_12"
-            app:default_circle_solide_color="@color/colorAppTheme"
-            app:progress_color="@color/color_white"
-            app:small_circle_stroke_color="@color/colorAppThemeShallow"
-            app:text_color="@color/color_white"/>
-
-
     <TextView
             android:id="@+id/tv_name"
             android:layout_width="wrap_content"
@@ -45,42 +30,69 @@
             android:textColor="@color/colorAppTheme"
             android:textSize="@dimen/sp_16" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aiv_splash"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/layout_bottom"
+            android:visibility="invisible"
+            android:scaleType="fitXY"/>
+
+    <kv.vension.vframe.views.CircleCountDownView
+            android:id="@+id/circleCountDownView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="15dp"
+            android:padding="5dp"
+            app:text_size="@dimen/sp_12"
+            app:default_circle_solide_color="@color/colorAppTheme"
+            app:progress_color="@color/color_white"
+            app:small_circle_stroke_color="@color/colorAppThemeShallow"
+            app:text_color="@color/color_white"/>
+
     <LinearLayout
+            android:id="@+id/layout_bottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:padding="15dip"
+            android:padding="12dip"
             android:gravity="center"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:background="@color/color_white">
-        <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/ic_launcher_round"/>
         <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/qb_px_15"
                 android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+            <ImageView
+                    android:layout_width="@dimen/qb_px_32"
+                    android:layout_height="@dimen/qb_px_32"
+                    android:src="@mipmap/ic_launcher_round"/>
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/qb_px_12"
                     android:text="@string/app_name"
                     android:textColor="@color/colorAppTheme"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/sp_18"
                     android:textStyle="bold" />
-            <TextView
-                    android:id="@+id/tv_version"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/qb_px_10"
-                    android:text="@string/welcome_hint_version"
-                    android:textSize="@dimen/sp_10"
-                    android:textColor="@color/colorAppText"/>
+
         </LinearLayout>
+        <TextView
+                android:id="@+id/tv_version"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_10"
+                android:text="@string/welcome_hint"
+                android:textSize="@dimen/sp_10"
+                android:textColor="@color/color_gray"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

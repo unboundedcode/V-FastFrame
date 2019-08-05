@@ -33,10 +33,9 @@ class AboutFragment : AbsCompatFragment() {
         return true
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        super.initToolBar(mCommonTitleBar)
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
+        super.initToolBar(mCommonTitleBar,"关于我们")
         mCommonTitleBar.run {
-            centerTextView.text = "关于我们"
             alpha = 0.0f
         }
     }

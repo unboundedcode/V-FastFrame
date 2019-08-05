@@ -46,6 +46,13 @@
 <a href="screenshots/wk/.png"><img src="screenshots/wk/six.png" width="30%"/></a>
 <a href="screenshots/wk/seven.png"><img src="screenshots/wk/seven.png" width="90%"/></a> 
 
+#### News
+<a href="screenshots/news/news_1.png"><img src="screenshots/news/news_1.png" width="30%"/></a> 
+<a href="screenshots/news/news_2.png"><img src="screenshots/news/news_2.png" width="30%"/></a> 
+<a href="screenshots/news/news_3.png"><img src="screenshots/news/news_3.png" width="30%"/></a> 
+<a href="screenshots/news/news_4.png"><img src="screenshots/news/news_4.png" width="30%"/></a> 
+<a href="screenshots/news/news_5.png"><img src="screenshots/news/news_5.png" width="30%"/></a> 
+
 
 ## License
 ```

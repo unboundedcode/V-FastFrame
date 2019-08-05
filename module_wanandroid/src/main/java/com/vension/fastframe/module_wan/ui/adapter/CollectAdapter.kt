@@ -20,7 +20,7 @@ import kv.vension.vframe.glide.ImageLoader
 
 class CollectAdapter(private val context: Context?)
     : BaseQuickAdapter<CollectionArticle, BaseViewHolder>(R.layout.item_recy_collect) {
-    override fun convert(helper: BaseViewHolder?, item: CollectionArticle?) {
+    override fun convert(helper: BaseViewHolder, item: CollectionArticle?) {
 
         helper ?: return
         item ?: return

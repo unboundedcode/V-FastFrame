@@ -21,13 +21,13 @@ class TodoAdapter : BaseSectionQuickAdapter<TodoDataBean, BaseViewHolder> {
 
     constructor(layoutResId: Int, sectionHeadResId: Int, data: MutableList<TodoDataBean>) : super(layoutResId, sectionHeadResId, data)
 
-    override fun convertHead(helper: BaseViewHolder?, item: TodoDataBean?) {
+    override fun convertHead(helper: BaseViewHolder, item: TodoDataBean?) {
         helper ?: return
         item ?: return
         helper.setText(R.id.tv_header, item.header)
     }
 
-    override fun convert(helper: BaseViewHolder?, item: TodoDataBean?) {
+    override fun convert(helper: BaseViewHolder, item: TodoDataBean?) {
         helper ?: return
         item ?: return
         val itemData = item.t as TodoBean

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tl="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <!--标题栏-->
+    <androidx.appcompat.widget.Toolbar
+            style="@style/AppTheme.Toolbars"
+            android:id="@+id/newsToolbar"
+            android:paddingTop="@dimen/qb_px_20"
+            android:gravity="center_vertical">
+            <com.flyco.tablayout.SlidingTabLayout
+                    android:id="@+id/slidingTabLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/transparent_00"
+                    tl:tl_textSelectColor="@color/colorNewsMain"
+                    tl:tl_textUnselectColor="@color/color_gray"
+                    tl:tl_indicator_corner_radius="1.5dp"
+                    tl:tl_indicator_height="3dp"
+                    tl:tl_indicator_width="15dp"
+                    tl:tl_bar_color="#ffffff"
+                    tl:tl_indicator_color="@color/colorNewsMain"
+                    tl:tl_tab_padding="5dp"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.viewpager.widget.ViewPager
+            android:id="@+id/newsViewpager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
+
+</LinearLayout>

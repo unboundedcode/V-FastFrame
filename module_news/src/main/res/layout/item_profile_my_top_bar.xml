@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:gravity="center_vertical"
+              android:background="@color/color_white"
+              android:orientation="horizontal">
+
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:orientation="vertical">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/colorAppText"
+                android:textStyle="bold"
+                android:text="99"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/icon_top_friend"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/color_gray"
+                android:text="好友"/>
+    </LinearLayout>
+
+    <View style="@style/Line_Vertical_06dp.color_DDDDDD"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            android:orientation="vertical">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/colorAppText"
+                android:textStyle="bold"
+                android:text="22"/>
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:drawableRight="@drawable/icon_topbar_yxl"
+                android:gravity="center"
+                android:textSize="12sp"
+                android:textColor="@color/color_gray"
+                android:text="影响力"/>
+    </LinearLayout>
+
+    <View style="@style/Line_Vertical_06dp.color_DDDDDD"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"/>
+
+    <FrameLayout
+                 android:layout_width="0dp"
+                 android:layout_height="wrap_content"
+                 android:layout_weight="1">
+
+        <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:orientation="vertical">
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textColor="@color/colorAppText"
+                    android:textStyle="bold"
+                    android:text="25"/>
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:drawableRight="@drawable/icon_topbar_root"
+                    android:gravity="center"
+                    android:textSize="12sp"
+                    android:textColor="@color/color_gray"
+                    android:text="访客"/>
+        </LinearLayout>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:textColor="@color/color_red"
+                android:layout_marginLeft="@dimen/dp_20"
+                android:layout_marginTop="@dimen/qb_px_5"
+                android:textSize="12sp"
+                android:text="+4"/>
+    </FrameLayout>
+
+</LinearLayout>

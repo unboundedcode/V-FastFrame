@@ -18,13 +18,18 @@ import lib.vension.fastframe.common.R
 class TestRefreshFragment : AbsCompatMVPRefreshFragment<String, TestRefreshContract.View, TestRefreshPresenter>(),
     TestRefreshContract.View {
 
+    companion object{
+        fun newInstance() : TestRefreshFragment{
+            return TestRefreshFragment()
+        }
+    }
+
     override fun enableLoadMore(): Boolean {
         return false
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        super.initToolBar(mCommonTitleBar)
-        mCommonTitleBar.centerTextView.text = "测试列表"
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar, title: String) {
+        super.initToolBar(mCommonTitleBar,"测试列表")
     }
 
     override fun createPresenter(): TestRefreshPresenter {
@@ -47,6 +52,9 @@ class TestRefreshFragment : AbsCompatMVPRefreshFragment<String, TestRefreshContr
         val hear = layoutInflater.inflate(R.layout.layout_test_refresh_header,null)
         val mLayoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, DensityUtil.dp2px(150))
         hear.layoutParams = mLayoutParams
+        hear.setOnClickListener {
+            startProxyActivity(TestMultiTypeFragment::class.java)
+        }
         setRefreshData(testDatas, listOf(hear),null)
 //        setRefreshData(testDatas)
     }

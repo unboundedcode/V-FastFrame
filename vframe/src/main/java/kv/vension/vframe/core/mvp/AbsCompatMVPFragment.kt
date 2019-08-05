@@ -54,8 +54,8 @@ abstract class AbsCompatMVPFragment<in V : IView, P : IPresenter<V>> : AbsCompat
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onDestroyView() {
+        super.onDestroyView()
         //view和presenter解绑
         mPresenter?.let {
             it.detachView()

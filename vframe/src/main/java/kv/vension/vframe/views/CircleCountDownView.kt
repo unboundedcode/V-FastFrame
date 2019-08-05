@@ -311,7 +311,7 @@ class CircleCountDownView @JvmOverloads constructor(
             override fun onTick(millisUntilFinished: Long) {
                 countdownTime -= 1000
                 textDesc = (countdownTime/1000).toString() + "s"
-                Log.e("time",countdownTime.toString() + "")
+                Log.e("倒计时",countdownTime.toString() + "")
                 //刷新view
                 invalidate()
             }

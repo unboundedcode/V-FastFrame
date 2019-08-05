@@ -5,7 +5,7 @@
     <application
         android:allowBackup="true">
 
-        <activity android:name="com.vension.fastframe.module_news.NewsMainActivity"
+        <activity android:name="com.vension.fastframe.module_news.ui.NewsMainActivity"
                   android:theme="@style/SwipeBackTheme"
                   android:screenOrientation="portrait">
             <intent-filter>

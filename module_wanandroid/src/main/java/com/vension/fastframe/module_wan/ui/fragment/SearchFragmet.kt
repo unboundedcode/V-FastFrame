@@ -77,7 +77,7 @@ class SearchFragmet : AbsCompatMVPFragment<SearchContract.View, SearchPresenter>
         return R.layout.layout_toolbar_search
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title: String) {
         mCommonTitleBar.setBackgroundColor(VFrame.getColor(R.color.colorWanMain))
         mCommonTitleBar.setListener { v, action1, extra ->
             when(action1){

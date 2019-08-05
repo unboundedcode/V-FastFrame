@@ -76,10 +76,6 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
      */
     abstract fun createRecyAdapter(): BaseQuickAdapter<data, BaseViewHolder>
     /**
-     * adapter 的点击事件处理
-     */
-    abstract fun addItemClickListener(mAdapter : BaseQuickAdapter<data, BaseViewHolder>)
-    /**
      * 请求Api数据
      */
     abstract fun onTargetRequestApi(isRefresh: Boolean, page: Int, limit: Int)
@@ -88,9 +84,8 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
      * 创建RecyclerView 的 LayoutManager
      * @return  默认LinearLayoutManager
      */
-    @SuppressLint("WrongConstant")
     open fun createRecyLayoutManager(): RecyclerView.LayoutManager {
-        return LinearLayoutManager(activity, LinearLayoutManager.VERTICAL, false)
+        return LinearLayoutManager(activity)
     }
     /**
      * 创建RecyclerView.ItemDecoration
@@ -99,6 +94,10 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
     open fun createRecyItemDecoration(): RecyclerView.ItemDecoration? {
         return SpaceItemDecoration(activity!!)
     }
+    /**
+     * adapter 的点击事件处理
+     */
+    open fun addItemClickListener(mAdapter : BaseQuickAdapter<data, BaseViewHolder>){}
     /**
      * 对mRecyAdapter item 的 childView 的点击监听
      */
@@ -202,6 +201,7 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
      * 下拉刷新数据
      */
     override fun onRefresh() {
+        mRefreshFloatingActionButton.visibility = View.INVISIBLE
         if (isCheckNet()){
             if (!NetWorkUtil.isNetworkAvailable()){
                 fraMultiStateLayout?.let {
@@ -267,7 +267,7 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
                 fraMultiStateLayout?.showEmpty()
             } else {
                 fraMultiStateLayout?.showContent()
-                replaceData(listData)
+                setNewData(listData)
                 val size = listData.size
                 if (size < limit) {
                     loadMoreEnd()//没有更多了
@@ -326,9 +326,9 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
     private fun scrollToTop(){
         mRefreshRecyclerView.run {
             if (mRecyAdapter.data.size > limit) {
-                scrollToPosition(0)
-            } else {
                 smoothScrollToPosition(0)
+            } else {
+                scrollToPosition(0)
             }
             mRefreshFloatingActionButton.visibility = View.INVISIBLE
         }
@@ -336,6 +336,13 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
 
     open fun getRefreshColor(color : Int): Int {
         return VFrame.getColor(if(color > 0)  color else R.color.colorAppTheme)
+    }
+
+    fun getSwipeRefreshLayout(): SwipeRefreshLayout {
+         return mRefreshSwipeRefreshLayout
+    }
+    fun getRecyclerView(): RecyclerView {
+         return mRefreshRecyclerView
     }
 
 }

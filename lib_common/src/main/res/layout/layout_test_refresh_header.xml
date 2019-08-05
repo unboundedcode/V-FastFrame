@@ -2,13 +2,13 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
              android:layout_width="match_parent"
              android:layout_height="150dp"
-             android:background="@drawable/shape_gradient_bg_orange">
+             android:background="@android:color/holo_green_light">
 
     <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="我是头部"
+            android:text="Nav To MultiType ->"
             android:textColor="@android:color/white"
             android:textSize="26sp"/>
 

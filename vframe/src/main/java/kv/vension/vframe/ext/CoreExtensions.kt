@@ -53,7 +53,7 @@ fun Fragment.showToast(content: String): Toast {
     return toast
 }
 
-fun Context.showToast(content: String): Toast {
+fun Any.showToast(content: String): Toast {
     val toast = Toast.makeText(VFrame.getContext(), content, Toast.LENGTH_SHORT)
     toast.show()
     return toast

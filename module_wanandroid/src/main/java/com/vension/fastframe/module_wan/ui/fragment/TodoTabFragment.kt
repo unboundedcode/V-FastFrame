@@ -29,10 +29,9 @@ class TodoTabFragment : AbsCompatFragment() {
         BaseFragmentAdapter(getPageFragmentManager(),getFragments(),getTitles())
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        super.initToolBar(mCommonTitleBar)
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
+        super.initToolBar(mCommonTitleBar,getString(R.string.nav_todo))
         mCommonTitleBar.setBackgroundColor(VFrame.getColor(R.color.colorWanMain))
-        mCommonTitleBar.centerTextView.text = getString(R.string.nav_todo)
     }
 
     override fun attachLayoutRes(): Int {

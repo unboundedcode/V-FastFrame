@@ -29,15 +29,15 @@ import java.util.concurrent.TimeUnit
  */
 
 object RetrofitHelper {
-    const val DEFAULT_TIMEOUT: Long = 60L
-    const val MAX_CACHE_SIZE: Long = 1024 * 1024 * 50 // 50M 的缓存大小
+    private const val DEFAULT_TIMEOUT: Long = 60L
+    private const val MAX_CACHE_SIZE: Long = 1024 * 1024 * 50 // 50M 的缓存大小
     private lateinit var BASE_URL: String
     /**
      * 缓存不同配置的retrofit集合，如url ,converter等
      */
     private var retrofitMap = ConcurrentHashMap<String,Retrofit>()
 
-    val mOkHttpClient by lazy {
+    private val mOkHttpClient by lazy {
         OkHttpClient.Builder()
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
@@ -45,7 +45,7 @@ object RetrofitHelper {
             .build()
     }
 
-    val mRetrofit by lazy {
+    private val mRetrofit by lazy {
         Retrofit.Builder()
             .baseUrl("https://www.xxx.com/")
             .addConverterFactory(ScalarsConverterFactory.create())
@@ -62,7 +62,7 @@ object RetrofitHelper {
                 .client(getOkHttpClient())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(ScalarsConverterFactory.create())
-                //.addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
                 .addConverterFactory(MoshiConverterFactory.create())
                 .build()
             retrofitMap[baseUrl] = retrofit

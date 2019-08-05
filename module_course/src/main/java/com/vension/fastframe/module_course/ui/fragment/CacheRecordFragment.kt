@@ -23,11 +23,10 @@ class CacheRecordFragment : AbsCompatFragment() {
         return R.layout.fragment_cache_record
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        super.initToolBar(mCommonTitleBar)
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
+        super.initToolBar(mCommonTitleBar,"离线缓存")
         mCommonTitleBar.run {
             setBackgroundColor(VFrame.getColor(R.color.colorCourseMain))
-            centerTextView.text = "离线缓存"
         }
     }
     override fun initViewAndData(view: View, savedInstanceState: Bundle?) {

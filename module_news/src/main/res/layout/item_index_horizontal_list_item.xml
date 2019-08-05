@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <FrameLayout
+        android:id="@+id/flHoriRoot"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="150dp"
+        android:background="@color/color_white">
+
+        <kv.vension.vframe.views.ShapeImageView
+                android:id="@+id/article_img"
+                android:layout_width="280dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                app:siv_shape_type="SHAPE_ROUND"
+                app:siv_border_radius="7dp"
+                tools:src="@drawable/img_banner2"/>
+
+        <TextView
+            android:id="@+id/horiTitle"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:paddingLeft="10dp"
+            android:paddingRight="@dimen/dp_10"
+            android:paddingBottom="15dp"
+            android:maxLines="2"
+            android:text="孕妇半路的那份科技发达是发复旦舍不得放手角度上看你付款计算得分"
+            android:textColor="@color/color_white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+</LinearLayout>

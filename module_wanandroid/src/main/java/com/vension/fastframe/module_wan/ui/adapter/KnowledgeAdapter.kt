@@ -12,7 +12,7 @@ import kv.vension.vframe.glide.ImageLoader
 
 class KnowledgeAdapter(private val context: Context?) : BaseQuickAdapter<Article, BaseViewHolder>(R.layout.item_recy_knowledge) {
 
-    override fun convert(helper: BaseViewHolder?, item: Article?) {
+    override fun convert(helper: BaseViewHolder, item: Article?) {
         item ?: return
         helper ?: return
 

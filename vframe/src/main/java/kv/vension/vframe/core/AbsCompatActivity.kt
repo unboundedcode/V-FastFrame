@@ -10,6 +10,7 @@ import android.widget.FrameLayout
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
@@ -97,9 +98,9 @@ abstract class AbsCompatActivity : AppCompatActivity(),IActivity {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         try{
+            this.initContentView(attachLayoutRes())//加载布局
 //            mUnBinder = ButterKnife.bind(this)
             mRxPermissions = RxPermissions(this)
-            this.initContentView(attachLayoutRes())//加载布局
             //设置ToolBar
             if (showToolBar()){
                 val mCommonTitleBar = rootView?.findViewById<View>(R.id.commonTitleBar) as CommonTitleBar//子布局容器
@@ -146,8 +147,12 @@ abstract class AbsCompatActivity : AppCompatActivity(),IActivity {
         }
         if (showToolBar() && getToolBarResId() > 0){
             //如果需要显示自定义toolbar,并且资源id存在的情况下，实例化rootView
-            rootView = LayoutInflater.from(this).inflate(if (isToolbarCover()) R.layout.activity_base_toolbar_cover
-            else R.layout.activity_base,null,false)//根布局
+            rootView = LayoutInflater.from(this).inflate(
+                if (isToolbarCover())
+                    R.layout.activity_base_toolbar_cover
+                else
+                    R.layout.activity_base,
+                null,false)//根布局
 
             //toolbar容器
             val vsToolbar = rootView?.findViewById<View>(R.id.vs_toolbar) as ViewStub
@@ -202,6 +207,7 @@ abstract class AbsCompatActivity : AppCompatActivity(),IActivity {
         } else {
             supportFragmentManager.popBackStack()
         }
+        ActivityCompat.finishAfterTransition(this)
     }
 
     override fun finish() {
@@ -221,15 +227,6 @@ abstract class AbsCompatActivity : AppCompatActivity(),IActivity {
         }
         return super.dispatchTouchEvent(ev)
     }
-
-//    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
-//        if (KeyEvent.KEYCODE_BACK == keyCode) {
-//            popBackStack()
-//            return true
-//        }
-//        return super.onKeyDown(keyCode, event)
-//    }
-
 
 
     /** ============================= 抽象方法 ===============================*/
@@ -342,25 +339,6 @@ abstract class AbsCompatActivity : AppCompatActivity(),IActivity {
 
 
     /** ====================== implements start ======================= */
-
-//    override fun postBackStack(fragment: Fragment) {
-//        if (fragment.isAdded) {
-//            return
-//        }
-//        supportFragmentManager
-//            .beginTransaction()
-//            .add(android.R.id.content, fragment)
-//            .addToBackStack(fragment.javaClass.name)
-//            .commitAllowingStateLoss()
-//    }
-//
-//    override fun popBackStack() {
-//        if (supportFragmentManager.backStackEntryCount > 1) {
-//            supportFragmentManager.popBackStack()
-//            return
-//        }
-//        ActivityCompat.finishAfterTransition(this)
-//    }
 
     override fun showToolBar(): Boolean {
         return false

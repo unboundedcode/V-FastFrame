@@ -18,9 +18,6 @@ interface IAppCompatPage {
 
     fun getPageFragmentManager(): FragmentManager
 
-//    fun postBackStack(fragment: Fragment)
-//    fun popBackStack()
-
     /**
      * 是否显示通用toolBar
      *

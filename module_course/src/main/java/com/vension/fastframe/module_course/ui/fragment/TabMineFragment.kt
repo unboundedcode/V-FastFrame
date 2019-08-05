@@ -9,6 +9,7 @@ import com.vension.fastframe.module_course.mvp.presenter.MinePresenter
 import kotlinx.android.synthetic.main.fragment_tab_mine.*
 import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
 import kv.vension.vframe.utils.OnInterceptDoubleClickListener
+import kv.vension.vframe.utils.StatusBarUtil
 
 /**
  * ===================================================================
@@ -39,6 +40,7 @@ class TabMineFragment : AbsCompatMVPFragment<MineContract.View,MinePresenter>(),
     }
 
     override fun initViewAndData(view: View, savedInstanceState: Bundle?) {
+        StatusBarUtil.setLightMode(activity!!)
         layout_cacheRecord.setOnClickListener(object : OnInterceptDoubleClickListener(){
             override fun onInterceptDoubleClick(v: View?) {
                 startProxyActivity(CacheRecordFragment::class.java)

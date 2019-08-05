@@ -399,31 +399,6 @@ class WanMainActivity : AbsCompatMVPActivity<MainContract.View, MainContract.Pre
         return super.onOptionsItemSelected(item)
     }
 
-    override fun recreate() {
-        try {
-            val fragmentTransaction = supportFragmentManager.beginTransaction()
-            if (mHomeFragment != null) {
-                fragmentTransaction.remove(mHomeFragment!!)
-            }
-            if (mKnowledgeTreeFragment != null) {
-                fragmentTransaction.remove(mKnowledgeTreeFragment!!)
-            }
-            if (mNavigationFragment != null) {
-                fragmentTransaction.remove(mNavigationFragment!!)
-            }
-            if (mProjectFragment != null) {
-                fragmentTransaction.remove(mProjectFragment!!)
-            }
-            if (mWeChatFragment != null) {
-                fragmentTransaction.remove(mWeChatFragment!!)
-            }
-            fragmentTransaction.commitAllowingStateLoss()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        super.recreate()
-    }
-
     override fun onDestroy() {
         super.onDestroy()
         mHomeFragment = null

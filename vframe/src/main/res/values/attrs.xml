@@ -103,10 +103,25 @@
     </declare-styleable>
 
     <declare-styleable name="ShapeImageView">
-        <attr name="siv_type" />
-        <attr name="siv_borderColor" />
-        <attr name="siv_borderWidth" />
-        <attr name="siv_rectRoundRadius" />
+        <attr name="siv_shape_type">
+            <enum name="SHAPE_CIRCLE" value="0"></enum>
+            <enum name="SHAPE_ROUND" value="1"></enum>
+        </attr>
+        <attr name="siv_border_width" format="dimension"/>
+        <attr name="siv_border_color" format="color|reference"/>
+        <attr name="siv_border_radius" format="dimension|reference"/>
+        <attr name="siv_left_top_radiusX" format="dimension"/>
+        <attr name="siv_left_top_radiusY" format="dimension"/>
+        <attr name="siv_right_top_radiusX" format="dimension"/>
+        <attr name="siv_right_top_radiusY" format="dimension"/>
+        <attr name="siv_right_bottom_radiusX" format="dimension"/>
+        <attr name="siv_right_bottom_radiusY" format="dimension"/>
+        <attr name="siv_left_bottom_radiusX" format="dimension"/>
+        <attr name="siv_left_bottom_radiusY" format="dimension"/>
+        <attr name="siv_show_border" format="boolean"/>
+        <attr name="siv_show_circle_dot" format="boolean"/>
+        <attr name="siv_circle_dot_color" format="color|reference"/>
+        <attr name="siv_circle_dot_radius" format="dimension"/>
         <attr name="siv_isGradientBorder" format="boolean"/>
         <attr name="siv_graStartColor" format="reference|color"/>
         <attr name="siv_graCenterColor" format="reference|color"/>

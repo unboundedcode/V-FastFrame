@@ -56,7 +56,7 @@ class AgentWebFragment : AbsCompatMVPFragment<ContentContract.View<BaseBean>,Con
         return ContentPresenter()
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
         mCommonTitleBar.apply {
             setBackgroundColor(VFrame.getColor(R.color.colorWanMain))
             centerTextView.text = "正在加载中..."

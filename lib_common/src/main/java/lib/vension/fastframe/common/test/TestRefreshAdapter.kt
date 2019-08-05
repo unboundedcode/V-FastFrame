@@ -15,11 +15,9 @@ import lib.vension.fastframe.common.R
 
 class TestRefreshAdapter(private val context: Context?)
     : BaseQuickAdapter<String, BaseViewHolder>(R.layout.item_lv_pop) {
-    override fun convert(helper: BaseViewHolder?, item: String?) {
 
-        helper ?: return
-        item ?: return
-
+    override fun convert(helper: BaseViewHolder, item: String?) {
         helper.setText(R.id.text_content, item)
     }
+
 }

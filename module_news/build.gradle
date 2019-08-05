@@ -24,4 +24,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    //banner
+    implementation 'com.youth.banner:banner:1.4.10'
+    //tab
+    implementation 'com.github.hackware1993:MagicIndicator:1.4.0'
+    //SwipeToLoadLayout
+    implementation 'com.github.Aspsine:SwipeToLoadLayout:1.0.4'
+    //video
+    implementation 'cn.jzvd:jiaozivideoplayer:6.4.1'
+
 }

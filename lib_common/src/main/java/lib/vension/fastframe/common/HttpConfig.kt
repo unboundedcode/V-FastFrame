@@ -17,5 +17,7 @@ object HttpConfig {
     const val BASE_URL_WANANDROID = "https://www.wanandroid.com/"
     //微课
     const val BASE_URL_WEIKE = "https://ke.youdao.com/"
+    //新闻
+    const val BASE_URL_NEWS = "http://c.cdn.sohu.com/"
 
 }

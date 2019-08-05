@@ -26,11 +26,10 @@ class SectionDetailFragment : AbsCompatFragment() {
         return R.layout.fragment_section_detail
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        super.initToolBar(mCommonTitleBar)
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
+        super.initToolBar(mCommonTitleBar,"微课")
         mCommonTitleBar.run {
             setBackgroundColor(VFrame.getColor(R.color.colorCourseMain))
-            centerTextView.text = "微课"
         }
     }
 

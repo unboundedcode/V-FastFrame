@@ -14,7 +14,7 @@ import kv.vension.vframe.R
  * ========================================================
  * @author: Created by Vension on 2018/11/7 11:39.
  * @email:  2506856664@qq.com
- * @desc:   character determines attitude, attitude determines destiny
+ * @desc:   TODO 待优化
  * ========================================================
  */
 abstract class AbsCompatDialog : AppCompatDialog, View.OnClickListener {

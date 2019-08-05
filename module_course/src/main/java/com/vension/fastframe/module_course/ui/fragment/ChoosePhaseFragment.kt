@@ -50,10 +50,9 @@ class ChoosePhaseFragment : AbsCompatMVPFragment<ChoosePhaseContract.View, Choos
      return R.layout.fragment_select_phase
     }
 
-    override fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        super.initToolBar(mCommonTitleBar)
+    override fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
+        super.initToolBar(mCommonTitleBar,"选择学习阶段")
         mCommonTitleBar.setBackgroundColor(VFrame.getColor(R.color.colorCourseMain))
-        mCommonTitleBar.centerTextView.text = "选择学习阶段"
     }
     override fun initViewAndData(view: View, savedInstanceState: Bundle?) {
         arguments?.let {

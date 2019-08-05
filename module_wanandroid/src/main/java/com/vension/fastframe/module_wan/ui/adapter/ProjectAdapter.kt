@@ -18,7 +18,7 @@ import kv.vension.vframe.glide.ImageLoader
 
 class ProjectAdapter(private val context: Context) : BaseQuickAdapter<Article, BaseViewHolder>(R.layout.item_recy_project) {
 
-    override fun convert(helper: BaseViewHolder?, item: Article?) {
+    override fun convert(helper: BaseViewHolder, item: Article?) {
 
         helper ?: return
         item ?: return

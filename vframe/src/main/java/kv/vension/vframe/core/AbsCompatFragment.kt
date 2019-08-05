@@ -16,6 +16,7 @@ import kv.vension.vframe.R
 import kv.vension.vframe.cache.PageCache
 import kv.vension.vframe.dialog.LoadingDialog
 import kv.vension.vframe.event.NetworkChangeEvent
+import kv.vension.vframe.ext.Logi
 import kv.vension.vframe.views.MultiStateLayout
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -28,6 +29,33 @@ import org.greenrobot.eventbus.ThreadMode
  * 日 期：2019/7/15 12:12
  * 更 新：2019/7/15 12:12
  * 描 述：Fragment-基类
+ *
+ * 生命周期执行的方法 如下：
+ * 第一次生成页面-->可见
+ * setUserVisibleHint: ----->false
+ * setUserVisibleHint: ----->true
+ * onCreateView: -----> onCreateView
+ * onStart: -----> onStart
+ * onFragmentFirst: 首次可见
+ * onFragmentFirst: -----> 子fragment进行初始化操作
+ * onResume: -----> onResume
+ *
+ * 可见-->第一次隐藏：
+ * onPause: -----> onPause
+ * onFragmentInVisible: 不可见
+ *
+ * 未销毁且不可见-->重新可见：
+ * onStart: -----> onStart
+ * onFragmentVisble: 可见
+ * onFragmentVisble: -----> 子fragment每次可见时的操作
+ * onResume: -----> onResume
+ *
+ * 可见-->销毁：
+ * onPause: -----> onPause
+ * onFragmentInVisible: 不可见
+ * onDestroyView: -----> onDestroyView
+ *
+ * 我们可以更具以上生命周期来操作不同的业务逻辑
  * ========================================================
  */
 
@@ -56,21 +84,16 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
      */
 //    private lateinit var mUnBinder: Unbinder
     /**
-     * 视图是否准备完毕
-     */
-    private var isPagePrepare = false
-    /**
-     * 数据是否加载过了
-     */
-    private var hasLoadData = false
-
-    /**
      * LoadingDialog
      */
     protected val mLoadingDialog: LoadingDialog by lazy { LoadingDialog.Builder(context!!).setCancelable(false).setCancelOutside(false).create() }
 
     lateinit var mContext: Context
     lateinit var mActivity: Activity
+
+    private var isPagePrepare = false//视图是否准备完毕
+    private var mIsFirstVisible = true/*当前Fragment是否首次可见，默认是首次可见**/
+    private var currentVisibleState = false/*当前Fragment的可见状态，一种当前可见，一种当前不可见**/
 
     override fun onAttach(context: Context?) {
         super.onAttach(context)
@@ -124,17 +147,11 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
 
         //初始化view和数据
         initViewAndData(view,savedInstanceState)
-        //页面初始化完成后进行懒加载数据
-        lazyLoadDataIfPrepared()
         //多种状态切换的view 重试点击事件
         fraMultiStateLayout?.let {
             it.setOnRetryClickListener(mRetryClickListener)
         }
         PageCache.pageFragmentCache.add(this)
-    }
-
-    override fun onHiddenChanged(hidden: Boolean) {//单个fragment
-        super.onHiddenChanged(hidden)
     }
 
     //结合viewpager
@@ -144,34 +161,49 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         //如果view还未初始化，不进行处理
         if(isPagePrepare){
             rootView?.let {
-                if (isVisibleToUser) {
-                    //页面对用户可见且初始化完成时进行懒加载数据
-                    lazyLoadDataIfPrepared()
+                //Fragment可见且状态不是可见(从一个Fragment切换到另外一个Fragment,后一个设置状态为可见)
+                if (isVisibleToUser && !currentVisibleState) {
+                    disPatchFragment(true)
+                } else if (!isVisibleToUser && currentVisibleState) {
+                    //Fragment不可见且状态是可见(从一个Fragment切换到另外一个Fragment,前一个更改状态为不可见)
+                    disPatchFragment(false)
                 }
             }
         }
     }
 
-
-    /**
-     * 页面初始化完进行懒加载
-     * 第三步:lazyLoadDataIfPrepared()方法中进行双重标记判断,通过后即可进行数据加载
-     */
-    private fun lazyLoadDataIfPrepared() {
-        if (userVisibleHint && isPagePrepare && !hasLoadData) {
-            lazyLoadData()
-            hasLoadData = true
+    override fun onStart() {
+        super.onStart()
+        //isHidden()是Fragment是否处于隐藏状态和isVisible()有区别
+        //getUserVisibleHint(),Fragement是否可见
+        if (!isHidden && userVisibleHint) {//如果Fragment没有隐藏且可见
+            //执行分发的方法,三种结果对应自Fragment的三个回调，对应的操作，Fragment首次加载，可见，不可见
+            disPatchFragment(true)
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        if (!mIsFirstVisible) {
+            //表示点击home键又返回操作,设置可见状态为ture
+            if (!isHidden && !userVisibleHint && currentVisibleState) {
+                disPatchFragment(true)
+            }
+        }
+    }
+
+    override fun onPause() {
+        super.onPause()
+        //表示点击home键,原来可见的Fragment要走该方法，更改Fragment的状态为不可见
+        if (!isHidden && userVisibleHint) {
+            disPatchFragment(false)
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
 //        mUnBinder.unbind()
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
+        //当 View 被销毁的时候我们需要重新设置 isViewCreated mIsFirstVisible 的状态
         if (useEventBus()) {
             EventBus.getDefault().unregister(this)
         }
@@ -186,6 +218,44 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
     override fun onClick(v: View?) {
 
     }
+
+
+    /**
+     * @param visible Fragment当前是否可见，然后调用相关方法
+     */
+    private fun disPatchFragment(visible: Boolean) {
+        currentVisibleState = visible
+        if (visible && isPagePrepare) {//Fragment可见
+            if (mIsFirstVisible) {//可见又是第一次
+                mIsFirstVisible = false//改变首次可见的状态
+                onFragmentFirst()//页面对用户可见且初始化完成时进行懒加载数据
+            } else {//可见但不是第一次
+                onFragmentVisble()
+            }
+        } else {//不可见
+            onFragmentInVisible()
+        }
+    }
+
+    /**
+     * Fragemnet首次可见的方法页面初始化完进行懒加载
+     */
+    //
+    private fun onFragmentFirst() {
+        Logi(TAG + "--首次可见")
+        lazyLoadData()
+    }
+
+    //Fragemnet可见的方法
+    open fun onFragmentVisble() {//子Fragment调用此方法，执行可见操作
+        Logi(TAG + "--可见")
+    }
+
+    //Fragemnet不可见的方法
+    open fun onFragmentInVisible() {
+        Logi(TAG + "--不可见")
+    }
+
 
 
     /** ======================= 抽象方法 ============================= */
@@ -220,7 +290,7 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
     /**重置变量 */
     private fun resetVariavle() {
         isPagePrepare = false
-        hasLoadData = false
+        mIsFirstVisible = true
     }
 
     /**
@@ -240,12 +310,19 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         return rootView?.findViewById(id) as V
     }
 
+
     /**初始化标题栏*/
     open fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        mCommonTitleBar.setListener {_: View?, action: Int, extra: String? ->
-            if (action == CommonTitleBar.ACTION_LEFT_BUTTON || action == CommonTitleBar.ACTION_LEFT_TEXT) {
-                activity?.onBackPressed()
+        initToolBar(mCommonTitleBar,"")
+    }
+    open fun initToolBar(mCommonTitleBar: CommonTitleBar,title:String) {
+        mCommonTitleBar.apply {
+            setListener {_: View?, action: Int, _: String? ->
+                if (action == CommonTitleBar.ACTION_LEFT_BUTTON || action == CommonTitleBar.ACTION_LEFT_TEXT) {
+                    activity?.onBackPressed()
+                }
             }
+            centerTextView.text = title
         }
     }
 
@@ -282,26 +359,6 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
     override fun postDelay(delayMillis: Long, block: () -> Unit) {
         activity?.window?.decorView?.postDelayed(block, delayMillis)
     }
-
-//    override fun postBackStack(fragment: Fragment) {
-//        (activity as AbsCompatActivity).postBackStack(fragment)
-//    }
-//
-//    override fun popBackStack() {
-//        (activity as AbsCompatActivity).popBackStack()
-//    }
-//
-//    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
-//        if (KeyEvent.KEYCODE_BACK == keyCode) {
-//            popBackStack()
-//            return true
-//        }
-//        return false
-//    }
-//
-//    override fun dispatchKeyEvent(event: KeyEvent): Boolean {
-//        return false
-//    }
 
 
     override fun startProxyActivity(_Class: Class<out Fragment>) {

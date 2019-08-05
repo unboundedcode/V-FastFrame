@@ -10,7 +10,7 @@
 
     <dimen name="avatar_width">80dp</dimen>
     <dimen name="avatar_height">80dp</dimen>
-    <dimen name="statusBar_height">46dp</dimen>
+    <dimen name="statusBar_height">26dp</dimen>
 
     <dimen name="textSize_small_10">10sp</dimen>
     <dimen name="textSize_small">12sp</dimen>
