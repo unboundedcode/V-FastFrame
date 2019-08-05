@@ -9,7 +9,7 @@ import androidx.annotation.IdRes
  * 作 者：Vension
  * 日 期：2019/7/15 12:13
  * 更 新：2019/7/15 12:13
- * 描 述： * 描  述：AbsCompatFragment - 接口
+ * 描 述：AbsCompatFragment - 接口
 
  * ========================================================
  */
