@@ -6,8 +6,8 @@ import com.vension.fastframe.module_course.R
 import com.vension.fastframe.module_course.util.SdCardUtils
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_cache_record.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.AbsCompatFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.AbsCompatFragment
 
 /**
  * ===================================================================

@@ -10,7 +10,7 @@ import com.github.florent37.shapeofview.shapes.ArcView
 import com.vension.fastframe.module_wan.R
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_about.*
-import kv.vension.vframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.AbsCompatFragment
 
 /**
  * ========================================================

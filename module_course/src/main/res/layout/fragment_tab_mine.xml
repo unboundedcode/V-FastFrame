@@ -55,7 +55,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/user_name"/>
 
-            <kv.vension.vframe.views.ShapeImageView
+            <kv.vension.fastframe.views.ShapeImageView
                     android:id="@+id/siv_avatar"
                     android:layout_width="@dimen/qb_px_72"
                     android:layout_height="@dimen/qb_px_72"

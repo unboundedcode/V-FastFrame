@@ -5,10 +5,10 @@ import com.vension.fastframe.module_course.api.ApiService
 import com.vension.fastframe.module_course.bean.HttpResult
 import com.vension.fastframe.module_course.bean.SelectionBean
 import com.vension.fastframe.module_course.mvp.contract.SelectionContract
-import kv.vension.vframe.core.mvp.AbsPresenter
-import kv.vension.vframe.net.RetrofitHelper
-import kv.vension.vframe.net.exception.ExceptionHandle
-import kv.vension.vframe.net.rx.RxHandler
+import kv.vension.fastframe.core.mvp.AbsPresenter
+import kv.vension.fastframe.net.RetrofitHelper
+import kv.vension.fastframe.net.exception.ExceptionHandle
+import kv.vension.fastframe.net.rx.RxHandler
 import lib.vension.fastframe.common.HttpConfig
 
 /**

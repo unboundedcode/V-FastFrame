@@ -5,7 +5,7 @@ import com.chad.library.adapter.base.BaseViewHolder
 import com.vension.fastframe.module_course.R
 import com.vension.fastframe.module_course.bean.DiscoveryCommentBean
 import kotlinx.android.synthetic.main.choose_left_item.view.*
-import kv.vension.vframe.VFrame.getColor
+import kv.vension.fastframe.VFrame.getColor
 
 /**
  * ========================================================

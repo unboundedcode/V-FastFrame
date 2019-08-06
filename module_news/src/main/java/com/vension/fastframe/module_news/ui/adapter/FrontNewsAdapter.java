@@ -10,9 +10,8 @@ import com.vension.fastframe.module_news.NewsConstant;
 import com.vension.fastframe.module_news.R;
 import com.vension.fastframe.module_news.bean.FrontNewsModel;
 import com.vension.fastframe.module_news.utils.StringUtils;
-import kv.vension.vframe.glide.GlideApp;
-import kv.vension.vframe.views.ShapeImageView;
-
+import kv.vension.fastframe.glide.GlideApp;
+import kv.vension.fastframe.views.ShapeImageView;
 import java.util.List;
 /**
  */

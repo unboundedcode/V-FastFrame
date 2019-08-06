@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
 import com.just.agentweb.AgentWeb
 import com.just.agentweb.DefaultWebClient
-import com.leifu.mvpkotlin.util.PreferenceUtil
+import kv.vension.fastframe.utils.PreferenceUtil
 import com.vension.fastframe.module_wan.Constant
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.event.RefreshHomeEvent
@@ -28,11 +28,11 @@ import com.vension.fastframe.module_wan.mvp.presenter.ContentPresenter
 import com.vension.mvpforkotlin.sample.ui.adapter.MyAdapter
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_agent_web.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.BasePopupWindow
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
-import kv.vension.vframe.ext.showToast
-import kv.vension.vframe.net.response.BaseBean
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.BasePopupWindow
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.net.response.BaseBean
 import org.greenrobot.eventbus.EventBus
 import org.jetbrains.anko.imageResource
 
@@ -45,7 +45,7 @@ import org.jetbrains.anko.imageResource
  * ========================================================
  */
 
-class AgentWebFragment : AbsCompatMVPFragment<ContentContract.View<BaseBean>,ContentContract.Presenter<BaseBean>>(),ContentContract.View<BaseBean>{
+class AgentWebFragment : AbsCompatMVPFragment<ContentContract.View<BaseBean>, ContentContract.Presenter<BaseBean>>(),ContentContract.View<BaseBean>{
     private var agentWeb: AgentWeb? = null
     private lateinit var shareTitle: String
     private lateinit var shareUrl: String

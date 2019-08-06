@@ -6,7 +6,7 @@ import android.widget.ImageView
 import cn.bingoogolapple.bgabanner.BGABanner
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.leifu.mvpkotlin.util.PreferenceUtil
+import kv.vension.fastframe.utils.PreferenceUtil
 import com.vension.fastframe.module_wan.Constant
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.bean.Article
@@ -17,9 +17,9 @@ import com.vension.fastframe.module_wan.mvp.presenter.HomePresenter
 import com.vension.fastframe.module_wan.ui.adapter.HomeAdapter
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.item_recy_wan_home_banner.view.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
-import kv.vension.vframe.ext.showToast
-import kv.vension.vframe.glide.ImageLoader
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.glide.ImageLoader
 
 /**
  * ===================================================================
@@ -29,7 +29,7 @@ import kv.vension.vframe.glide.ImageLoader
  * @desc:   character determines attitude, attitude determines destiny
  * ===================================================================
  */
-class MenuTabHomeFragment : AbsCompatMVPRefreshFragment<Article, HomeContract.View<Article>,HomePresenter>(),HomeContract.View<Article> {
+class MenuTabHomeFragment : AbsCompatMVPRefreshFragment<Article, HomeContract.View<Article>, HomePresenter>(),HomeContract.View<Article> {
 
     companion object {
         fun getInstance(): MenuTabHomeFragment = MenuTabHomeFragment()

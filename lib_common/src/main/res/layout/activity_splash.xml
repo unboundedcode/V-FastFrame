@@ -41,7 +41,7 @@
             android:visibility="invisible"
             android:scaleType="fitXY"/>
 
-    <kv.vension.vframe.views.CircleCountDownView
+    <kv.vension.fastframe.views.CircleCountDownView
             android:id="@+id/circleCountDownView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

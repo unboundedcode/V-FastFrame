@@ -19,10 +19,10 @@ import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 import kotlinx.android.synthetic.main.fragment_search.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
-import kv.vension.vframe.ext.getRandomColor
-import kv.vension.vframe.ext.showToast
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.ext.getRandomColor
+import kv.vension.fastframe.ext.showToast
 
 /**
  * ========================================================

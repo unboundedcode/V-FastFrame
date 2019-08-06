@@ -20,14 +20,14 @@
 
         <!--代理Activity //显示软键盘,并让布局压缩 -->
         <activity
-                android:name=".core.ProxyActivity"
+                android:name="kv.vension.fastframe.core.ProxyActivity"
                 android:configChanges="orientation|screenSize|keyboardHidden"
                 android:exported="false"
                 android:screenOrientation="portrait"
                 android:theme="@style/SwipeBackTheme"
                 android:windowSoftInputMode="stateHidden|adjustResize"/>
 
-        <receiver android:name=".receiver.NetworkChangeReceiver">
+        <receiver android:name="kv.vension.fastframe.receiver.NetworkChangeReceiver">
             <intent-filter>
                 <action android:name="android.NET.conn.CONNECTIVITY_CHANGE" />
                 <action android:name="android.Net.wifi.WIFI_STATE_CHANGED" />

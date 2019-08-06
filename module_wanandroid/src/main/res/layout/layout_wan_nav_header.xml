@@ -13,7 +13,7 @@
         android:background="@drawable/shape_gradient_bg_nav_header_wan"
         tools:ignore="ResourceName">
 
-    <kv.vension.vframe.views.ShapeImageView
+    <kv.vension.fastframe.views.ShapeImageView
             android:id="@+id/siv_avatar"
             android:layout_width="@dimen/avatar_width"
             android:layout_height="@dimen/avatar_height"

@@ -2,8 +2,8 @@ package com.vension.fastframe.module_wan.mvp.contract
 
 import com.vension.fastframe.module_wan.bean.HotSearchBean
 import com.vension.fastframe.module_wan.bean.SearchHistoryBean
-import kv.vension.vframe.core.mvp.IPresenter
-import kv.vension.vframe.core.mvp.IView
+import kv.vension.fastframe.core.mvp.IPresenter
+import kv.vension.fastframe.core.mvp.IView
 
 /**
  * ========================================================

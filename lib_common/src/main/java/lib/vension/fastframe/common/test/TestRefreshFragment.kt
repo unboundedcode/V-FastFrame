@@ -4,8 +4,8 @@ import android.view.ViewGroup
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
-import kv.vension.vframe.utils.DensityUtil
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.utils.DensityUtil
 import lib.vension.fastframe.common.R
 
 /**

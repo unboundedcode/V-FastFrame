@@ -17,8 +17,8 @@ import com.vension.fastframe.module_news.mvp.presenter.VideoPresenter
 import com.vension.fastframe.module_news.ui.adapter.VideoNewsAdapter
 import com.vension.fastframe.module_news.widget.loadmore.CustomLoadMoreView
 import kotlinx.android.synthetic.main.fragment_video_list.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 import java.util.*
 
 /**
@@ -29,7 +29,7 @@ import java.util.*
  * @desc:
  * ===================================================================
  */
-class VideoListFragment : AbsCompatMVPFragment<VideoContract.View,VideoPresenter>()
+class VideoListFragment : AbsCompatMVPFragment<VideoContract.View, VideoPresenter>()
     ,VideoContract.View, OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener {
 
     private var intSize = 0

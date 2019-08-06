@@ -4,8 +4,8 @@ import io.reactivex.Flowable
 import io.reactivex.Observable
 import com.vension.fastframe.app.bean.ObjectBean
 import com.vension.fastframe.app.bean.TBean
-import kv.vension.vframe.net.response.BaseBean
-import kv.vension.vframe.net.response.BaseResponseBean
+import kv.vension.fastframe.net.response.BaseBean
+import kv.vension.fastframe.net.response.BaseResponseBean
 import retrofit2.http.GET
 
 /**

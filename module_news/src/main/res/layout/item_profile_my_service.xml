@@ -22,7 +22,7 @@
         android:orientation="vertical">
         <include
             layout="@layout/item_profile_my_title"/>
-        <kv.vension.vframe.views.VGridView
+        <kv.vension.fastframe.views.VGridView
             android:id="@+id/mySrviceGrid"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,7 +32,7 @@
             android:stretchMode="columnWidth"
             android:verticalSpacing="15dp"
             android:layoutMode="clipBounds">
-        </kv.vension.vframe.views.VGridView>
+        </kv.vension.fastframe.views.VGridView>
        <!-- <android.support.v7.widget.RecyclerView
             android:id="@+id/mySrviceRecyclerView"
             android:layout_marginTop="@dimen/dp_20"

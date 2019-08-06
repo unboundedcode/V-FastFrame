@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.widget.*;
 import androidx.recyclerview.widget.RecyclerView;
-import kv.vension.vframe.glide.GlideApp;
+import kv.vension.fastframe.glide.GlideApp;
 
 import java.io.File;
 

@@ -5,10 +5,10 @@ import com.vension.fastframe.module_wan.bean.CollectionArticle
 import com.vension.fastframe.module_wan.bean.CollectionResponseBody
 import com.vension.fastframe.module_wan.bean.HttpResult
 import com.vension.fastframe.module_wan.mvp.contract.CollectContract
-import kv.vension.vframe.core.mvp.AbsPresenter
-import kv.vension.vframe.net.RetrofitHelper
-import kv.vension.vframe.net.exception.ExceptionHandle
-import kv.vension.vframe.net.rx.RxHandler
+import kv.vension.fastframe.core.mvp.AbsPresenter
+import kv.vension.fastframe.net.RetrofitHelper
+import kv.vension.fastframe.net.exception.ExceptionHandle
+import kv.vension.fastframe.net.rx.RxHandler
 import lib.vension.fastframe.common.HttpConfig
 
 

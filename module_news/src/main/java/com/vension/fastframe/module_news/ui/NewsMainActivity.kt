@@ -15,9 +15,9 @@ import com.vension.fastframe.module_news.ui.fragment.TabHomeFragment
 import com.vension.fastframe.module_news.ui.fragment.TabMineFragment
 import com.vension.fastframe.module_news.ui.fragment.TabVideoFragment
 import kotlinx.android.synthetic.main.activity_main_news.*
-import kv.vension.vframe.core.AbsCompatActivity
-import kv.vension.vframe.core.adapter.BaseFragmentAdapter
-import kv.vension.vframe.utils.StatusBarUtil
+import kv.vension.fastframe.core.AbsCompatActivity
+import kv.vension.fastframe.core.adapter.BaseFragmentAdapter
+import kv.vension.fastframe.utils.StatusBarUtil
 import lib.vension.fastframe.common.RouterConfig
 import java.util.*
 

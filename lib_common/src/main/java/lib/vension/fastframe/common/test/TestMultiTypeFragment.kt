@@ -3,7 +3,7 @@ package lib.vension.fastframe.common.test
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import java.util.*
 
 /**

@@ -7,7 +7,7 @@ import com.vension.fastframe.module_news.bean.CategoryModel
 import com.vension.fastframe.module_news.bean.HomeNewsTabBean
 import com.vension.fastframe.module_news.bean.NewsChannelTable
 import com.vension.fastframe.module_news.utils.FileUtil
-import kv.vension.vframe.VFrame
+import kv.vension.fastframe.VFrame
 import java.util.*
 
 /**

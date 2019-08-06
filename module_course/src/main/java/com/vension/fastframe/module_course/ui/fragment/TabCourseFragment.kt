@@ -5,7 +5,7 @@ import android.view.View
 import com.vension.fastframe.module_course.R.layout
 import com.vension.fastframe.module_course.ui.adapter.CourseAdapter
 import kotlinx.android.synthetic.main.fragment_tab_course.*
-import kv.vension.vframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.AbsCompatFragment
 
 /**
  * ===================================================================

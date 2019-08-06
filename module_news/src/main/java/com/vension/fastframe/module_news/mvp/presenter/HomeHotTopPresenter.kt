@@ -6,8 +6,8 @@ import com.vension.fastframe.module_news.NewsConstant
 import com.vension.fastframe.module_news.bean.HomeTophotIndex
 import com.vension.fastframe.module_news.mvp.contract.HomeHotTopContract
 import com.vension.fastframe.module_news.utils.FileUtil
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsPresenter
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsPresenter
 
 /**
  * ===================================================================

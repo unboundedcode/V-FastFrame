@@ -9,7 +9,7 @@ import android.util.AttributeSet;
 import androidx.annotation.ColorRes;
 import androidx.appcompat.widget.AppCompatImageView;
 import com.vension.fastframe.module_wan.R;
-import kv.vension.vframe.utils.DensityUtil;
+import kv.vension.fastframe.utils.DensityUtil;
 
 
 /**

@@ -15,7 +15,7 @@ import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
 import com.youth.banner.listener.OnBannerListener
 import com.youth.banner.transformer.*
-import kv.vension.vframe.views.ShapeImageView
+import kv.vension.fastframe.views.ShapeImageView
 import java.util.*
 
 

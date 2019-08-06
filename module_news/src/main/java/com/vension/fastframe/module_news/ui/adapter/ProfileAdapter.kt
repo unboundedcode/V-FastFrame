@@ -11,9 +11,9 @@ import com.chad.library.adapter.base.BaseViewHolder
 import com.vension.fastframe.module_news.R
 import com.vension.fastframe.module_news.bean.ProfileCareModel
 import com.vension.fastframe.module_news.bean.ProfileServiceGridBean
-import kv.vension.vframe.ext.showToast
-import kv.vension.vframe.glide.GlideApp
-import kv.vension.vframe.views.VGridView
+import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.glide.GlideApp
+import kv.vension.fastframe.views.VGridView
 import java.util.*
 
 /**

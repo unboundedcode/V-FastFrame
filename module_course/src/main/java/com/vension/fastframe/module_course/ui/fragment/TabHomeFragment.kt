@@ -7,8 +7,8 @@ import com.vension.fastframe.module_course.Constant
 import com.vension.fastframe.module_course.R
 import com.vension.fastframe.module_course.bean.TagBean
 import kotlinx.android.synthetic.main.fragment_tab_home.*
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.core.adapter.BaseFragmentStatePagerAdapter
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentStatePagerAdapter
 
 /**
  * ===================================================================

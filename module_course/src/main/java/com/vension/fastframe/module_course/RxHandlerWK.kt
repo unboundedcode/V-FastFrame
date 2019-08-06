@@ -4,8 +4,8 @@ import com.vension.fastframe.module_course.bean.BaseWKBean
 import io.reactivex.Observable
 import io.reactivex.ObservableTransformer
 import io.reactivex.functions.Function
-import kv.vension.vframe.net.exception.ApiException
-import kv.vension.vframe.net.rx.RxHandler
+import kv.vension.fastframe.net.exception.ApiException
+import kv.vension.fastframe.net.rx.RxHandler
 
 /**
  * ===================================================================

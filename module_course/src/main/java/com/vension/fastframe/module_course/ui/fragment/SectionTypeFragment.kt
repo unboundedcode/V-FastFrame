@@ -15,8 +15,8 @@ import com.vension.fastframe.module_course.ui.adapter.section.SectionTypeColumn
 import com.vension.fastframe.module_course.ui.adapter.section.SectionTypeSubTag
 import com.vension.fastframe.module_course.widget.section.SectionedRVAdapter
 import kotlinx.android.synthetic.main.fragment_section.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 
 /**
  * ===================================================================

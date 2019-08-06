@@ -1,7 +1,7 @@
 package com.vension.fastframe.module_wan.mvp.presenter
 
 import com.vension.fastframe.module_wan.mvp.contract.ContentContract
-import kv.vension.vframe.net.response.BaseBean
+import kv.vension.fastframe.net.response.BaseBean
 
 
 /**

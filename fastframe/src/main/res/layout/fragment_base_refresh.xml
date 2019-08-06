@@ -11,7 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior">
-        <kv.vension.vframe.views.MultiStateLayout
+        <kv.vension.fastframe.views.MultiStateLayout
                 android:id="@+id/refresh_MultiStateLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
@@ -22,7 +22,7 @@
                     android:scrollbarSize="5dp"
                     android:scrollbarThumbVertical="@color/colorAppTheme"
                     android:scrollbars="vertical" />
-        </kv.vension.vframe.views.MultiStateLayout>
+        </kv.vension.fastframe.views.MultiStateLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
@@ -38,7 +38,7 @@
             app:elevation="6dp"
             app:fabSize="mini"
             app:pressedTranslationZ="10dp"
-            app:layout_behavior="kv.vension.vframe.views.behavior.ScaleDownShowBehavior"/>
+            app:layout_behavior="kv.vension.vframe.kv.vension.fastframe.views.behavior.ScaleDownShowBehavior"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

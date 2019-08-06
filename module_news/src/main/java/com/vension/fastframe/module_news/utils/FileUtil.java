@@ -10,7 +10,7 @@ import android.os.Environment;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.Toast;
-import kv.vension.vframe.VFrame;
+import kv.vension.fastframe.VFrame;
 
 import java.io.BufferedOutputStream;
 import java.io.BufferedReader;

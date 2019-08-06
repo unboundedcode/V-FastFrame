@@ -8,12 +8,12 @@ import com.vension.fastframe.module_wan.bean.TodoBean
 import com.vension.fastframe.module_wan.event.RefreshTodoEvent
 import com.vension.fastframe.module_wan.mvp.contract.TodoAddContract
 import com.vension.fastframe.module_wan.mvp.presenter.TodoAddPresenter
-import com.vension.mvpforkotlin.sample.util.DialogUtil
+import kv.vension.fastframe.utils.DialogUtil
 import kotlinx.android.synthetic.main.fragment_todo_add.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
-import kv.vension.vframe.ext.formatCurrentDate
-import kv.vension.vframe.ext.showToast
-import kv.vension.vframe.utils.KeyBoardUtil
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.ext.formatCurrentDate
+import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.utils.KeyBoardUtil
 import org.greenrobot.eventbus.EventBus
 import java.util.*
 

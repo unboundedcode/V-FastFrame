@@ -11,9 +11,9 @@ import com.vension.mvpforkotlin.sample.ui.fragment.TodoFragment
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_knowledge_tab.tabLayout
 import kotlinx.android.synthetic.main.fragment_todo_tab.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.core.adapter.BaseFragmentAdapter
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentAdapter
 import org.greenrobot.eventbus.EventBus
 
 /**

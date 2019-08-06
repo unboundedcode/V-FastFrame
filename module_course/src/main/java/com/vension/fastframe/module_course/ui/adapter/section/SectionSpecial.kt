@@ -10,8 +10,8 @@ import com.vension.fastframe.module_course.bean.SelectionBean
 import com.vension.fastframe.module_course.ui.fragment.SectionDetailFragment
 import com.vension.fastframe.module_course.widget.section.StatelessSection
 import com.vension.fastframe.module_course.widget.section.ViewHolder
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.utils.DensityUtil
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.utils.DensityUtil
 
 
 /**
@@ -23,7 +23,7 @@ import kv.vension.vframe.utils.DensityUtil
  * ========================================================
  */
 
-class SectionSpecial(val fragment:AbsCompatFragment,list: List<SelectionBean.Zhuanlan>?) : StatelessSection<SelectionBean.Zhuanlan>(R.layout.layout_item_section_head, R.layout.layout_item_special_body, list) {
+class SectionSpecial(val fragment: AbsCompatFragment, list: List<SelectionBean.Zhuanlan>?) : StatelessSection<SelectionBean.Zhuanlan>(R.layout.layout_item_section_head, R.layout.layout_item_special_body, list) {
 
     override fun convert(holder: ViewHolder, zhuanlan: SelectionBean.Zhuanlan, position: Int) {
         holder.apply {

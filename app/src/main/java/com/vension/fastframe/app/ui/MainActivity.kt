@@ -17,8 +17,8 @@ import com.vension.fastframe.app.R
 import com.wuhenzhizao.titlebar.statusbar.StatusBarUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_toolbar_main.*
-import kv.vension.vframe.core.AbsCompatActivity
-import kv.vension.vframe.ext.showToast
+import kv.vension.fastframe.core.AbsCompatActivity
+import kv.vension.fastframe.ext.showToast
 import lib.vension.fastframe.common.RouterConfig
 import lib.vension.fastframe.common.test.TestFragment
 import lib.vension.fastframe.common.test.TestRefreshFragment

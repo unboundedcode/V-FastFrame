@@ -9,8 +9,8 @@ import com.vension.fastframe.module_news.mvp.contract.HotNewsBestContract
 import com.vension.fastframe.module_news.mvp.presenter.HotNewsBestPresenter
 import com.vension.fastframe.module_news.ui.adapter.HotNewsBestMultipleRecycleAdapter
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import java.util.*
 
 /**
@@ -21,7 +21,7 @@ import java.util.*
  * @desc:   热闻精选详情界面
  * ===================================================================
  */
-class HotNewsBestFragment : AbsCompatMVPRefreshFragment<HotNewsBestModel.Articles,HotNewsBestContract.View,HotNewsBestPresenter>(),HotNewsBestContract.View {
+class HotNewsBestFragment : AbsCompatMVPRefreshFragment<HotNewsBestModel.Articles, HotNewsBestContract.View, HotNewsBestPresenter>(),HotNewsBestContract.View {
 
 
     private val datas = ArrayList<HotNewsBestModel.Articles>()

@@ -14,7 +14,7 @@
             android:paddingRight="@dimen/dp_24"
             android:paddingTop="@dimen/dp_60">
 
-        <kv.vension.vframe.views.ShapeImageView
+        <kv.vension.fastframe.views.ShapeImageView
                 android:layout_width="@dimen/avatar_width"
                 android:layout_height="@dimen/avatar_height"
                 android:layout_gravity="center_horizontal"

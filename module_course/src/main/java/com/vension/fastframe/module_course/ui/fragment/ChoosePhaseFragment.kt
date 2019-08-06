@@ -19,8 +19,8 @@ import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 import kotlinx.android.synthetic.main.common_tag.view.*
 import kotlinx.android.synthetic.main.fragment_select_phase.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 import org.greenrobot.eventbus.EventBus
 
 /**

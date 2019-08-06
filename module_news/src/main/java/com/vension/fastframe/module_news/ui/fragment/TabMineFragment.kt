@@ -12,9 +12,9 @@ import com.vension.fastframe.module_news.bean.ProfileCareModel
 import com.vension.fastframe.module_news.ui.adapter.ProfileAdapter
 import com.vension.fastframe.module_news.utils.FileUtil
 import kotlinx.android.synthetic.main.fragment_tab_mine_news.*
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.ext.Logi
-import kv.vension.vframe.ext.showToast
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.ext.Logi
+import kv.vension.fastframe.ext.showToast
 import java.util.*
 
 /**

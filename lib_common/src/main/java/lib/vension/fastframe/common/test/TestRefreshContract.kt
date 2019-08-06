@@ -1,7 +1,7 @@
 package lib.vension.fastframe.common.test
 
-import kv.vension.vframe.core.mvp.IPresenter
-import kv.vension.vframe.core.mvp.IViewRefresh
+import kv.vension.fastframe.core.mvp.IPresenter
+import kv.vension.fastframe.core.mvp.IViewRefresh
 
 /**
  * ========================================================

@@ -9,10 +9,10 @@ import com.vension.fastframe.module_news.NewsConstant
 import com.vension.fastframe.module_news.R
 import com.vension.fastframe.module_news.bean.HomeNewsTabBean
 import kotlinx.android.synthetic.main.fragment_tab_home_news.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.core.adapter.BaseFragmentStatePagerAdapter
-import kv.vension.vframe.ext.showToast
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentStatePagerAdapter
+import kv.vension.fastframe.ext.showToast
 import org.jetbrains.anko.textColor
 import java.util.*
 

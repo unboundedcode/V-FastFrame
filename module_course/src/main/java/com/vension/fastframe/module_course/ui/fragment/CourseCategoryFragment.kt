@@ -12,8 +12,8 @@ import com.vension.fastframe.module_course.bean.VideoGroup
 import com.vension.fastframe.module_course.mvp.contract.CourseCategoryContract
 import com.vension.fastframe.module_course.mvp.presenter.CourseCategoryPresenter
 import com.vension.fastframe.module_course.ui.adapter.CourseCategoryAdapter
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import lib.vension.fastframe.common.RouterConfig
 
 /**
@@ -24,7 +24,7 @@ import lib.vension.fastframe.common.RouterConfig
  * @desc:
  * ===================================================================
  */
-class CourseCategoryFragment : AbsCompatMVPRefreshFragment<VideoBean,CourseCategoryContract.View,CourseCategoryPresenter>(),CourseCategoryContract.View {
+class CourseCategoryFragment : AbsCompatMVPRefreshFragment<VideoBean, CourseCategoryContract.View, CourseCategoryPresenter>(),CourseCategoryContract.View {
 
 
     companion object {

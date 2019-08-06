@@ -12,7 +12,7 @@ import com.vension.fastframe.module_wan.bean.NavigationBean
 import com.zhy.view.flowlayout.FlowLayout
 import com.zhy.view.flowlayout.TagAdapter
 import com.zhy.view.flowlayout.TagFlowLayout
-import kv.vension.vframe.ext.getRandomColor
+import kv.vension.fastframe.ext.getRandomColor
 
 
 /**

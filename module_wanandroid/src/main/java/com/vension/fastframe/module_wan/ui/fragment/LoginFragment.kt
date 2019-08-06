@@ -2,7 +2,7 @@ package com.vension.fastframe.module_wan.ui.fragment
 
 import android.os.Bundle
 import android.view.View
-import com.leifu.mvpkotlin.util.PreferenceUtil
+import kv.vension.fastframe.utils.PreferenceUtil
 import com.vension.fastframe.module_wan.Constant
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.bean.LoginData
@@ -11,9 +11,9 @@ import com.vension.fastframe.module_wan.mvp.contract.LoginContract
 import com.vension.fastframe.module_wan.mvp.presenter.LoginPresenter
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_login.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
-import kv.vension.vframe.ext.showToast
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.ext.showToast
 import org.greenrobot.eventbus.EventBus
 
 /**

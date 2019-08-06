@@ -2,8 +2,8 @@ package com.vension.fastframe.module_wan.mvp.contract
 
 import com.vension.fastframe.module_wan.bean.CollectionArticle
 import com.vension.fastframe.module_wan.bean.CollectionResponseBody
-import kv.vension.vframe.core.mvp.IPresenter
-import kv.vension.vframe.core.mvp.IViewRefresh
+import kv.vension.fastframe.core.mvp.IPresenter
+import kv.vension.fastframe.core.mvp.IViewRefresh
 
 /**
  * ========================================================

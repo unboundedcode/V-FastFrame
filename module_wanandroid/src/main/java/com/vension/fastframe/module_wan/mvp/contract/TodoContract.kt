@@ -1,11 +1,8 @@
 package com.vension.fastframe.module_wan.mvp.contract
 
-import com.vension.fastframe.module_wan.bean.AllTodoResponseBody
-import com.vension.fastframe.module_wan.bean.HttpResult
 import com.vension.fastframe.module_wan.bean.TodoResponseBody
-import kv.vension.vframe.core.mvp.IPresenter
-import kv.vension.vframe.core.mvp.IView
-import io.reactivex.Observable
+import kv.vension.fastframe.core.mvp.IPresenter
+import kv.vension.fastframe.core.mvp.IView
 
 /**
  * ========================================================

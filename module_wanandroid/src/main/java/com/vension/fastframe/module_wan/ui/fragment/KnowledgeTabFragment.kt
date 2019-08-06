@@ -12,9 +12,9 @@ import com.vension.fastframe.module_wan.bean.KnowledgeTreeBody
 import com.vension.fastframe.module_wan.ui.fragment.KnowledgeFragment
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_knowledge_tab.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.core.adapter.BaseFragmentStatePagerAdapter
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentStatePagerAdapter
 import org.jetbrains.anko.imageResource
 
 /**

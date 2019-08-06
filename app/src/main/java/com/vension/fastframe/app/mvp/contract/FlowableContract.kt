@@ -1,7 +1,7 @@
 package com.vension.fastframe.app.mvp.contract
 
-import kv.vension.vframe.core.mvp.IPresenter
-import kv.vension.vframe.core.mvp.IView
+import kv.vension.fastframe.core.mvp.IPresenter
+import kv.vension.fastframe.core.mvp.IView
 import com.vension.fastframe.app.bean.ObjectBean
 
 

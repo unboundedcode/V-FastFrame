@@ -18,7 +18,7 @@
             android:layout_marginRight="10dp"
             android:orientation="horizontal">
 
-            <kv.vension.vframe.views.ShapeImageView
+            <kv.vension.fastframe.views.ShapeImageView
                     android:id="@+id/tymenu_a"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/qb_px_200"
@@ -26,7 +26,7 @@
                     android:adjustViewBounds="true"
                     tools:src="@drawable/place_image_default"
                     app:siv_shape_type="SHAPE_ROUND"/>
-            <kv.vension.vframe.views.ShapeImageView
+            <kv.vension.fastframe.views.ShapeImageView
                     android:id="@+id/tymenu_b"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/qb_px_200"
@@ -37,7 +37,7 @@
                     android:adjustViewBounds="true"
                     tools:src="@drawable/place_image_default"
                     app:siv_shape_type="SHAPE_ROUND"/>
-            <kv.vension.vframe.views.ShapeImageView
+            <kv.vension.fastframe.views.ShapeImageView
                     android:id="@+id/tymenu_c"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/qb_px_200"

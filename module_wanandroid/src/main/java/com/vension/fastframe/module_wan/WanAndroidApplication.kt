@@ -1,7 +1,7 @@
 package com.vension.fastframe.module_wan
 
-import kv.vension.vframe.core.IApplication
-import kv.vension.vframe.ext.Logi
+import kv.vension.fastframe.core.IApplication
+import kv.vension.fastframe.ext.Logi
 import lib.vension.fastframe.common.CommonApplication
 import org.litepal.LitePal
 

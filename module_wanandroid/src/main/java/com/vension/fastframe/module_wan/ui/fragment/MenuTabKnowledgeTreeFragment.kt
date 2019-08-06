@@ -8,7 +8,7 @@ import com.vension.fastframe.module_wan.mvp.contract.KnowledgeTreeContract
 import com.vension.fastframe.module_wan.mvp.presenter.KnowledgeTreePresenter
 import com.vension.fastframe.module_wan.ui.adapter.KnowledgeTreeAdapter
 import com.vension.mvpforkotlin.sample.ui.fragment.KnowledgeTabFragment
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 
 /**
  * ========================================================

@@ -13,7 +13,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.vension.fastframe.module_news.R;
 import com.vension.fastframe.module_news.bean.VideoNewsModel;
-import kv.vension.vframe.glide.GlideApp;
+import kv.vension.fastframe.glide.GlideApp;
 
 import java.util.LinkedHashMap;
 import java.util.List;

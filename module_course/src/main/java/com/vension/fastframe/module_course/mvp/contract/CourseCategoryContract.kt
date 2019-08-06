@@ -2,8 +2,8 @@ package com.vension.fastframe.module_course.mvp.contract
 
 import com.vension.fastframe.module_course.bean.VideoBean
 import com.vension.fastframe.module_course.bean.VideoGroup
-import kv.vension.vframe.core.mvp.IPresenter
-import kv.vension.vframe.core.mvp.IViewRefresh
+import kv.vension.fastframe.core.mvp.IPresenter
+import kv.vension.fastframe.core.mvp.IViewRefresh
 
 
 /**
@@ -17,7 +17,7 @@ import kv.vension.vframe.core.mvp.IViewRefresh
 
 interface CourseCategoryContract {
 
-    interface View :IViewRefresh<VideoBean>{
+    interface View : IViewRefresh<VideoBean> {
         fun showVideo(videoGroup: VideoGroup)
     }
 

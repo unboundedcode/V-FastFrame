@@ -9,11 +9,11 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/fastframe" />
             <option value="$PROJECT_DIR$/lib_common" />
             <option value="$PROJECT_DIR$/module_course" />
             <option value="$PROJECT_DIR$/module_news" />
             <option value="$PROJECT_DIR$/module_wanandroid" />
-            <option value="$PROJECT_DIR$/vframe" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

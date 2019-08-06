@@ -10,8 +10,8 @@ import com.vension.fastframe.module_wan.mvp.contract.WeChatContract
 import com.vension.fastframe.module_wan.mvp.presenter.WeChatPresenter
 import com.vension.fastframe.module_wan.ui.fragment.KnowledgeFragment
 import kotlinx.android.synthetic.main.fragment_menu_tab_wechat.*
-import kv.vension.vframe.core.adapter.BaseFragmentStatePagerAdapter
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentStatePagerAdapter
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 
 
 /**

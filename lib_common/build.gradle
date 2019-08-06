@@ -42,7 +42,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    api project(path: ':vframe')
+    api project(path: ':fastframe')
     kapt'com.alibaba:arouter-compiler:1.2.2'
     //Arouter路由
     api'com.alibaba:arouter-api:1.4.1'

@@ -7,8 +7,8 @@ import android.webkit.*
 import com.vension.fastframe.module_course.R
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_section_detail.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.AbsCompatFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.AbsCompatFragment
 
 /**
  * ===================================================================

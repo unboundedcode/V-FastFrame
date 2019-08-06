@@ -29,9 +29,9 @@ import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
 import com.youth.banner.listener.OnBannerListener
 import com.youth.banner.transformer.*
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.glide.GlideApp
-import kv.vension.vframe.views.ShapeImageView
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.glide.GlideApp
+import kv.vension.fastframe.views.ShapeImageView
 import java.util.*
 import kotlin.collections.LinkedHashMap
 import kotlin.math.ceil
@@ -44,7 +44,7 @@ import kotlin.math.ceil
  * @desc:
  * ===================================================================
  */
-class HomeRecommendAdapter(private val mFragment:AbsCompatFragment, data: ArrayList<HomeTophotIndex.Articles>) :
+class HomeRecommendAdapter(private val mFragment: AbsCompatFragment, data: ArrayList<HomeTophotIndex.Articles>) :
     BaseMultiItemQuickAdapter<HomeTophotIndex.Articles, BaseViewHolder>(data) , OnBannerListener {
 
     private var mPagerList: MutableList<View>? = null

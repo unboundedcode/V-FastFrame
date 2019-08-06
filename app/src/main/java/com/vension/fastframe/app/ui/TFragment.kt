@@ -7,7 +7,7 @@ import com.vension.fastframe.app.bean.TBean
 import com.vension.fastframe.app.mvp.contract.TContract
 import com.vension.fastframe.app.mvp.presenter.TPresenter
 import kotlinx.android.synthetic.main.fragment_observable.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 
 /**
  * ===================================================================

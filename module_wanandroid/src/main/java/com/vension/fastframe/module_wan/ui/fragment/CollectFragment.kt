@@ -10,9 +10,9 @@ import com.vension.fastframe.module_wan.mvp.contract.CollectContract
 import com.vension.fastframe.module_wan.mvp.presenter.CollectPresenter
 import com.vension.fastframe.module_wan.ui.adapter.CollectAdapter
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
-import kv.vension.vframe.ext.showToast
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.ext.showToast
 import org.greenrobot.eventbus.EventBus
 
 /**

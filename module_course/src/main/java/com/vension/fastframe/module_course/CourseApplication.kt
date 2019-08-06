@@ -1,7 +1,7 @@
 package com.vension.fastframe.module_course
 
-import kv.vension.vframe.core.IApplication
-import kv.vension.vframe.ext.Logi
+import kv.vension.fastframe.core.IApplication
+import kv.vension.fastframe.ext.Logi
 import lib.vension.fastframe.common.CommonApplication
 
 /**
@@ -12,7 +12,7 @@ import lib.vension.fastframe.common.CommonApplication
  * @desc:   character determines attitude, attitude determines destiny
  * ===================================================================
  */
-class CourseApplication : CommonApplication(),IApplication {
+class CourseApplication : CommonApplication(), IApplication {
 
     override fun initConfig() {
         Logi("initComponents-->CourseApplication")

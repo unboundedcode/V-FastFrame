@@ -76,7 +76,7 @@
             app:tl_textUnselectColor="@color/tab_textUnSelectColor"
             app:tl_textsize="@dimen/sp_16"/>
 
-    <kv.vension.vframe.views.NoScrollViewPager
+    <kv.vension.fastframe.views.NoScrollViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

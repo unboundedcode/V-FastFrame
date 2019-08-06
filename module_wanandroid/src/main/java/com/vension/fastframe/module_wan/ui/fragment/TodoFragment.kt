@@ -17,13 +17,13 @@ import com.vension.fastframe.module_wan.mvp.contract.TodoContract
 import com.vension.fastframe.module_wan.mvp.presenter.TodoPresenter
 import com.vension.fastframe.module_wan.ui.adapter.TodoAdapter
 import com.vension.fastframe.module_wan.widget.SwipeItemLayout
-import com.vension.mvpforkotlin.sample.util.DialogUtil
+import kv.vension.fastframe.utils.DialogUtil
 import kotlinx.android.synthetic.main.fragment_todo.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.adapter.recy.decoration.SpaceItemDecoration
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
-import kv.vension.vframe.ext.showToast
-import kv.vension.vframe.utils.NetWorkUtil
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.adapter.recy.decoration.SpaceItemDecoration
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.utils.NetWorkUtil
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 

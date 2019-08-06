@@ -8,7 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.bean.Article
-import kv.vension.vframe.glide.ImageLoader
+import kv.vension.fastframe.glide.ImageLoader
 
 class KnowledgeAdapter(private val context: Context?) : BaseQuickAdapter<Article, BaseViewHolder>(R.layout.item_recy_knowledge) {
 

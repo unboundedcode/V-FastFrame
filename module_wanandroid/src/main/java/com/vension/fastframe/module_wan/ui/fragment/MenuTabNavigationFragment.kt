@@ -13,7 +13,7 @@ import com.vension.fastframe.module_wan.mvp.presenter.NavigationPresenter
 import com.vension.fastframe.module_wan.ui.adapter.NavigationAdapter
 import com.vension.fastframe.module_wan.ui.adapter.NavigationTabAdapter
 import kotlinx.android.synthetic.main.fragment_menu_tab_navigation.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 import q.rorbin.verticaltablayout.VerticalTabLayout
 import q.rorbin.verticaltablayout.widget.TabView
 

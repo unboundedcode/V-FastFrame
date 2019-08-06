@@ -19,8 +19,8 @@ import com.vension.fastframe.module_course.ui.fragment.TabCourseFragment
 import com.vension.fastframe.module_course.ui.fragment.TabHomeFragment
 import com.vension.fastframe.module_course.ui.fragment.TabMineFragment
 import kotlinx.android.synthetic.main.activity_main_course.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPActivity
-import kv.vension.vframe.ext.Loge
+import kv.vension.fastframe.core.mvp.AbsCompatMVPActivity
+import kv.vension.fastframe.ext.Loge
 import lib.vension.fastframe.common.RouterConfig
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -34,7 +34,7 @@ import org.greenrobot.eventbus.ThreadMode
  * ===================================================================
  */
 @Route(path = RouterConfig.PATH_COURSE_MAINACTIVITY)
-class CourseMainActivity : AbsCompatMVPActivity<MainContract.View,MainPresenter>(), OnTabSelectListener ,MainContract.View{
+class CourseMainActivity : AbsCompatMVPActivity<MainContract.View, MainPresenter>(), OnTabSelectListener ,MainContract.View{
 
     private var mCurrentPos: Int = -1
     private val numbers = ArrayList<Int>()

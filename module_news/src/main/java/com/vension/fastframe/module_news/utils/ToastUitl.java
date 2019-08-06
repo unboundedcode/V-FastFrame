@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.vension.fastframe.module_news.R;
-import kv.vension.vframe.VFrame;
+import kv.vension.fastframe.VFrame;
 
 
 /**

@@ -12,9 +12,9 @@ import com.vension.fastframe.module_news.R
 import com.vension.fastframe.module_news.bean.CategoryModel
 import com.vension.fastframe.module_news.widget.ColorFlipPagerTitleView
 import kotlinx.android.synthetic.main.fragment_tab_headnews.*
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.core.adapter.BaseFragmentAdapter
-import kv.vension.vframe.utils.StatusBarUtil
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentAdapter
+import kv.vension.fastframe.utils.StatusBarUtil
 import lib.vension.fastframe.common.test.TestFragment
 import net.lucode.hackware.magicindicator.ViewPagerHelper
 import net.lucode.hackware.magicindicator.buildins.UIUtil

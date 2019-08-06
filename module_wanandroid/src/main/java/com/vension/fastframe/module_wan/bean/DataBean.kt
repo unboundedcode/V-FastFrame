@@ -1,7 +1,7 @@
 package com.vension.fastframe.module_wan.bean
 
 import com.squareup.moshi.Json
-import kv.vension.vframe.net.response.BaseBean
+import kv.vension.fastframe.net.response.BaseBean
 import org.litepal.crud.LitePalSupport
 import java.io.Serializable
 

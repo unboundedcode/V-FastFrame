@@ -13,11 +13,11 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_splash.*
-import kv.vension.vframe.core.AbsCompatActivity
-import kv.vension.vframe.glide.ImageLoader
-import kv.vension.vframe.net.rx.RxHandler
-import kv.vension.vframe.utils.TimeUtil
-import kv.vension.vframe.views.CircleCountDownView
+import kv.vension.fastframe.core.AbsCompatActivity
+import kv.vension.fastframe.glide.ImageLoader
+import kv.vension.fastframe.net.rx.RxHandler
+import kv.vension.fastframe.utils.TimeUtil
+import kv.vension.fastframe.views.CircleCountDownView
 import lib.vension.fastframe.common.Constant
 import lib.vension.fastframe.common.R
 import lib.vension.fastframe.common.RouterConfig

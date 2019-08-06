@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.vension.fastframe.module_course.R
 import com.vension.fastframe.module_course.ui.fragment.CourseCategoryFragment
-import kv.vension.vframe.VFrame
+import kv.vension.fastframe.VFrame
 
 /**
  * @author: ym  作者 E-mail: 15622113269@163.com

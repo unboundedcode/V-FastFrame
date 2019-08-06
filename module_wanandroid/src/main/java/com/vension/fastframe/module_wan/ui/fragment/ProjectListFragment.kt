@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
-import com.leifu.mvpkotlin.util.PreferenceUtil
+import kv.vension.fastframe.utils.PreferenceUtil
 import com.vension.fastframe.module_wan.Constant
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.bean.Article
@@ -14,9 +14,9 @@ import com.vension.fastframe.module_wan.mvp.presenter.ProjectListPresenter
 import com.vension.fastframe.module_wan.ui.adapter.ProjectAdapter
 import com.vension.fastframe.module_wan.ui.fragment.AgentWebFragment
 import com.vension.fastframe.module_wan.ui.fragment.LoginFragment
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
-import kv.vension.vframe.ext.showToast
-import kv.vension.vframe.utils.NetWorkUtil
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.utils.NetWorkUtil
 
 /**
  * ========================================================

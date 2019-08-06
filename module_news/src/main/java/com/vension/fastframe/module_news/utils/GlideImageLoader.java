@@ -5,7 +5,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.vension.fastframe.module_news.R;
 import com.youth.banner.loader.ImageLoader;
-import kv.vension.vframe.glide.GlideApp;
+import kv.vension.fastframe.glide.GlideApp;
 
 /**
  * author：JSYL-DCL on 2017/9/21

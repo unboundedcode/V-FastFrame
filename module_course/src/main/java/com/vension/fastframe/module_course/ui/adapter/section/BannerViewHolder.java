@@ -10,7 +10,7 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.vension.fastframe.module_course.R;
 import com.zhouwei.mzbanner.holder.MZViewHolder;
-import kv.vension.vframe.utils.DensityUtil;
+import kv.vension.fastframe.utils.DensityUtil;
 
 /**
  * ========================================================

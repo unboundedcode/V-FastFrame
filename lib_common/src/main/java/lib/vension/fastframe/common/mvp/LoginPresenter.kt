@@ -1,7 +1,7 @@
 package lib.vension.fastframe.common.mvp
 
 import android.os.Handler
-import kv.vension.vframe.core.mvp.AbsPresenter
+import kv.vension.fastframe.core.mvp.AbsPresenter
 
 /**
  * ========================================================

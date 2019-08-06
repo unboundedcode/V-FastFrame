@@ -9,8 +9,8 @@ import com.vension.fastframe.module_wan.bean.ProjectTreeBean
 import com.vension.fastframe.module_wan.mvp.contract.ProjectContract
 import com.vension.fastframe.module_wan.mvp.presenter.ProjectPresenter
 import kotlinx.android.synthetic.main.fragment_menu_tab_project.*
-import kv.vension.vframe.core.adapter.BaseFragmentStatePagerAdapter
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentStatePagerAdapter
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 
 /**
  * ========================================================

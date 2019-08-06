@@ -1,11 +1,10 @@
 package com.vension.fastframe.app.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import com.vension.fastframe.app.R
 import kotlinx.android.synthetic.main.fragment_net_test.*
-import kv.vension.vframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.AbsCompatFragment
 
 /**
  * ===================================================================

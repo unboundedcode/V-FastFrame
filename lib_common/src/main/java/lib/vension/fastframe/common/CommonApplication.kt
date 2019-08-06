@@ -1,9 +1,9 @@
 package lib.vension.fastframe.common
 
 import com.alibaba.android.arouter.launcher.ARouter
+import kv.vension.fastframe.core.AbsApplication
+import kv.vension.fastframe.core.IApplication
 import kv.vension.vframe.BuildConfig
-import kv.vension.vframe.core.AbsApplication
-import kv.vension.vframe.core.IApplication
 
 /**
  * ===================================================================

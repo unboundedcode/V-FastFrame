@@ -42,7 +42,7 @@
                         android:paddingRight="@dimen/qb_px_15"
                         android:orientation="horizontal">
 
-                    <kv.vension.vframe.views.ShapeImageView
+                    <kv.vension.fastframe.views.ShapeImageView
                             android:id="@+id/article_img1"
                             android:layout_width="70dp"
                             android:layout_height="70dp"
@@ -149,7 +149,7 @@
             android:paddingRight="10dp"
             android:background="@color/colorNewsMain"
             app:layout_behavior="com.vension.fastframe.module_news.widget.behavior.XiamiTitleBehavior">
-        <kv.vension.vframe.views.ShapeImageView
+        <kv.vension.fastframe.views.ShapeImageView
                 android:id="@+id/collapseHeaderIco"
                 android:layout_width="35dp"
                 android:layout_height="35dp"

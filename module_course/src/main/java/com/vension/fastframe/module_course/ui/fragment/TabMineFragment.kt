@@ -7,9 +7,9 @@ import com.vension.fastframe.module_course.bean.MineBean
 import com.vension.fastframe.module_course.mvp.contract.MineContract
 import com.vension.fastframe.module_course.mvp.presenter.MinePresenter
 import kotlinx.android.synthetic.main.fragment_tab_mine.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
-import kv.vension.vframe.utils.OnInterceptDoubleClickListener
-import kv.vension.vframe.utils.StatusBarUtil
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.utils.OnInterceptDoubleClickListener
+import kv.vension.fastframe.utils.StatusBarUtil
 
 /**
  * ===================================================================
@@ -19,7 +19,7 @@ import kv.vension.vframe.utils.StatusBarUtil
  * @desc:   character determines attitude, attitude determines destiny
  * ===================================================================
  */
-class TabMineFragment : AbsCompatMVPFragment<MineContract.View,MinePresenter>(),MineContract.View {
+class TabMineFragment : AbsCompatMVPFragment<MineContract.View, MinePresenter>(),MineContract.View {
 
     companion object {
         fun newInstance(): TabMineFragment {

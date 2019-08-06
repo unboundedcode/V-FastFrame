@@ -1,6 +1,6 @@
 package com.vension.fastframe.app.bean
 
-import kv.vension.vframe.net.response.BaseBean
+import kv.vension.fastframe.net.response.BaseBean
 
 /**
  *创建人:雷富

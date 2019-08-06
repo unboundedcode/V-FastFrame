@@ -1,7 +1,7 @@
 package lib.vension.fastframe.common.mvp
 
-import kv.vension.vframe.core.mvp.IPresenter
-import kv.vension.vframe.core.mvp.IView
+import kv.vension.fastframe.core.mvp.IPresenter
+import kv.vension.fastframe.core.mvp.IView
 
 /**
  * ===================================================================

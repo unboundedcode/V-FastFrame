@@ -16,8 +16,8 @@ import com.vension.fastframe.module_news.mvp.presenter.HeadPresenter
 import com.vension.fastframe.module_news.ui.adapter.FrontNewsAdapter
 import com.vension.fastframe.module_news.widget.loadmore.CustomLoadMoreView
 import kotlinx.android.synthetic.main.fragment_head_recommend.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
-import kv.vension.vframe.utils.StatusBarUtil
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.utils.StatusBarUtil
 import java.util.*
 
 /**
@@ -28,7 +28,7 @@ import java.util.*
  * @desc:
  * ===================================================================
  */
-class HeadRecommendFragment : AbsCompatMVPFragment<HeadContract.View,HeadPresenter>(),
+class HeadRecommendFragment : AbsCompatMVPFragment<HeadContract.View, HeadPresenter>(),
     HeadContract.View, BaseQuickAdapter.RequestLoadMoreListener {
 
     /**

@@ -29,9 +29,8 @@ import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
 import com.youth.banner.transformer.*;
-import kv.vension.vframe.glide.GlideApp;
-import kv.vension.vframe.views.ShapeImageView;
-
+import kv.vension.fastframe.glide.GlideApp;
+import kv.vension.fastframe.views.ShapeImageView;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;

@@ -3,7 +3,7 @@ package com.vension.fastframe.module_wan.util
 import android.graphics.Color
 import android.preference.PreferenceManager
 import com.vension.fastframe.module_wan.R
-import kv.vension.vframe.VFrame
+import kv.vension.fastframe.VFrame
 
 /**
  * ========================================================

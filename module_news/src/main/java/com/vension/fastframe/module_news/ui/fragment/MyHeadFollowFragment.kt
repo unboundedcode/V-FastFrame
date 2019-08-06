@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import com.vension.fastframe.module_news.R
 import kotlinx.android.synthetic.main.fragment_my_follow.*
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.ext.showToast
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.ext.showToast
 
 /**
  * ===================================================================

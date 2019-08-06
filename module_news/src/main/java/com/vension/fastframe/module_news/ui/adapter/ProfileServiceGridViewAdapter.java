@@ -9,8 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.vension.fastframe.module_news.R;
 import com.vension.fastframe.module_news.bean.ProfileServiceGridBean;
-import kv.vension.vframe.glide.GlideApp;
-
+import kv.vension.fastframe.glide.GlideApp;
 import java.util.List;
 
 /**

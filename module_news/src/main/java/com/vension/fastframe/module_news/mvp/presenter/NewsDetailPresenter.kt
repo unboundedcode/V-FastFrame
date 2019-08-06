@@ -4,10 +4,10 @@ import com.vension.fastframe.module_news.RxHandlerNews
 import com.vension.fastframe.module_news.api.NewsApiService
 import com.vension.fastframe.module_news.bean.NewsDetailModel
 import com.vension.fastframe.module_news.mvp.contract.NewsDetailContract
-import kv.vension.vframe.core.mvp.AbsPresenter
-import kv.vension.vframe.net.RetrofitHelper
-import kv.vension.vframe.net.exception.ExceptionHandle
-import kv.vension.vframe.net.rx.RxHandler
+import kv.vension.fastframe.core.mvp.AbsPresenter
+import kv.vension.fastframe.net.RetrofitHelper
+import kv.vension.fastframe.net.exception.ExceptionHandle
+import kv.vension.fastframe.net.rx.RxHandler
 import lib.vension.fastframe.common.HttpConfig
 
 /**

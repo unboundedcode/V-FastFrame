@@ -44,7 +44,7 @@
             android:orientation="horizontal"
             android:layout_marginBottom="14dp">
 
-            <kv.vension.vframe.views.ShapeImageView
+            <kv.vension.fastframe.views.ShapeImageView
                     android:id="@+id/article_img1"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -57,7 +57,7 @@
                     app:siv_left_bottom_radiusX="10dp"
                     app:siv_left_bottom_radiusY="10dp"
                     tools:src="@drawable/img_banner2"/>
-            <kv.vension.vframe.views.ShapeImageView
+            <kv.vension.fastframe.views.ShapeImageView
                     android:id="@+id/article_img2"
                     android:layout_weight="1"
                     android:layout_width="0dp"
@@ -68,7 +68,7 @@
                     android:layout_marginRight="3dp"
                     app:siv_shape_type="SHAPE_ROUND"
                     tools:src="@drawable/img_banner2"/>
-            <kv.vension.vframe.views.ShapeImageView
+            <kv.vension.fastframe.views.ShapeImageView
                     android:id="@+id/article_img3"
                     android:layout_weight="1"
                     android:layout_width="0dp"

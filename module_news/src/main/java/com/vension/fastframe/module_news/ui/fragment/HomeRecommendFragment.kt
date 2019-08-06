@@ -15,9 +15,9 @@ import com.vension.fastframe.module_news.mvp.contract.HomeRecommendContract
 import com.vension.fastframe.module_news.mvp.presenter.HomeRecommendPresenter
 import com.vension.fastframe.module_news.ui.adapter.HomeRecommendAdapter
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPRefreshFragment
-import kv.vension.vframe.utils.DensityUtil
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
+import kv.vension.fastframe.utils.DensityUtil
 
 /**
  * ===================================================================

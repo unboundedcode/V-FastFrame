@@ -8,9 +8,9 @@ import cn.jzvd.Jzvd
 import com.flyco.tablayout.listener.OnTabSelectListener
 import com.vension.fastframe.module_news.NewsConstant
 import kotlinx.android.synthetic.main.fragment_tab_video.*
-import kv.vension.vframe.core.AbsCompatFragment
-import kv.vension.vframe.core.adapter.BaseFragmentStatePagerAdapter
-import kv.vension.vframe.utils.StatusBarUtil
+import kv.vension.fastframe.core.AbsCompatFragment
+import kv.vension.fastframe.core.adapter.BaseFragmentStatePagerAdapter
+import kv.vension.fastframe.utils.StatusBarUtil
 import java.util.*
 
 

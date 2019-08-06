@@ -8,7 +8,7 @@
               android:background="@color/colorWindowBackground"
               tools:ignore="ResourceName">
 
-    <kv.vension.vframe.views.NoScrollViewPager
+    <kv.vension.fastframe.views.NoScrollViewPager
             android:id="@+id/vp_newsMain"
             android:layout_width="match_parent"
             android:layout_height="0dp"

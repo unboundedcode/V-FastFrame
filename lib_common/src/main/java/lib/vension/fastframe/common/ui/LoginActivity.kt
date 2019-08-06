@@ -5,7 +5,7 @@ import android.view.View
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_login.*
-import kv.vension.vframe.core.mvp.AbsCompatMVPActivity
+import kv.vension.fastframe.core.mvp.AbsCompatMVPActivity
 import lib.vension.fastframe.common.R
 import lib.vension.fastframe.common.RouterConfig
 import lib.vension.fastframe.common.mvp.LoginContract
@@ -21,7 +21,7 @@ import lib.vension.fastframe.common.mvp.LoginPresenter
  */
 
 @Route(path = RouterConfig.PATH_COMMON_LOGINACTIVITY)
-class LoginActivity : AbsCompatMVPActivity<LoginContract.View,LoginContract.Presenter>(),LoginContract.View {
+class LoginActivity : AbsCompatMVPActivity<LoginContract.View, LoginContract.Presenter>(),LoginContract.View {
 
     var targetUrl: String? = null
 

@@ -25,8 +25,8 @@ import com.vension.fastframe.module_news.widget.texthtml.HtmlText
 import com.vension.fastframe.module_news.widget.texthtml.OnTagClickListener
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.fragment_hot_news_detail.*
-import kv.vension.vframe.VFrame
-import kv.vension.vframe.core.mvp.AbsCompatMVPFragment
+import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 import java.util.*
 
 /**
@@ -37,7 +37,7 @@ import java.util.*
  * @desc:
  * ===================================================================
  */
-class HotNewsDetailFragment : AbsCompatMVPFragment<NewsDetailContract.View,NewsDetailPresenter>(),NewsDetailContract.View {
+class HotNewsDetailFragment : AbsCompatMVPFragment<NewsDetailContract.View, NewsDetailPresenter>(),NewsDetailContract.View {
 
     private var dataUrl = ""
 

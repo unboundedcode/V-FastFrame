@@ -13,7 +13,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import com.vension.fastframe.module_wan.R;
-import kv.vension.vframe.utils.DensityUtil;
+import kv.vension.fastframe.utils.DensityUtil;
 
 import java.util.ArrayList;
 import java.util.List;

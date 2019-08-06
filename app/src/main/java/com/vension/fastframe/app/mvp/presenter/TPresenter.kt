@@ -3,11 +3,11 @@ package com.vension.fastframe.app.mvp.presenter
 import com.vension.fastframe.app.api.ApiService
 import com.vension.fastframe.app.bean.TBean
 import com.vension.fastframe.app.mvp.contract.TContract
-import kv.vension.vframe.core.mvp.AbsPresenter
-import kv.vension.vframe.net.RetrofitHelper
-import kv.vension.vframe.net.response.BaseResponseBean
-import kv.vension.vframe.net.rx.FlowableSubscriberManager
-import kv.vension.vframe.net.rx.RxHandler
+import kv.vension.fastframe.core.mvp.AbsPresenter
+import kv.vension.fastframe.net.RetrofitHelper
+import kv.vension.fastframe.net.response.BaseResponseBean
+import kv.vension.fastframe.net.rx.FlowableSubscriberManager
+import kv.vension.fastframe.net.rx.RxHandler
 import lib.vension.fastframe.common.HttpConfig
 
 /**
