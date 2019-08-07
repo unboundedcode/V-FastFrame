@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.view.Window
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 /**
  * ========================================================

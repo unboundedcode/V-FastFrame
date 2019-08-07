@@ -9,7 +9,7 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.util.TypedValue
 import androidx.appcompat.widget.AppCompatImageView
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 import kotlin.math.max
 import kotlin.math.min
 import kotlin.math.sqrt

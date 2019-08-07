@@ -3,7 +3,7 @@ package kv.vension.fastframe.views
 import android.content.Context
 import android.util.AttributeSet
 import androidx.appcompat.widget.AppCompatImageView
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 /**
  * ========================================================
  * 作  者：Vension

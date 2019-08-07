@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.appcompat.widget.LinearLayoutCompat
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -18,26 +17,18 @@
             android:text="test fragment"
             android:gravity="center"/>
 
-    <!--<android.support.v7.widget.AppCompatImageView-->
-            <!--android:layout_width="@dimen/qb_px_200"-->
-            <!--android:layout_height="@dimen/qb_px_200"-->
-            <!--android:layout_gravity="center"-->
-            <!--android:scaleType="centerCrop"-->
-            <!--app:srcCompat="@drawable/img_user"/>-->
-
-
-    <!--<frame.vension.kotlin.views.QMUIRadiusImageView-->
-            <!--android:clickable="true"-->
-            <!--android:id="@+id/radiusImageView"-->
-            <!--android:layout_width="300dp"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:src="@drawable/img_user"-->
-            <!--android:layout_marginTop="10dp"-->
-            <!--app:qmui_border_color="@color/colorAppTheme"-->
-            <!--app:qmui_border_width="2dp"-->
-            <!--app:qmui_corner_radius="15dp"-->
-            <!--app:qmui_selected_border_color="@color/color_orange"-->
-            <!--app:qmui_selected_border_width="10dp"-->
-            <!--app:qmui_selected_mask_color="@color/red"/>-->
+    <kv.vension.fastframe.views.QMUIRadiusImageView
+            android:clickable="true"
+            android:id="@+id/radiusImageView"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/banner_1"
+            android:layout_marginTop="10dp"
+            app:qmui_border_color="@color/colorAppTheme"
+            app:qmui_border_width="2dp"
+            app:qmui_corner_radius="15dp"
+            app:qmui_selected_border_color="@color/color_orange"
+            app:qmui_selected_border_width="10dp"
+            app:qmui_selected_mask_color="@color/color_red"/>
 
 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -8,7 +8,7 @@ import android.view.KeyEvent
 import android.view.View
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatDialog
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 /**
  * ========================================================

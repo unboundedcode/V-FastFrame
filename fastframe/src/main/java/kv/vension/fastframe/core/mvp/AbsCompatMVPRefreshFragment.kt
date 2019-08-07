@@ -10,13 +10,11 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kv.vension.fastframe.R
 import kv.vension.fastframe.VFrame
-import kv.vension.fastframe.core.adapter.recy.decoration.SpaceItemDecoration
-import kv.vension.vframe.R
 import kv.vension.fastframe.ext.showToast
 import kv.vension.fastframe.utils.NetWorkUtil
 import kv.vension.fastframe.views.MultiStateLayout
-import org.jetbrains.anko.backgroundColor
 
 
 /**
@@ -92,7 +90,7 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
      * @return  默认 SpaceItemDecoration
      */
     open fun createRecyItemDecoration(): RecyclerView.ItemDecoration? {
-        return SpaceItemDecoration(activity!!)
+        return null
     }
     /**
      * adapter 的点击事件处理
@@ -145,7 +143,6 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
 
         //悬浮按钮点击监听
         mRefreshFloatingActionButton.run {
-            backgroundColor = getRefreshColor(0)
             setOnClickListener(this@AbsCompatMVPRefreshFragment)
         }
 

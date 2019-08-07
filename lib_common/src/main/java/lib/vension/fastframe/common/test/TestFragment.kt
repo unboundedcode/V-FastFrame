@@ -41,5 +41,4 @@ class TestFragment : Fragment() {
         tv_content.text = mTitle
     }
 
-
 }

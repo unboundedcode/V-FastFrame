@@ -24,8 +24,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    //banner
-    implementation 'com.youth.banner:banner:1.4.10'
     //tab
     implementation 'com.github.hackware1993:MagicIndicator:1.4.0'
     //SwipeToLoadLayout

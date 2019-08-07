@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.OrientationHelper
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import kotlin.math.roundToInt
 
 
 /**
@@ -68,7 +69,7 @@ class SpaceItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
 
             val params = child.layoutParams as RecyclerView.LayoutParams
 
-            val top = child.bottom + params.bottomMargin + Math.round(ViewCompat.getTranslationY(child))
+            val top = child.bottom + params.bottomMargin + ViewCompat.getTranslationY(child).roundToInt()
             val bottom = top + if (mDivider!!.intrinsicHeight <= 0) 1 else mDivider!!.intrinsicHeight
 
             mDivider?.let {

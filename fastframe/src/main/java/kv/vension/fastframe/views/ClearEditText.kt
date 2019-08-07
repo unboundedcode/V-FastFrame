@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.view.MotionEvent
 import android.view.View
 import android.widget.EditText
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 /**
  * ========================================================

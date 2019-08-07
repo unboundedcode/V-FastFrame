@@ -1,6 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <declare-styleable name="GridPager">
+        <!--竖直方向的间距-->
+        <attr name="kv_verticalSpacing" format="reference|dimension"></attr>
+        <!--icon 宽度-->
+        <attr name="kv_img_width" format="reference|dimension" />
+        <!--icon 高度-->
+        <attr name="kv_img_height" format="reference|dimension"></attr>
+        <!--文字颜色-->
+        <attr name="kv_text_color" format="color|reference"></attr>
+        <!--文字大小-->
+        <attr name="kv_text_size" format="reference|dimension"></attr>
+        <!--文字与icon的间距-->
+        <attr name="kv_imgText_margin" format="reference|dimension"></attr>
+        <!--行数-->
+        <attr name="kv_row_count" format="integer"></attr>
+        <!--列数-->
+        <attr name="kv_column_count" format="integer"></attr>
+        <!-- 是否显示默认指示器-->
+        <attr name="kv_show_default_indicator" format="boolean"></attr>
+
+        <!--指示点配置-->
+        <!-- 设置子控件显示的宽度 -->
+        <attr name="kv_indicator_width" format="reference|dimension" />
+        <!-- 设置子控件显示的高度 -->
+        <attr name="kv_indicator_height" format="reference|dimension"></attr>
+        <!-- 设置子控件之间的间距 -->
+        <attr name="kv_indicator_margin" format="reference|dimension"></attr>
+        <!-- 正常情况下显示的颜色 -->
+        <attr name="kv_indicator_normal_color" format="color|reference"></attr>
+        <!-- 选中的时候显示的颜色 -->
+        <attr name="kv_indicator_select_color" format="color|reference"></attr>
+        <!-- 子空间是否显示为圆形，默认为true，此时控件的大小为宽和高中的最小值 -->
+        <attr name="kv_indicator_is_circle" format="boolean"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="GridPagerIndicator">
+        <!-- 设置子控件显示的宽度 -->
+        <attr name="kv_child_width" format="dimension" />
+        <!-- 设置子控件显示的高度 -->
+        <attr name="kv_child_height" format="dimension"></attr>
+        <!-- 设置子控件之间的间距 -->
+        <attr name="kv_child_margin" format="dimension"></attr>
+        <!-- 子空间是否显示为圆形，默认为true，此时控件的大小为宽和高中的最小值 -->
+        <attr name="kv_is_circle" format="boolean"></attr>
+        <!-- 正常情况下显示的颜色 -->
+        <attr name="kv_normal_color" format="color|reference"></attr>
+        <!-- 选中的时候显示的颜色 -->
+        <attr name="kv_select_color" format="color|reference"></attr>
+    </declare-styleable>
+
     <!--流式布局-->
     <declare-styleable name="FlowLayout">
         <attr name="kv_max_select" format="integer" />

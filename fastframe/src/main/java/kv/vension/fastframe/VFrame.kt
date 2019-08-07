@@ -36,15 +36,9 @@ object VFrame {
         private set
     lateinit var mApplication: Context
         private set
-    var debug = false
-        private set
 
 
     fun init(application: Application) {
-        init(application,false)
-    }
-    fun init(application: Application, isDebug: Boolean) {
-        debug = isDebug
         mApplication = application
         mContext = application.applicationContext
         FileCache.init(application.applicationContext)
@@ -67,7 +61,7 @@ object VFrame {
         Logger.addLogAdapter(object : AndroidLogAdapter(formatStrategy) {
             override fun isLoggable(priority: Int, tag: String?): Boolean {
                 //DEBUG模式下不打印LOG
-                return debug
+                return BuildConfig.DEBUG
             }
         })
     }

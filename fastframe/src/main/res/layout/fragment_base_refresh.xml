@@ -5,7 +5,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
             android:id="@+id/refresh_SwipeRefreshLayout"
             android:layout_width="match_parent"
@@ -38,7 +37,7 @@
             app:elevation="6dp"
             app:fabSize="mini"
             app:pressedTranslationZ="10dp"
-            app:layout_behavior="kv.vension.vframe.kv.vension.fastframe.views.behavior.ScaleDownShowBehavior"/>
+            app:layout_behavior="kv.vension.fastframe.views.behavior.ScaleDownShowBehavior"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 

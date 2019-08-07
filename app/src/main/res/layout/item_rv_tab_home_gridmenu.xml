@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+              android:orientation="vertical"
+             xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="@color/colorWindowBackground"/>
+
+    <kv.vension.fastframe.views.gridpager.GridPager
+            android:id="@+id/gridPager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:kv_verticalSpacing="10dp"
+            app:kv_indicator_is_circle="false"
+            app:kv_indicator_width="15dp"
+            app:kv_indicator_height="2dp"/>
+
+</LinearLayout>

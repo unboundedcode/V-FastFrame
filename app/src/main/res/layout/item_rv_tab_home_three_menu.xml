@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical">
+
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="12dp"
+            android:background="@color/colorWindowBackground"/>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/qb_px_160"
+            android:padding="12dp"
+            android:orientation="horizontal">
+
+        <kv.vension.fastframe.views.ShapeImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/banner_1"
+                app:siv_shape_type="SHAPE_ROUND"
+                app:siv_show_border="false"
+                app:siv_left_top_radiusX="@dimen/qb_px_10"
+                app:siv_left_top_radiusY="@dimen/qb_px_10"
+                app:siv_left_bottom_radiusX="@dimen/qb_px_10"
+                app:siv_left_bottom_radiusY="@dimen/qb_px_10"/>
+
+        <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/qb_px_6"
+                android:orientation="vertical">
+
+            <kv.vension.fastframe.views.ShapeImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_2"
+                    app:siv_shape_type="SHAPE_ROUND"
+                    app:siv_show_border="false"
+                    app:siv_right_top_radiusX="@dimen/qb_px_10"
+                    app:siv_right_top_radiusY="@dimen/qb_px_10"/>
+
+            <kv.vension.fastframe.views.ShapeImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginTop="@dimen/qb_px_6"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/banner_4"
+                    app:siv_shape_type="SHAPE_ROUND"
+                    app:siv_show_border="false"
+                    app:siv_right_bottom_radiusX="@dimen/qb_px_10"
+                    app:siv_right_bottom_radiusY="@dimen/qb_px_10"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

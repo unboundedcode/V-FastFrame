@@ -144,7 +144,6 @@ class CourseMainActivity : AbsCompatMVPActivity<MainContract.View, MainPresenter
             numbers.clear()
             numbers.add(event.tagId)
             numbers.add(event.nextId)
-            Loge("onActivityResult-->main")
             mPresenter.getRegionTagTypeBean(numbers)
         }
     }

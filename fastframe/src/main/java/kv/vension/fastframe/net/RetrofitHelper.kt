@@ -1,6 +1,7 @@
 package kv.vension.fastframe.net
 
 import com.orhanobut.logger.Logger
+import kv.vension.fastframe.BuildConfig
 import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.net.cookies.CookieManager
 import kv.vension.fastframe.net.intercepter.HeaderInterceptor
@@ -81,7 +82,7 @@ object RetrofitHelper {
                 message -> Logger.i( "请求参数-->:$message")
         })
         //可以设置请求过滤的水平,body,basic,headers
-        if (VFrame.debug) {
+        if (BuildConfig.DEBUG) {
             httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
         } else {
             httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.NONE

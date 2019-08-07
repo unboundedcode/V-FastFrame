@@ -14,7 +14,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.DrawableRes
 import androidx.core.content.ContextCompat
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 
 /**

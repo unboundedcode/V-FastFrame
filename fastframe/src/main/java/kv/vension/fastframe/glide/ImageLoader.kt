@@ -8,9 +8,9 @@ import androidx.annotation.DrawableRes
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
 import com.bumptech.glide.request.RequestOptions
+import kv.vension.fastframe.R
 import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.utils.NetWorkUtil
-import kv.vension.vframe.R
 
 
 /**

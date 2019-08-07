@@ -12,7 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
 import kv.vension.fastframe.event.NetworkChangeEvent

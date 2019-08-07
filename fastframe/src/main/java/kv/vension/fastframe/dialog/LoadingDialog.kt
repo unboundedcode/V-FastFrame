@@ -5,7 +5,7 @@ import android.content.Context
 import android.content.DialogInterface
 import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatDialog
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 
 /**

@@ -13,7 +13,7 @@ import androidx.annotation.ColorInt
 import androidx.annotation.IntRange
 import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.drawerlayout.widget.DrawerLayout
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 
 /**

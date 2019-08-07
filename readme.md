@@ -33,6 +33,7 @@
 #### fastframe
 <a href="screenshots/fastframe_1.png"><img src="screenshots/fastframe_1.png" width="30%"/></a>
 <a href="screenshots/fastframe_2.png"><img src="screenshots/fastframe_2.png" width="30%"/></a>
+<a href="screenshots/fastframe_3.png"><img src="screenshots/fastframe_3.png" width="30%"/></a>
 
 #### wanAndroid
 <a href="screenshots/wan/wan_1.png"><img src="screenshots/wan/wan_1.png" width="30%"/></a>

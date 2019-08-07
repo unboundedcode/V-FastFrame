@@ -13,7 +13,7 @@ import com.vension.fastframe.module_news.bean.ProfileCareModel
 import com.vension.fastframe.module_news.bean.ProfileServiceGridBean
 import kv.vension.fastframe.ext.showToast
 import kv.vension.fastframe.glide.GlideApp
-import kv.vension.fastframe.views.VGridView
+import kv.vension.fastframe.views.AtMostGridView
 import java.util.*
 
 /**
@@ -119,7 +119,7 @@ class ProfileAdapter(private val context: Context, data: List<ProfileCareModel.P
         val profileServiceGridBeans = ArrayList<ProfileServiceGridBean>()
         if (profileServiceGridBeans != null) profileServiceGridBeans.clear()
         val civTitle = holder.getView(R.id.civTitle) as AppCompatImageView
-        val mySrviceGrid = holder.getView(R.id.mySrviceGrid) as VGridView
+        val mySrviceGrid = holder.getView(R.id.mySrviceGrid) as AtMostGridView
         if (data != null) {
             GlideApp.with(context).load(if (data!!.title_url == null) "" else data!!.title_url).into(civTitle)
             if (data!!.item_list != null) {

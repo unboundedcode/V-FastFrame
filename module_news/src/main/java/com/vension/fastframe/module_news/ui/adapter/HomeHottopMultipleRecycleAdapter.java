@@ -445,7 +445,7 @@ public class HomeHottopMultipleRecycleAdapter extends
         String[] titles = context.getResources().getStringArray(R.array.menu9_title);
         for (int i = 0; i < titles.length; i++) {
             //动态获取资源ID，第一个参数是资源名，第二个参数是资源类型例如drawable，string等，第三个参数包名
-            int imageId = context.getResources().getIdentifier("ic_category_" + i, "mipmap", context.getPackageName());
+            int imageId = context.getResources().getIdentifier("ic_category_" + i, "drawable", context.getPackageName());
             mDatas.add(new Menu9Model(titles[i], imageId));
         }
     }

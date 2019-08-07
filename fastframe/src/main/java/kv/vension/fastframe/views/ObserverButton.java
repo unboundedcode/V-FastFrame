@@ -9,7 +9,7 @@ import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.widget.EditText;
 import androidx.appcompat.widget.AppCompatTextView;
-import kv.vension.vframe.R;
+import kv.vension.fastframe.R;
 
 import java.util.ArrayList;
 import java.util.List;

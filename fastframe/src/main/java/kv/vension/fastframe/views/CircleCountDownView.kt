@@ -11,7 +11,7 @@ import android.util.Log
 import android.util.TypedValue
 import android.view.View
 import android.view.animation.LinearInterpolator
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 /**
  * ========================================================

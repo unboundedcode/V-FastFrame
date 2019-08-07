@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.KeyEvent
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 
 /**

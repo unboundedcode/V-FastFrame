@@ -6,7 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 /**
  * ========================================================

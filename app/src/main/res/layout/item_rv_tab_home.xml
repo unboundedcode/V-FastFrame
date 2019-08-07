@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="horizontal"
+              android:padding="@dimen/qb_px_12"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="@dimen/qb_px_150"
+            android:layout_height="@dimen/qb_px_100"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/banner_5"/>
+
+    <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/qb_px_10"
+            android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="反馈建行阿嘎和港口"
+                android:textColor="@color/colorAppText"
+                android:textSize="@dimen/sp_18"/>
+        <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/qb_px_10"
+                android:maxLines="3"
+                android:ellipsize="end"
+                android:lineSpacingExtra="@dimen/qb_px_3"
+                android:text="反馈建行阿嘎和港口公交加分加分分离开旧爱of叫我姐埃及附件为if就按解放军of就"
+                android:textColor="@color/color_gray"
+                android:textSize="@dimen/sp_14"/>
+    </LinearLayout>
+
+</LinearLayout>

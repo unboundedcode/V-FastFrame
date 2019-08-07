@@ -6,14 +6,13 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentTransaction
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.google.android.material.navigation.NavigationView
 import com.vension.fastframe.app.R
+import com.vension.fastframe.app.ui.tab1.TabFragment_1
 import com.wuhenzhizao.titlebar.statusbar.StatusBarUtils
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_toolbar_main.*
@@ -37,13 +36,16 @@ import lib.vension.fastframe.common.test.TestRefreshFragment
 @Route(path = RouterConfig.PATH_APP_MAINACTIVITY)
 class MainActivity : AbsCompatActivity(){
 
-    private var mTabFragment_1: TestFragment? = null
-    private var mTabFragment_2: TestFragment? = null
-    private var mTabFragment_3: TestFragment? = null
-    private var mTabFragment_4: TestFragment? = null
-
+    private val titles = arrayOf("首页", "热门", "发现", "我的")
+    private val mFragments = mutableListOf(
+    TabFragment_1.newInstance(),
+    TestFragment.getInstance("热门"),
+    TestFragment.getInstance("发现"),
+    TestFragment.getInstance("我的")
+    )
     //默认为0
-    private var mIndex = 0
+    private var mIndex = -1
+
 
     private val mNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
@@ -134,14 +136,13 @@ class MainActivity : AbsCompatActivity(){
             // BottomNavigationViewHelper.disableShiftMode(this)
             labelVisibilityMode = LabelVisibilityMode.LABEL_VISIBILITY_LABELED
             setOnNavigationItemSelectedListener(mNavigationItemSelectedListener)
-            menu.getItem(mIndex).isChecked = true
+            menu.getItem(0).isChecked = true
         }
 
         navigationView_left.run {
             setNavigationItemSelectedListener(onDrawerNavigationItemSelectedListener)
         }
-
-        switchFragment(mIndex)
+        switchFragment(0)
     }
 
     /**
@@ -149,72 +150,22 @@ class MainActivity : AbsCompatActivity(){
      * @param position 下标
      */
     private fun switchFragment(position: Int) {
-        val transaction = supportFragmentManager.beginTransaction()
-        hideFragments(transaction)
-        mIndex = position
-        when (position) {
-            0 ->{
-                toolbar_home.title = getString(R.string.menu_tab_1)
-                mTabFragment_1?.let {
-                    transaction.show(it)
-                } ?: TestFragment.getInstance("首页").let {
-                    mTabFragment_1 = it
-                    transaction.add(R.id.container_main, it, "home")
+        toolbar_home.title = titles[position]
+        //特别注意，fragment重叠问题，mCurrentPos是上一个fragment,index是当前fragment
+        supportFragmentManager.beginTransaction()
+            .apply {
+                if (mIndex != -1){
+                    //隐藏当前Fragment
+                    hide(mFragments[mIndex])
                 }
-            }
-            1 -> {
-                toolbar_home.title = getString(R.string.menu_tab_2)
-                mTabFragment_2?.let {
-                    transaction.show(it)
-                } ?: TestFragment.getInstance("热门").let {
-                    mTabFragment_2 = it
-                    transaction.add(R.id.container_main, it, "hot")
+                if (!mFragments[position].isAdded) {
+                    add(R.id.container_main, mFragments[position])
                 }
+                show(mFragments[position]).commit()
+                mIndex = position
             }
-            2 -> {
-                toolbar_home.title = getString(R.string.menu_tab_3)
-                mTabFragment_3?.let {
-                    transaction.show(it)
-                } ?: TestFragment.getInstance("发现").let {
-                    mTabFragment_3 = it
-                    transaction.add(R.id.container_main, it, "discover")
-                }
-            }
-            3 -> {
-                toolbar_home.title = getString(R.string.menu_tab_4)
-                mTabFragment_4?.let {
-                    transaction.show(it)
-                } ?: TestFragment.getInstance("我的").let {
-                    mTabFragment_4 = it
-                    transaction.add(R.id.container_main, it, "mine")
-                }
-            }
-            else -> {
-                transaction.add(R.id.container_main, Fragment(), "test")
-            }
-        }
-        //
-        /*
-        *  如果你需要同步的操作, 并且你不需要加到back stack里, 使用commitNow().
-        *  如果你操作很多transactions, 并且不需要同步, 或者你需要把transactions加在back stack里, 那就使用commit().
-        *  如果你希望在某一个指定的点, 确保所有的transactions都被执行, 那么使用executePendingTransactions().
-        *
-        */
-        transaction.commit()
-//        transaction.commitAllowingStateLoss()
     }
 
-
-    /**
-     * 隐藏所有的Fragment
-     * @param transaction transaction
-     */
-    private fun hideFragments(transaction: FragmentTransaction) {
-        mTabFragment_1?.let { transaction.hide(it) }
-        mTabFragment_2?.let { transaction.hide(it) }
-        mTabFragment_3?.let { transaction.hide(it) }
-        mTabFragment_4?.let { transaction.hide(it) }
-    }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.navigation_bottom, menu)
@@ -234,13 +185,6 @@ class MainActivity : AbsCompatActivity(){
         return true
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        mTabFragment_1 = null
-        mTabFragment_2 = null
-        mTabFragment_3 = null
-        mTabFragment_4 = null
-    }
 
     private var exitTime: Long = 0
     override fun onBackPressed() {
@@ -260,28 +204,5 @@ class MainActivity : AbsCompatActivity(){
         //TODO 暂时解决播放视频返回时底部Tab上移bug,待优化
         StatusBarUtils.transparentStatusBar(window)//代码设置透明状态栏
     }
-
-    override fun recreate() {
-        try {
-            val fragmentTransaction = supportFragmentManager.beginTransaction()
-            if (mTabFragment_1 != null) {
-                fragmentTransaction.remove(mTabFragment_1!!)
-            }
-            if (mTabFragment_2 != null) {
-                fragmentTransaction.remove(mTabFragment_2!!)
-            }
-            if (mTabFragment_3 != null) {
-                fragmentTransaction.remove(mTabFragment_3!!)
-            }
-            if (mTabFragment_4 != null) {
-                fragmentTransaction.remove(mTabFragment_4!!)
-            }
-            fragmentTransaction.commitAllowingStateLoss()
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
-        super.recreate()
-    }
-
 
 }

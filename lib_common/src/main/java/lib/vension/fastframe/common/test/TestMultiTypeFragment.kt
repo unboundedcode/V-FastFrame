@@ -41,9 +41,6 @@ class TestMultiTypeFragment : AbsCompatMVPRefreshFragment<TestBean, TestRefreshM
         return TestRefreshMultiPresenter()
     }
 
-    override fun addItemClickListener(mAdapter: BaseQuickAdapter<TestBean, BaseViewHolder>) {
-    }
-
     override fun onTargetRequestApi(isRefresh: Boolean, page: Int, limit: Int) {
         mPresenter?.getTestMultiDatas()
     }

@@ -8,7 +8,7 @@ import android.util.AttributeSet
 import android.view.Gravity
 import androidx.annotation.ColorInt
 import androidx.appcompat.widget.AppCompatTextView
-import kv.vension.vframe.R
+import kv.vension.fastframe.R
 
 
 /**
