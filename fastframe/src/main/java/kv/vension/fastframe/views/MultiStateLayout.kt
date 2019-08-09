@@ -110,7 +110,7 @@ class MultiStateLayout : FrameLayout{
      *
      * @param onRetryClickListener 重试点击事件
      */
-    fun setOnRetryClickListener(onRetryClickListener: View.OnClickListener) {
+    fun setOnRetryClickListener(onRetryClickListener: OnClickListener) {
         this.mOnRetryClickListener = onRetryClickListener
     }
 
@@ -141,7 +141,7 @@ class MultiStateLayout : FrameLayout{
         mViewStatus = STATUS_EMPTY
         if (null == mEmptyView) {
             mEmptyView = view
-            val emptyRetryView = mEmptyView?.findViewById<View>(R.id.empty_retry_view)
+            val emptyRetryView = mEmptyView?.findViewById<View>(R.id.empty_view)
             if (null != mOnRetryClickListener && null != emptyRetryView) {
                 emptyRetryView.setOnClickListener(mOnRetryClickListener)
             }
@@ -178,7 +178,7 @@ class MultiStateLayout : FrameLayout{
         mViewStatus = STATUS_ERROR
         if (null == mErrorView) {
             mErrorView = view
-            val errorRetryView = mErrorView?.findViewById<View>(R.id.error_retry_view)
+            val errorRetryView = mErrorView?.findViewById<View>(R.id.error_view)
             if (null != mOnRetryClickListener && null != errorRetryView) {
                 errorRetryView.setOnClickListener(mOnRetryClickListener)
             }
@@ -249,7 +249,7 @@ class MultiStateLayout : FrameLayout{
         mViewStatus = STATUS_NO_NETWORK
         if (null == mNoNetworkView) {
             mNoNetworkView = view
-            val noNetworkRetryView = mNoNetworkView?.findViewById<View>(R.id.no_network_retry_view)
+            val noNetworkRetryView = mNoNetworkView?.findViewById<View>(R.id.no_network_view)
             if (null != mOnRetryClickListener && null != noNetworkRetryView) {
                 noNetworkRetryView.setOnClickListener(mOnRetryClickListener)
             }

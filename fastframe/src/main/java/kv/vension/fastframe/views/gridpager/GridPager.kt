@@ -339,6 +339,8 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
         viewPager!!.adapter = GridAdapter()
         viewPager!!.addOnPageChangeListener(this)
+        viewPager!!.currentItem = 0
+
         // 设置指示点
         if (mIsShowDefaultIndicator) {
             mGridPagerIndicator!!.visibility = View.VISIBLE

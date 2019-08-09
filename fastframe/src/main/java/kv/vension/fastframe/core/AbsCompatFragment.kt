@@ -15,8 +15,10 @@ import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kv.vension.fastframe.R
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
-import kv.vension.fastframe.event.NetworkChangeEvent
+import kv.vension.fastframe.event.BaseEvent
 import kv.vension.fastframe.ext.Logi
+import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.utils.PreferenceUtil
 import kv.vension.fastframe.views.MultiStateLayout
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
@@ -83,6 +85,10 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
      * butterknife Unbinder
      */
 //    private lateinit var mUnBinder: Unbinder
+    /**
+     * 缓存上一次的网络状态
+     */
+    private var hasNetwork: Boolean by PreferenceUtil("has_network", true)
     /**
      * LoadingDialog
      */
@@ -242,18 +248,18 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
      */
     //
     private fun onFragmentFirst() {
-        Logi(TAG + "--首次可见")
+        Logi("$TAG--首次可见")
         lazyLoadData()
     }
 
     //Fragemnet可见的方法
     open fun onFragmentVisble() {//子Fragment调用此方法，执行可见操作
-        Logi(TAG + "--可见")
+        Logi("$TAG--可见")
     }
 
     //Fragemnet不可见的方法
     open fun onFragmentInVisible() {
-        Logi(TAG + "--不可见")
+        Logi("$TAG--不可见")
     }
 
 
@@ -282,7 +288,7 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
     }
 
 
-    open val mRetryClickListener: View.OnClickListener = View.OnClickListener {
+    private val mRetryClickListener: View.OnClickListener = View.OnClickListener {
         lazyLoadData()
     }
 
@@ -326,16 +332,19 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         }
     }
 
-
     /**
      * 网络状态变化事件
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onNetworkChangeEvent(event: NetworkChangeEvent) {
-        if (event.isConnected) {
-            doReConnected()
+    fun <T> onEvent(event: BaseEvent<T>) {
+        if(!hasNetwork){
+            if (event.isNetConnected) {
+                doReConnected()
+            }
         }
+        hasNetwork = event.isNetConnected
     }
+
 
     /** ====================== implements start ======================= */
 

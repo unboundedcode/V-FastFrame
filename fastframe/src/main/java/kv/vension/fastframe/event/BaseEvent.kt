@@ -19,9 +19,8 @@ class BaseEvent<T> {
     var code: Int = 0
     var msg: String? = null
     var data: T? = null
-    var isCollect: Boolean = false
+    var isNetConnected: Boolean = true //网络是否连接
+    var isCollect: Boolean = false //是否收藏
     var id: Int = 0
-    var isIngored: Boolean = false
-
 
 }

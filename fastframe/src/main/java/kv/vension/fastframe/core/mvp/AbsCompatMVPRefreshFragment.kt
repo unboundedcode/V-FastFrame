@@ -14,7 +14,6 @@ import kv.vension.fastframe.R
 import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.ext.showToast
 import kv.vension.fastframe.utils.NetWorkUtil
-import kv.vension.fastframe.views.MultiStateLayout
 
 
 /**
@@ -40,7 +39,6 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
     SwipeRefreshLayout.OnRefreshListener, BaseQuickAdapter.RequestLoadMoreListener, IViewRefresh<data> {
 
     private lateinit var mRefreshSwipeRefreshLayout: SwipeRefreshLayout
-    private lateinit var mRefreshMultiStateLayout: MultiStateLayout
     private lateinit var mRefreshRecyclerView: RecyclerView
     private lateinit var mRefreshFloatingActionButton: FloatingActionButton
 //    private val mRefreshSwipeRefreshLayout: SwipeRefreshLayout by bindView(R.id.refresh_SwipeRefreshLayout)
@@ -119,11 +117,9 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
         //initViewAndData 实现了Presenter的attachView方法,一定要super
         //设置多页面布局
         mRefreshSwipeRefreshLayout = findViewById(R.id.refresh_SwipeRefreshLayout)
-        mRefreshMultiStateLayout = findViewById(R.id.refresh_MultiStateLayout)
+        fraMultiStateLayout = findViewById(R.id.refresh_MultiStateLayout)
         mRefreshRecyclerView = findViewById(R.id.refresh_RecyclerView)
         mRefreshFloatingActionButton = findViewById(R.id.refresh_fab_top)
-
-        fraMultiStateLayout = mRefreshMultiStateLayout
 
         //初始化刷新控件
         mRefreshSwipeRefreshLayout.run {
@@ -168,15 +164,9 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
         },300)
     }
 
-
-    /**
-     * 因为showEmpty()或showContent()在下面{@link setRefreshData() @link setMoreData()}
-     * 中已经实现，故这里需要重写{@link showContent()}去掉里面的super()引用
-     * 这是为了解决用RxJava 处理网络数据回调时onNext()已经回调了结果，但是onComplete()最后执行
-     * 导致设置完数据之后已经调用showEmpty()后有执行了showContent(),
-     * 使得最终空布局没显示出来
-     */
     override fun showContent() {
+        super.showContent()
+        stopRefresh(true)
     }
 
     override fun showEmpty() {
@@ -201,10 +191,7 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
         mRefreshFloatingActionButton.visibility = View.INVISIBLE
         if (isCheckNet()){
             if (!NetWorkUtil.isNetworkAvailable()){
-                fraMultiStateLayout?.let {
-                    it.showNoNetwork()
-                }
-                stopRefresh(true)
+                showNoNetwork()
                 return
             }
         }
@@ -239,31 +226,30 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
 
     override fun setRefreshData(listData: MutableList<data>, headers: List<View>?, footers: List<View>?) {
         //设置刷新数据
-        stopRefresh(true)
         mRecyAdapter.run {
             setEnableLoadMore(true)
             removeAllHeaderView()
             removeAllFooterView()
 
-            //添加头部
-            if (!headers.isNullOrEmpty()){
-                for (view in headers) {
-                    addHeaderView(view)
-                }
-            }
-
-            //添加尾部
-            if (!footers.isNullOrEmpty()){
-                for (view in footers) {
-                    addFooterView(view)
-                }
-            }
-
             //添加内容
             if (headers.isNullOrEmpty() && footers.isNullOrEmpty() && listData.isNullOrEmpty()){
-                fraMultiStateLayout?.showEmpty()
+               showEmpty()
             } else {
-                fraMultiStateLayout?.showContent()
+                showContent()
+
+                //添加头部
+                if (!headers.isNullOrEmpty()){
+                    for (view in headers) {
+                        addHeaderView(view)
+                    }
+                }
+
+                //添加尾部
+                if (!footers.isNullOrEmpty()){
+                    for (view in footers) {
+                        addFooterView(view)
+                    }
+                }
                 setNewData(listData)
                 val size = listData.size
                 if (size < limit) {
@@ -277,8 +263,7 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
 
     override fun setMoreData(listData: MutableList<data>) {
         //设置下一页数据
-        stopRefresh(true)
-        fraMultiStateLayout?.showContent()
+        showContent()
         if (listData.isNullOrEmpty()) {
             showToast("没有更多了")
             mRecyAdapter.loadMoreEnd()//没有更多了
@@ -336,10 +321,11 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
     }
 
     fun getSwipeRefreshLayout(): SwipeRefreshLayout {
-         return mRefreshSwipeRefreshLayout
+        return mRefreshSwipeRefreshLayout
     }
+
     fun getRecyclerView(): RecyclerView {
-         return mRefreshRecyclerView
+        return mRefreshRecyclerView
     }
 
 }

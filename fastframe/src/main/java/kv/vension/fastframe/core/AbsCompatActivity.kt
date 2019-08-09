@@ -1,9 +1,7 @@
 package kv.vension.fastframe.core
 
-import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
-import android.graphics.PixelFormat
 import android.os.Bundle
 import android.view.*
 import android.widget.FrameLayout
@@ -23,7 +21,7 @@ import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kv.vension.fastframe.R
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
-import kv.vension.fastframe.event.NetworkChangeEvent
+import kv.vension.fastframe.event.BaseEvent
 import kv.vension.fastframe.receiver.NetworkChangeReceiver
 import kv.vension.fastframe.utils.KeyBoardUtil
 import kv.vension.fastframe.utils.PreferenceUtil
@@ -58,10 +56,6 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
      */
     protected lateinit var mRxPermissions: RxPermissions
     /**
-     * butterknife Unbinder
-     */
-//    private var mUnBinder: Unbinder? = null
-    /**
      * 缓存上一次的网络状态
      */
     private var hasNetwork: Boolean by PreferenceUtil("has_network", true)
@@ -77,16 +71,9 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
     /**
      * 重连点击监听
      */
-    open val mRetryClickListener: View.OnClickListener = View.OnClickListener {
+    private val mRetryClickListener: View.OnClickListener = View.OnClickListener {
         requestApi()
     }
-
-    /**
-     * 提示View
-     */
-    protected lateinit var mTipView: View
-    protected lateinit var mWindowManager: WindowManager
-    protected lateinit var mLayoutParams: WindowManager.LayoutParams
 
 
     override fun onAttachedToWindow() {
@@ -99,7 +86,6 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
         super.onCreate(savedInstanceState)
         try{
             this.initContentView(attachLayoutRes())//加载布局
-//            mUnBinder = ButterKnife.bind(this)
             mRxPermissions = RxPermissions(this)
             //设置ToolBar
             if (showToolBar()){
@@ -119,7 +105,6 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
                 EventBus.getDefault().register(this)
             }
 
-            initTipView()
             //初始化view和数据
             initViewAndData(savedInstanceState)
             //请求网络数据
@@ -181,7 +166,6 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
             mNetworkChangeReceiver = null
         }
         rootView = null
-//        mUnBinder!!.unbind()
         if(mLoadingDialog.isShowing){
             mLoadingDialog.dismiss()
         }
@@ -208,13 +192,6 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
             supportFragmentManager.popBackStack()
         }
         ActivityCompat.finishAfterTransition(this)
-    }
-
-    override fun finish() {
-        super.finish()
-        if (mTipView != null && mTipView.parent != null) {
-            mWindowManager.removeView(mTipView)
-        }
     }
 
     override fun dispatchTouchEvent(ev: MotionEvent?): Boolean {
@@ -252,24 +229,6 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
     }
 
     /** ============================= 私有方法 ===============================*/
-
-    /**
-     * 初始化 TipView
-     */
-    private fun initTipView() {
-        mTipView = layoutInflater.inflate(R.layout.layout_network_tip, null)
-        mWindowManager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        mLayoutParams = WindowManager.LayoutParams(
-            ViewGroup.LayoutParams.MATCH_PARENT,
-            ViewGroup.LayoutParams.WRAP_CONTENT,
-            WindowManager.LayoutParams.TYPE_APPLICATION,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE or WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE,
-            PixelFormat.TRANSLUCENT)
-        mLayoutParams.gravity = Gravity.TOP
-        mLayoutParams.x = 0
-        mLayoutParams.y = 0
-        mLayoutParams.windowAnimations = R.style.anim_float_view // add animations
-    }
 
     /**
      * 获取自定义toolbar 资源id 默认为-1，
@@ -313,29 +272,12 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
 
 
     /**
-     * Network ChangeEvent
+     * 网络状态变化事件
      */
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun onNetworkChangeEvent(event: NetworkChangeEvent) {
-        hasNetwork = event.isConnected
-        checkNetwork(event.isConnected)
-    }
+    fun <T> onEvent(event: BaseEvent<T>) {
 
-    private fun checkNetwork(isConnected: Boolean) {
-        if (enableNetworkTip()) {
-            if (isConnected) {
-                doReConnected()
-                if (mTipView != null && mTipView.parent != null) {
-                    mWindowManager.removeView(mTipView)
-                }
-            } else {
-                if (mTipView.parent == null) {
-                    mWindowManager.addView(mTipView, mLayoutParams)
-                }
-            }
-        }
     }
-
 
 
     /** ====================== implements start ======================= */
