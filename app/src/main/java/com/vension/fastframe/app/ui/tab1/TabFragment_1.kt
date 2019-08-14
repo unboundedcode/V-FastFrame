@@ -1,11 +1,9 @@
 package com.vension.fastframe.app.ui.tab1
 
-import androidx.recyclerview.widget.RecyclerView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import lib.vension.fastframe.common.test.TestBean
-import java.util.*
 
 /**
  * ===================================================================
@@ -32,12 +30,9 @@ class TabFragment_1 : AbsCompatMVPRefreshFragment<TestBean, TabContract_1.View, 
         return false
     }
 
-    override fun createRecyItemDecoration(): RecyclerView.ItemDecoration? {
-        return null
-    }
-
     override fun createRecyAdapter(): BaseQuickAdapter<TestBean, BaseViewHolder> {
-        return TabAdapter_1(ArrayList())
+        val lists = mutableListOf<TestBean>()
+        return TabAdapter_1(lists)
     }
 
     override fun onTargetRequestApi(isRefresh: Boolean, page: Int, limit: Int) {

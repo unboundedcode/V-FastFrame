@@ -4,19 +4,19 @@ import android.graphics.Color
 import android.view.Gravity
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import android.widget.ViewFlipper
 import androidx.core.content.ContextCompat
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.vension.fastframe.app.R
-import com.vension.fastframe.module_news.utils.GlideImageLoader
 import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
 import com.youth.banner.listener.OnBannerListener
-import kv.vension.fastframe.VFrame.getResources
 import kv.vension.fastframe.ext.showToast
 import kv.vension.fastframe.views.gridpager.GridPager
 import lib.vension.fastframe.common.test.TestBean
+import lib.vension.fastframe.common.utils.GlideImageLoader
 
 
 /**
@@ -32,22 +32,22 @@ class TabAdapter_1(data: MutableList<TestBean>?) : BaseMultiItemQuickAdapter<Tes
     init {
         addItemType(0, R.layout.item_rv_tab_home_banner)
         addItemType(1, R.layout.item_rv_tab_home_viewfilpper)
-        addItemType(2, R.layout.item_rv_tab_home_gridmenu)
+        addItemType(2, R.layout.item_rv_tab_home_gridpager_menu)
         addItemType(3, R.layout.item_rv_tab_home_three_menu)
         addItemType(5, R.layout.item_rv_tab_home)
     }
 
-    override fun convert(helper: BaseViewHolder, item: TestBean?) {
+    override fun convert(helper: BaseViewHolder, item: TestBean) {
         val adapterPosition = helper.adapterPosition
         when (item?.itemType) {
             0 -> {//banner
-                bindTypeBanner(helper, item, adapterPosition)
+                bindBanner(helper, item, adapterPosition)
             }
             1 -> {//viewFilpper
                 bindTypeViewFilpper(helper, item, adapterPosition)
             }
             2 -> {//网格菜单
-                bindTypeGridMenu(helper, item, adapterPosition)
+                bindGridPager(helper, item, adapterPosition)
             }
             3 -> {//3图菜单
 
@@ -59,16 +59,13 @@ class TabAdapter_1(data: MutableList<TestBean>?) : BaseMultiItemQuickAdapter<Tes
     }
 
 
-    /**
-     * banner 绑定
-     */
-    private fun bindTypeBanner(helper: BaseViewHolder, item: TestBean, adapterPosition: Int) {
+    private fun bindBanner(helper: BaseViewHolder, item: TestBean, pos: Int) {
         val mBanner = helper.getView<Banner>(R.id.homeBanner)
-        val banners = arrayListOf(R.drawable.banner_1,R.drawable.banner_2,R.drawable.banner_3,R.drawable.banner_4,R.drawable.banner_5)
+        val banners = listOf(R.drawable.banner_1,R.drawable.banner_2,R.drawable.banner_3,R.drawable.banner_4,R.drawable.banner_5)
         //默认是NUM_INDICATOR_TITLE
-        mBanner.setImages(banners as MutableList<*>?)
+        mBanner.setImages(banners)
             .setImageLoader(GlideImageLoader())
-            .setOnBannerListener(object : OnBannerListener{
+            .setOnBannerListener(object : OnBannerListener {
                 override fun OnBannerClick(position: Int) {
                     showToast("点击了第" + (position + 1) + "张banner")
                 }
@@ -95,14 +92,15 @@ class TabAdapter_1(data: MutableList<TestBean>?) : BaseMultiItemQuickAdapter<Tes
             } else {
                 textView.setTextColor(ContextCompat.getColor(mContext, R.color.color_666666))
             }
+            textView.setOnClickListener {
+                showToast("str")
+            }
             viewFlipper.addView(textView)
         }
     }
 
-    /**
-     * gridPage
-     */
-    private fun bindTypeGridMenu(helper: BaseViewHolder, item: TestBean, adapterPosition: Int) {
+    private fun bindGridPager(helper: BaseViewHolder, item: TestBean, pos: Int) {
+        val gridPager = helper.getView<GridPager>(R.id.gridPager)
         val titles = arrayOf(
             "美食",
             "电影",
@@ -139,25 +137,34 @@ class TabAdapter_1(data: MutableList<TestBean>?) : BaseMultiItemQuickAdapter<Tes
             "结婚",
             "全部分配"
         )
-
-        val mGridPager = helper.getView<GridPager>(R.id.gridPager)
-        mGridPager
+        val iconS = IntArray(titles.size)
+        for (i in titles.indices) {
+            //动态获取资源ID，第一个参数是资源名，第二个参数是资源类型例如drawable，string等，第三个参数包名
+            val imageId = mContext.resources.getIdentifier("ic_category_$i", "drawable", mContext.packageName)
+            iconS[i] = imageId
+        }
+        gridPager
             .setDataAllCount(titles.size)
-            .setItemBindDataListener(object : GridPager.ItemBindDataListener {
-                override fun bindData(imageView: ImageView?, textView: TextView?, position: Int) {
+            .setItemBindDataListener(object : GridPager.ItemBindDataListener{
+                override fun bindData(imageView: ImageView, textView: TextView, position: Int) {
                     // 自己进行数据的绑定，灵活度更高，不受任何限制
-                    val imageId = getResources().getIdentifier("ic_category_$position", "drawable", mContext.packageName)
-                    imageView!!.setImageResource(imageId)
+                    imageView!!.setImageResource(iconS[position])
                     textView!!.text = titles[position]
                 }
+
             })
-            // Item点击
-            .setGridItemClickListener(object : GridPager.GridItemClickListener {
+            .setGridItemClickListener(object : GridPager.GridItemClickListener{
                 override fun onItemClick(position: Int) {
-                    showToast("点击了" + titles[position])
+                    Toast.makeText(
+                        mContext,
+                        "点击了" + titles[position],
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
+
             })
             .show()
     }
+
 
 }

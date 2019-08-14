@@ -8,8 +8,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.vension.fastframe.module_news.R;
 import com.vension.fastframe.module_news.bean.HomeTophotIndex;
-import com.vension.fastframe.module_news.utils.GlideImageLoader;
 import com.vension.fastframe.module_news.utils.ToastUitl;
+import lib.vension.fastframe.common.utils.GlideImageLoader;
 
 import java.util.List;
 

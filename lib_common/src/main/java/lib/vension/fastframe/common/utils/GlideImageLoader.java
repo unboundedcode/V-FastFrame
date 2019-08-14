@@ -1,11 +1,11 @@
-package com.vension.fastframe.module_news.utils;
+package lib.vension.fastframe.common.utils;
 
 import android.content.Context;
 import android.widget.ImageView;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.vension.fastframe.module_news.R;
 import com.youth.banner.loader.ImageLoader;
 import kv.vension.fastframe.glide.GlideApp;
+import lib.vension.fastframe.common.R;
 
 /**
  * author：JSYL-DCL on 2017/9/21

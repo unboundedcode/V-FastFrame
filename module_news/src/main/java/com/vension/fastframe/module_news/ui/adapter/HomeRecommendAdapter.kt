@@ -21,7 +21,6 @@ import com.vension.fastframe.module_news.bean.Menu9Model
 import com.vension.fastframe.module_news.ui.fragment.HotNewsBestFragment
 import com.vension.fastframe.module_news.ui.fragment.HotNewsDetailFragment
 import com.vension.fastframe.module_news.utils.DateTimeUtils
-import com.vension.fastframe.module_news.utils.GlideImageLoader
 import com.vension.fastframe.module_news.utils.ToastUitl
 import com.vension.fastframe.module_news.widget.PulToLeftViewGroup
 import com.vension.fastframe.module_news.widget.UpDownViewSwitcher
@@ -32,6 +31,7 @@ import com.youth.banner.transformer.*
 import kv.vension.fastframe.core.AbsCompatFragment
 import kv.vension.fastframe.glide.GlideApp
 import kv.vension.fastframe.views.ShapeImageView
+import lib.vension.fastframe.common.utils.GlideImageLoader
 import java.util.*
 import kotlin.collections.LinkedHashMap
 import kotlin.math.ceil

@@ -17,17 +17,17 @@ class TabPresenter_1 : AbsPresenter<TabContract_1.View>(),TabContract_1.Presente
     override fun getHomeDatas() {
         mView?.showLoading()
         Handler().postDelayed({
-            var list :MutableList<TestBean> = ArrayList()
-            list.add(TestBean(0,"I am test banners"))
-            list.add(TestBean(1,"I am test viewFlipper"))
-            list.add(TestBean(2,"I am test gridMenu"))
-            list.add(TestBean(3,"I am test threeMenu"))
-            list.add(TestBean(5,"I am test listItem"))
-            list.add(TestBean(5,"I am test listItem"))
-            list.add(TestBean(5,"I am test listItem"))
-            list.add(TestBean(5,"I am test listItem"))
-            list.add(TestBean(5,"I am test listItem"))
-            mView?.setHomeDatas(list)
+            var lists :MutableList<TestBean> = ArrayList()
+            lists.add(TestBean(0,"I am test banners"))
+            lists.add(TestBean(1,"I am test viewFlipper"))
+            lists.add(TestBean(2,"I am test gridPagerMenu"))
+            lists.add(TestBean(3,"I am test threeMenu"))
+            lists.add(TestBean(5,"I am test listItem"))
+            lists.add(TestBean(5,"I am test listItem"))
+            lists.add(TestBean(5,"I am test listItem"))
+            lists.add(TestBean(5,"I am test listItem"))
+            lists.add(TestBean(5,"I am test listItem"))
+            mView?.setHomeDatas(lists)
         }, 2000)
     }
 }

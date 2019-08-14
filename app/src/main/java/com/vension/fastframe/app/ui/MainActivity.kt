@@ -36,14 +36,13 @@ import lib.vension.fastframe.common.test.TestRefreshFragment
 @Route(path = RouterConfig.PATH_APP_MAINACTIVITY)
 class MainActivity : AbsCompatActivity(){
 
-    private val titles = arrayOf("首页", "热门", "发现", "我的")
-    private val mFragments = mutableListOf(
-    TabFragment_1.newInstance(),
-    TestFragment.getInstance("热门"),
-    TestFragment.getInstance("发现"),
-    TestFragment.getInstance("我的")
+    private val titles = listOf("首页", "热门", "发现", "我的")
+    private val mFragments = listOf(
+        TabFragment_1.newInstance(),
+        TestFragment.getInstance("热门"),
+        TestFragment.getInstance("发现"),
+        TestFragment.getInstance("我的")
     )
-    //默认为0
     private var mIndex = -1
 
 

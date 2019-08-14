@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-              android:orientation="vertical"
-             xmlns:app="http://schemas.android.com/apk/res-auto">
+<!-- 根布局用LinearLayout的时候gridView第一次不显示 暂不知啥原因 -->
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <View
+    <View   android:id="@+id/line"
             android:layout_width="match_parent"
             android:layout_height="12dp"
             android:background="@color/colorWindowBackground"/>
@@ -14,9 +15,10 @@
             android:id="@+id/gridPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/line"
             app:kv_verticalSpacing="10dp"
             app:kv_indicator_is_circle="false"
             app:kv_indicator_width="15dp"
             app:kv_indicator_height="2dp"/>
 
-</LinearLayout>
+</RelativeLayout>

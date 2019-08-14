@@ -49,6 +49,8 @@ dependencies {
     kapt'com.alibaba:arouter-compiler:1.2.2'
     //Flycotablayout
     api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
+    //轮播图Banner --> https://github.com/bingoogolapple/BGABanner-Android
+    api 'cn.bingoogolapple:bga-banner:2.2.5@aar'
     //banner
     api 'com.youth.banner:banner:1.4.10'
     //flowlayout --> https://github.com/hongyangAndroid/FlowLayout

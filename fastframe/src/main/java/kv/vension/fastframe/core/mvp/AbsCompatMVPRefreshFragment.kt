@@ -41,10 +41,6 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
     private lateinit var mRefreshSwipeRefreshLayout: SwipeRefreshLayout
     private lateinit var mRefreshRecyclerView: RecyclerView
     private lateinit var mRefreshFloatingActionButton: FloatingActionButton
-//    private val mRefreshSwipeRefreshLayout: SwipeRefreshLayout by bindView(R.id.refresh_SwipeRefreshLayout)
-//    private val mRefreshMultiStateLayout: MultiStateLayout by bindView(R.id.refresh_MultiStateLayout)
-//    private val mRefreshRecyclerView: RecyclerView by bindView(R.id.refresh_RecyclerView)
-//    private val mRefreshFloatingActionButton: FloatingActionButton by bindView(R.id.refresh_fab_top)
 
     private var page: Int = 0 //页数
     private val limit: Int = 10 //条目数
@@ -129,17 +125,11 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
 
         //初始化RecyclerView
         mRefreshRecyclerView.run {
-            setHasFixedSize(true)
             layoutManager = recyLayoutManager
-            adapter = mRecyAdapter
+            setHasFixedSize(true)
             itemAnimator = DefaultItemAnimator()
             recyItemDecoration?.let { addItemDecoration(it) }
-        }
-
-
-        //悬浮按钮点击监听
-        mRefreshFloatingActionButton.run {
-            setOnClickListener(this@AbsCompatMVPRefreshFragment)
+            adapter = mRecyAdapter
         }
 
         mRecyAdapter.run {
@@ -151,6 +141,11 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
             }
             addItemClickListener(this)
             addItemChildClickListener(this)
+        }
+
+        //悬浮按钮点击监听
+        mRefreshFloatingActionButton.run {
+            setOnClickListener(this@AbsCompatMVPRefreshFragment)
         }
     }
 

@@ -33,5 +33,7 @@ class NetTestFragment : AbsCompatFragment(){
     }
 
     override fun lazyLoadData() {
+
     }
+
 }

@@ -11,25 +11,20 @@ import androidx.viewpager.widget.ViewPager
  * @desc:   高度自适应的ViewPager
  * ========================================================
  */
-class AtMostViewPager : ViewPager {
-
-    constructor(context: Context) : super(context)
-
-    constructor(context: Context, attrs: AttributeSet):super(context, attrs)
+class AtMostViewPager @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) :
+    ViewPager(context, attrs) {
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        var heightMeasureSpec: Int
+        var heightMeasureSpec = heightMeasureSpec
         var height = 0
         for (i in 0 until childCount) {
             val child = getChildAt(i)
             child.measure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED))
             val h = child.measuredHeight
-            if (h > height) {
+            if (h > height)
                 height = h
-            }
         }
         heightMeasureSpec = MeasureSpec.makeMeasureSpec(height, MeasureSpec.EXACTLY)
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
     }
-
 }

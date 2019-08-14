@@ -17,10 +17,10 @@
             <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/refresh_RecyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:scrollbarSize="5dp"
-                    android:scrollbarThumbVertical="@color/colorAppTheme"
-                    android:scrollbars="vertical" />
+                    android:layout_height="wrap_content"
+                    android:scrollbars="vertical"
+                    android:fadeScrollbars="false"
+                    android:scrollbarThumbVertical="@color/color_white_alpha_50"/>
         </kv.vension.fastframe.views.MultiStateLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.annotation.NonNull
 import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import kv.vension.fastframe.R
@@ -20,18 +19,17 @@ import kv.vension.fastframe.views.AtMostViewPager
  * @author: Created by Vension on 2019/8/6 14:36.
  * @email:  250685***4@qq.com
  * @update: update by *** on 2019/8/6 14:36
- * @desc:
+ * @desc:   采用ViewPager+GridView的方式来实现美团app的首页标签效果
  * ===================================================================
  */
-class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0)
-    : FrameLayout(context, attrs, defStyleAttr) ,ViewPager.OnPageChangeListener {
+class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) :
+    FrameLayout(context, attrs, defStyleAttr), ViewPager.OnPageChangeListener {
 
     // ViewPager
-    private var viewPager: AtMostViewPager? = null
-    /**
-     * 指示点
-     */
-    private var mGridPagerIndicator: GridPagerIndicator? = null
+    private lateinit var viewPager: AtMostViewPager
+    //指示器
+    private lateinit var mGridPagerIndicator: GridPagerIndicator
+
     //子控件显示的宽度
     private var mChildWidth = 0
     //子控件显示的高度
@@ -45,7 +43,7 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     // 是否是圆形的指示点
     private var mIsCircle = true
     //是否显示默认指示器
-    private var mIsShowDefaultIndicator = true
+    private var isShowDefaultIndicator = true
 
     /**
      * GridPager
@@ -84,9 +82,9 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
     private fun initView(context: Context, attrs: AttributeSet?) {
         handleTypedArray(context, attrs)
-        val view = View.inflate(context, R.layout.layout_gridpager, null)
-        viewPager = view.findViewById<AtMostViewPager>(R.id.viewpager)
-        mGridPagerIndicator = view.findViewById<GridPagerIndicator>(R.id.gridPagerIndicator)
+        val view = View.inflate(getContext(), R.layout.layout_gridpager, null)
+        viewPager = view.findViewById(R.id.viewpager)
+        mGridPagerIndicator = view.findViewById(R.id.gridPagerIndicator)
         addView(view)
     }
 
@@ -105,7 +103,7 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         columnCount = typedArray.getInt(R.styleable.GridPager_kv_column_count, 4)
         pageSize = rowCount * columnCount
         // 指示点
-        mIsShowDefaultIndicator = typedArray.getBoolean(R.styleable.GridPager_kv_show_default_indicator, true)
+        isShowDefaultIndicator = typedArray.getBoolean(R.styleable.GridPager_kv_show_default_indicator, true)
         mChildWidth = typedArray.getDimensionPixelSize(R.styleable.GridPager_kv_indicator_width, DensityUtil.dp2px(8))
         mChildHeight = typedArray.getDimensionPixelSize(R.styleable.GridPager_kv_indicator_height, DensityUtil.dp2px(8))
         mChildMargin = typedArray.getDimensionPixelSize(R.styleable.GridPager_kv_indicator_margin, DensityUtil.dp2px(8))
@@ -114,7 +112,6 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         mIsCircle = typedArray.getBoolean(R.styleable.GridPager_kv_indicator_is_circle, true)
         typedArray.recycle()
     }
-
 
     /**
      * 设置数据
@@ -228,7 +225,7 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
      * @return
      */
     fun showDefaultIndicator(showDefaultIndicator: Boolean): GridPager {
-        this.mIsShowDefaultIndicator = showDefaultIndicator
+        this.isShowDefaultIndicator = showDefaultIndicator
         return this
     }
 
@@ -298,6 +295,10 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         return this
     }
 
+    fun getViewPager(): ViewPager? {
+        return viewPager
+    }
+
     /**
      * 设置 Item 点击监听
      *
@@ -318,10 +319,6 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         return this
     }
 
-    fun getViewPager(): ViewPager? {
-        return viewPager
-    }
-
     /**
      * 显示
      */
@@ -331,21 +328,18 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         }
         // 设置viewPager
         if (verticalSpacing > 0) {
-            val viewPagerParams = viewPager!!.layoutParams as LinearLayout.LayoutParams
+            val viewPagerParams = viewPager.layoutParams as LinearLayout.LayoutParams
             viewPagerParams.topMargin = verticalSpacing
             viewPagerParams.bottomMargin = verticalSpacing
             viewPager!!.layoutParams = viewPagerParams
         }
-
-        viewPager!!.adapter = GridAdapter()
-        viewPager!!.addOnPageChangeListener(this)
-        viewPager!!.currentItem = 0
-
+        viewPager.adapter = GridAdapter()
+        viewPager.addOnPageChangeListener(this)
         // 设置指示点
-        if (mIsShowDefaultIndicator) {
-            mGridPagerIndicator!!.visibility = View.VISIBLE
+        if (isShowDefaultIndicator && dataAllCount / pageSize > 1) {
+            mGridPagerIndicator.visibility = View.VISIBLE
             val page = dataAllCount / pageSize + if (dataAllCount % pageSize > 0) 1 else 0
-            mGridPagerIndicator!!.setChildWidth(mChildWidth)
+            mGridPagerIndicator.setChildWidth(mChildWidth)
                 .setChildHeight(mChildHeight)
                 .setChildMargin(mChildMargin)
                 .isCircle(mIsCircle)
@@ -360,7 +354,7 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
                 })
                 .addChild(page)
         } else {
-            mGridPagerIndicator!!.visibility = View.GONE
+            mGridPagerIndicator.visibility = View.GONE
         }
     }
 
@@ -376,8 +370,8 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     }
 
     override fun onPageSelected(i: Int) {
-        if (mIsShowDefaultIndicator && mGridPagerIndicator!!.visibility === View.VISIBLE) {
-            mGridPagerIndicator!!.setSelectPosition(i)
+        if (isShowDefaultIndicator && mGridPagerIndicator.visibility == View.VISIBLE) {
+            mGridPagerIndicator.setSelectPosition(i)
         }
     }
 
@@ -394,20 +388,22 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
             return dataAllCount / pageSize + if (dataAllCount % pageSize > 0) 1 else 0
         }
 
-        override fun isViewFromObject(@NonNull view: View, @NonNull o: Any): Boolean {
+        override fun isViewFromObject(view: View, o: Any): Boolean {
             return view === o
         }
 
-        override fun instantiateItem(@NonNull container: ViewGroup, position: Int): Any {
+        override fun instantiateItem(container: ViewGroup, position: Int): Any {
             val atMostGridView = AtMostGridView(context)
             atMostGridView.numColumns = columnCount
-            atMostGridView.verticalSpacing =  if (verticalSpacing > 0) verticalSpacing else 12
-            atMostGridView.adapter = AtMostGridViewAdapter(position)
+            if (verticalSpacing > 0) {
+                atMostGridView.verticalSpacing = verticalSpacing
+            }
+            atMostGridView.adapter = AtMostGridViewAdapter(context, position)
             container.addView(atMostGridView)
             return atMostGridView
         }
 
-        override fun destroyItem(@NonNull container: ViewGroup, position: Int, @NonNull `object`: Any) {
+        override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
             container.removeView(`object` as View)
         }
     }
@@ -415,7 +411,8 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     /**
      * AtMostGridViewAdapter
      */
-    private inner class AtMostGridViewAdapter( private val pageindex: Int) : BaseAdapter() {
+    private inner class AtMostGridViewAdapter(private val context: Context, private val pageindex: Int) :
+        BaseAdapter() {
 
         override fun getCount(): Int {
             return if (dataAllCount > (pageindex + 1) * pageSize) pageSize else dataAllCount - pageindex * pageSize
@@ -430,53 +427,51 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         }
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-            var mConvertView = convertView
-            val holder: ViewHolder
+            var convertView = convertView
+            var holder: ViewHolder? = null
             if (convertView == null) {
-                mConvertView = LayoutInflater.from(context).inflate(R.layout.item_gridpager_gv, parent, false)
+                convertView = LayoutInflater.from(context).inflate(R.layout.item_gridpager_gv, parent, false)
                 holder = ViewHolder()
-                holder.linearLayout = mConvertView.findViewById(R.id.ll_layout)
-                holder.iconImageView = mConvertView.findViewById(R.id.item_image)
-                holder.iconNameTextView = mConvertView.findViewById(R.id.item_text)
+                holder.iconImageView = convertView!!.findViewById(R.id.item_image)
+                holder.iconNameTextView = convertView.findViewById(R.id.item_text)
 
-                val imageParams = holder.iconImageView!!.layoutParams as LinearLayout.LayoutParams
-                if (imageWidth > 0 && imageHeight > 0) {
-                    imageParams.width = imageWidth
-                    imageParams.height = imageHeight
+                if(imageWidth > 0 && imageHeight > 0){
+                    holder.iconImageView.layoutParams = LinearLayout.LayoutParams(imageWidth, imageHeight)
                 }
-                holder.iconImageView!!.layoutParams = imageParams
 
-                val textParams = holder.iconNameTextView!!.layoutParams as LinearLayout.LayoutParams
-                if (textImgMargin > 0) {
+                if(textImgMargin > 0){
+                    val textParams = holder.iconNameTextView.layoutParams as LinearLayout.LayoutParams
                     textParams.topMargin = textImgMargin
+                    holder.iconNameTextView.layoutParams = textParams
                 }
-                holder.iconNameTextView.layoutParams = textParams
-                mConvertView.tag = holder
+
+                convertView.tag = holder
             } else {
-                holder = mConvertView!!.tag as ViewHolder
+                holder = convertView.tag as ViewHolder
             }
+
             val pos = position + pageindex * pageSize
-            if (textColor > 0) {
-                holder.iconNameTextView!!.setTextColor(textColor)
+            if(textColor > 0){
+                holder.iconNameTextView.setTextColor(textColor)
             }
-            if (textSize > 0) {
-                holder.iconNameTextView!!.textSize = textSize.toFloat()
+            if(textSize > 0){
+                holder.iconNameTextView.textSize = textSize.toFloat()
             }
+
             // 绑定数据
             if (itemBindDataListener != null) {
                 itemBindDataListener!!.bindData(holder.iconImageView, holder.iconNameTextView, pos)
             }
             // item点击
-            holder.linearLayout!!.setOnClickListener {
+            convertView.setOnClickListener {
                 if (gridItemClickListener != null) {
                     gridItemClickListener!!.onItemClick(pos)
                 }
             }
-            return mConvertView!!
+            return convertView
         }
 
         private inner class ViewHolder {
-            internal lateinit var linearLayout: LinearLayout
             internal lateinit var iconNameTextView: TextView
             internal lateinit var iconImageView: ImageView
         }
@@ -486,7 +481,7 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
      * 绑定数据
      */
     interface ItemBindDataListener {
-        fun bindData(imageView: ImageView?, textView: TextView?, position: Int)
+        fun bindData(imageView: ImageView, textView: TextView, position: Int)
     }
 
     /**

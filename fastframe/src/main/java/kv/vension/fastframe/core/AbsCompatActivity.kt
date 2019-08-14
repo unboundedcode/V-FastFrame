@@ -87,6 +87,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
         try{
             this.initContentView(attachLayoutRes())//加载布局
             mRxPermissions = RxPermissions(this)
+
             //设置ToolBar
             if (showToolBar()){
                 val mCommonTitleBar = rootView?.findViewById<View>(R.id.commonTitleBar) as CommonTitleBar//子布局容器

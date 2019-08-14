@@ -9,13 +9,13 @@ import com.chad.library.adapter.base.BaseMultiItemQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.vension.fastframe.module_news.NewsConstant
 import com.vension.fastframe.module_news.bean.HotNewsBestModel
-import com.vension.fastframe.module_news.utils.GlideImageLoader
 import com.vension.fastframe.module_news.utils.ToastUitl
 import com.youth.banner.Banner
 import com.youth.banner.BannerConfig
 import com.youth.banner.listener.OnBannerListener
 import com.youth.banner.transformer.*
 import kv.vension.fastframe.views.ShapeImageView
+import lib.vension.fastframe.common.utils.GlideImageLoader
 import java.util.*
 
 

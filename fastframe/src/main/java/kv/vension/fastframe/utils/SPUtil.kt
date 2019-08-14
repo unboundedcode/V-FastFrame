@@ -3,6 +3,7 @@ package kv.vension.fastframe.utils
 import android.content.Context
 import android.content.SharedPreferences
 import com.google.gson.Gson
+import kv.vension.fastframe.VFrame
 import java.io.*
 
 
@@ -17,20 +18,11 @@ import java.io.*
 
 object SPUtil {
 
-    private lateinit var editor: SharedPreferences.Editor
-    private lateinit var sp: SharedPreferences
+    private val sp_name = "SP.cache"
 
-    /**
-     * SPUtils构造函数
-     * <p>在Application中初始化</p>
-     *
-     * @param spName spName
-     */
-    fun init(context: Context,spName: String) {
-        sp = context.getSharedPreferences(spName, Context.MODE_PRIVATE)
-        editor = sp.edit()
-        editor.apply()
-    }
+    val sp: SharedPreferences
+        get() = VFrame.getApplication().getSharedPreferences(sp_name, Context.MODE_PRIVATE)
+
 
     /**
      * SP中写入key类型value
@@ -40,11 +32,11 @@ object SPUtil {
      */
     fun <T> put(key: String?, value: T){
         when (value) {
-            is Long -> editor.putLong(key, value)
-            is String -> editor.putString(key, value)
-            is Int -> editor.putInt(key, value)
-            is Boolean -> editor.putBoolean(key, value)
-            is Float -> editor.putFloat(key, value)
+            is Long -> sp.edit().putLong(key, value)
+            is String -> sp.edit().putString(key, value)
+            is Int -> sp.edit().putInt(key, value)
+            is Boolean -> sp.edit().putBoolean(key, value)
+            is Float -> sp.edit().putFloat(key, value)
             else -> throw IllegalArgumentException("This type can be saved into Preferences")
         }.apply()
     }
@@ -55,14 +47,14 @@ object SPUtil {
      * @param key 键
      * @return 存在返回对应值，不存在返回默认值{@code null}
      */
-    fun <T> get(key: String?,default: T): T {
+    fun <T> get(key: String,default: T): T {
         val res: Any = when (default) {
             is Long -> sp.getLong(key, default)
             is String -> sp.getString(key, default)
             is Int -> sp.getInt(key, default)
             is Boolean -> sp.getBoolean(key, default)
             is Float -> sp.getFloat(key, default)
-            else -> deSerialization(getString(key, serialize(default)))
+            else -> deSerialization(getString(key, serialize(default)).toString())
         }!!
         return res as T
     }
@@ -115,7 +107,7 @@ object SPUtil {
     }
 
     fun put(key: String?, value: String) {
-        editor.putString(key, value).apply()
+        sp.edit().putString(key, value).apply()
     }
 
     /**
@@ -124,7 +116,7 @@ object SPUtil {
      * @param key 键
      * @return 存在返回对应值，不存在返回默认值{@code null}
      */
-    fun getString(key: String?): String {
+    fun getString(key: String): String? {
         return getString(key, "")
     }
 
@@ -136,8 +128,8 @@ object SPUtil {
      * @param defaultValue 默认值
      * @return 存在返回对应值，不存在返回默认值{@code defaultValue}
      */
-    fun getString(key: String?, defaultValue: String): String {
-        return sp.getString(key, defaultValue)!!
+    fun getString(key: String, defaultValue: String): String? {
+        return sp.getString(key, defaultValue)
     }
 
     /**
@@ -147,7 +139,7 @@ object SPUtil {
      * @param value 值
      */
     fun put(key: String?, value: Int) {
-        editor.putInt(key, value).apply()
+        sp.edit().putInt(key, value).apply()
     }
 
 
@@ -180,7 +172,7 @@ object SPUtil {
      * @param value 值
      */
     fun put(key: String?, value: Long) {
-        editor.putLong(key, value).apply()
+        sp.edit().putLong(key, value).apply()
     }
 
     /**
@@ -212,7 +204,7 @@ object SPUtil {
      * @param value 值
      */
     fun put(key: String?, value: Float) {
-        editor.putFloat(key, value).apply()
+        sp.edit().putFloat(key, value).apply()
     }
 
 
@@ -246,7 +238,7 @@ object SPUtil {
      * @param value 值
      */
     fun put(key: String?, value: Boolean) {
-        editor.putBoolean(key, value)
+        sp.edit().putBoolean(key, value)
     }
 
 
@@ -279,7 +271,7 @@ object SPUtil {
      * @param values 值
      */
     fun put(key: String?, value: Set<String>) {
-        editor.putStringSet(key, value).apply()
+        sp.edit().putStringSet(key, value).apply()
     }
 
 
@@ -320,7 +312,7 @@ object SPUtil {
      * @param key 键
      */
     fun remove(key: String?) {
-        editor.remove(key).apply()
+        sp.edit().remove(key).apply()
     }
 
 
@@ -339,7 +331,7 @@ object SPUtil {
      * SP中清除所有数据
      */
     fun clear() {
-        editor.clear().apply()
+        sp.edit().clear().apply()
     }
 
 
@@ -350,8 +342,8 @@ object SPUtil {
      */
     fun saveObject(key: String?, obj: Any) {
         val str = Gson().toJson(obj, obj.javaClass)
-        editor.putString(key, str)
-        editor.commit()
+        sp.edit().putString(key, str)
+        sp.edit().commit()
     }
 
 

@@ -12,17 +12,21 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
-import kv.vension.fastframe.R
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
 import kv.vension.fastframe.event.BaseEvent
 import kv.vension.fastframe.ext.Logi
-import kv.vension.fastframe.ext.showToast
 import kv.vension.fastframe.utils.PreferenceUtil
 import kv.vension.fastframe.views.MultiStateLayout
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
+
+
+
+
+
+
 
 
 /**
@@ -68,7 +72,7 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
     /**
      * 在使用自定义toolbar时候的根布局 = toolBarView+childView
      */
-    private var rootView: View? = null
+    var rootView: View? = null
     /**
      * 多状态Layout MultiStateLayout
      */
@@ -81,10 +85,6 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
      * 6.0动态获取权限
      */
     protected lateinit var mRxPermissions: RxPermissions
-    /**
-     * butterknife Unbinder
-     */
-//    private lateinit var mUnBinder: Unbinder
     /**
      * 缓存上一次的网络状态
      */
@@ -112,14 +112,17 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
             //为空时初始化。
             if (showToolBar() && getToolBarResId() > 0) {
                 //如果需要显示自定义toolbar,并且资源id存在的情况下，实例化baseView;
-                rootView = inflater.inflate(if (isToolbarCover())
-                    R.layout.activity_base_toolbar_cover
-                else
-                    R.layout.activity_base, container, false)//根布局
+                rootView = LayoutInflater.from(context).inflate(
+                    if (isToolbarCover())
+                        kv.vension.fastframe.R.layout.activity_base_toolbar_cover
+                    else
+                        kv.vension.fastframe.R.layout.activity_base,
+                    null,false)//根布局
+
                 //toolbar容器
-                val vsToolbar = rootView?.findViewById<View>(R.id.vs_toolbar) as ViewStub
+                val vsToolbar = rootView?.findViewById<View>(kv.vension.fastframe.R.id.vs_toolbar) as ViewStub
                 //子布局容器
-                val flContainer = rootView?.findViewById<View>(R.id.fl_container) as FrameLayout
+                val flContainer = rootView?.findViewById<View>(kv.vension.fastframe.R.id.fl_container) as FrameLayout
                 vsToolbar.layoutResource = getToolBarResId()//toolbar资源id
                 vsToolbar.layoutParams = ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
                 vsToolbar.inflate()//显示toolbar
@@ -140,12 +143,11 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         isPagePrepare = true //标记页面初始化完成
         if (showToolBar()){
-            mCommonTitleBar = rootView?.findViewById<View>(R.id.commonTitleBar) as CommonTitleBar//子布局容器
+            mCommonTitleBar = rootView?.findViewById<View>(kv.vension.fastframe.R.id.commonTitleBar) as CommonTitleBar//子布局容器
             initToolBar(mCommonTitleBar)//初始化标题栏
         }
-        //绑定view
-//        mUnBinder = ButterKnife.bind(this, view)
         mRxPermissions = RxPermissions(this)
+
         //开启事件总线
         if (useEventBus()) {
             EventBus.getDefault().register(this)
@@ -160,23 +162,11 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         PageCache.pageFragmentCache.add(this)
     }
 
-    //结合viewpager
-    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
-        super.setUserVisibleHint(isVisibleToUser)
-        //如果fragment可见进行懒加载数据,setUserVisibleHint()有可能在fragment的生命周期外被调用
-        //如果view还未初始化，不进行处理
-        if(isPagePrepare){
-            rootView?.let {
-                //Fragment可见且状态不是可见(从一个Fragment切换到另外一个Fragment,后一个设置状态为可见)
-                if (isVisibleToUser && !currentVisibleState) {
-                    disPatchFragment(true)
-                } else if (!isVisibleToUser && currentVisibleState) {
-                    //Fragment不可见且状态是可见(从一个Fragment切换到另外一个Fragment,前一个更改状态为不可见)
-                    disPatchFragment(false)
-                }
-            }
-        }
+
+    override fun onClick(v: View?) {
+
     }
+
 
     override fun onStart() {
         super.onStart()
@@ -206,9 +196,8 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         }
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-//        mUnBinder.unbind()
+    override fun onDestroy() {
+        super.onDestroy()
         //当 View 被销毁的时候我们需要重新设置 isViewCreated mIsFirstVisible 的状态
         if (useEventBus()) {
             EventBus.getDefault().unregister(this)
@@ -217,12 +206,25 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         if(mLoadingDialog.isShowing){
             mLoadingDialog.dismiss()
         }
-        resetVariavle()
         PageCache.pageFragmentCache.remove(this)//
     }
 
-    override fun onClick(v: View?) {
-
+    //结合viewpager
+    override fun setUserVisibleHint(isVisibleToUser: Boolean) {
+        super.setUserVisibleHint(isVisibleToUser)
+        //如果fragment可见进行懒加载数据,setUserVisibleHint()有可能在fragment的生命周期外被调用
+        //如果view还未初始化，不进行处理
+        if(isPagePrepare){
+            rootView?.let {
+                //Fragment可见且状态不是可见(从一个Fragment切换到另外一个Fragment,后一个设置状态为可见)
+                if (isVisibleToUser && !currentVisibleState) {
+                    disPatchFragment(true)
+                } else if (!isVisibleToUser && currentVisibleState) {
+                    //Fragment不可见且状态是可见(从一个Fragment切换到另外一个Fragment,前一个更改状态为不可见)
+                    disPatchFragment(false)
+                }
+            }
+        }
     }
 
 
@@ -276,8 +278,7 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
      */
     abstract fun initViewAndData(view: View,savedInstanceState: Bundle?)
     /**
-     * 请求加载网络数据
-     * 第四步:定义抽象方法lazyLoadData(),具体加载数据的工作,交给子类去完成
+     * 第一次可见时触发调用,此处实现具体的数据请求逻辑
      */
     abstract fun lazyLoadData()
     /**
@@ -287,17 +288,12 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         lazyLoadData()
     }
 
-
     private val mRetryClickListener: View.OnClickListener = View.OnClickListener {
         lazyLoadData()
     }
 
 
-    /**重置变量 */
-    private fun resetVariavle() {
-        isPagePrepare = false
-        mIsFirstVisible = true
-    }
+
 
     /**
      * 获取自定义toolbarview 资源id 默认为-1，
@@ -308,7 +304,7 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
     }
 
     open fun getToolBarResId(layout : Int): Int {
-        return if (layout > 0) layout else R.layout.layout_default_toolbar
+        return if (layout > 0) layout else kv.vension.fastframe.R.layout.layout_default_toolbar
     }
 
 

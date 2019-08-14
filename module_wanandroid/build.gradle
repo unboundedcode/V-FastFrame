@@ -30,8 +30,6 @@ dependencies {
     implementation 'q.rorbin:badgeview:1.1.3'
     implementation 'org.litepal.android:kotlin:3.0.0'
     implementation 'com.github.clans:fab:1.6.4'
-    //轮播图Banner --> https://github.com/bingoogolapple/BGABanner-Android
-    implementation 'cn.bingoogolapple:bga-banner:2.2.5@aar'
     // agentweb --> https://github.com/Justson/AgentWeb
     implementation 'com.just.agentweb:agentweb:4.0.3-beta' // (必选)
     implementation 'com.github.florent37:shapeofview:1.4.7'

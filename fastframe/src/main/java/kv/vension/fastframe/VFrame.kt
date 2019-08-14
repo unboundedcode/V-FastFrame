@@ -20,6 +20,7 @@ import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 import kv.vension.fastframe.cache.FileCache
 import kv.vension.fastframe.utils.CrashUtil
+import kv.vension.fastframe.utils.SharedPreferencesUtil
 
 /**
  * ===================================================================
@@ -56,7 +57,7 @@ object VFrame {
             .methodCount(2)                         // (可选）要显示的方法行数
             .methodOffset(5)                        // (可选）设置调用堆栈的函数偏移值，0的话则从打印该Log函数开始输出堆栈信息，默认是0
             .logStrategy(LogcatLogStrategy())           // (可选）要改要打印的日志策略。默认LogCat
-            .tag("V-FastFrame_Logger--->")             // (可选）每个日志的全局标记。默认PRETTY_LOGGER
+            .tag("V-FastFrame_Logger--->")         // (可选）每个日志的全局标记。默认PRETTY_LOGGER
             .build()
         Logger.addLogAdapter(object : AndroidLogAdapter(formatStrategy) {
             override fun isLoggable(priority: Int, tag: String?): Boolean {
@@ -135,33 +136,8 @@ object VFrame {
         return ColorStateList(arrayOf(states), colors)
     }
 
-
-
-//    private void installAPK(){
-//            if (Build.VERSION.SDK_INT >= 26) {
-//                    boolean hasInstallPermission = getPackageManager().canRequestPackageInstalls();
-//                    if (hasInstallPermission) {
-//                        //安装应用
-//                    } else {
-//                        //跳转至“安装未知应用”权限界面，引导用户开启权限
-//                        Uri selfPackageUri = Uri.parse("package:" + this.getPackageName());
-//                        Intent intent = new Intent(Settings.ACTION_MANAGE_UNKNOWN_APP_SOURCES, selfPackageUri);
-//                        startActivityForResult(intent, REQUEST_CODE_UNKNOWN_APP);
-//                    }
-//                }else {
-//                    //安装应用
-//                }
-//
-//    }
-//
-////接收“安装未知应用”权限的开启结果
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//            super.onActivityResult(requestCode, resultCode, data);
-//            if (requestCode == REQUEST_CODE_UNKNOWN_APP) {
-//                    installAPK();
-//                }
-//    }
-
+    fun getPreferenceHelper(): SharedPreferencesUtil? {
+       return SharedPreferencesUtil.getSingleInstance(getContext())
+    }
 
 }

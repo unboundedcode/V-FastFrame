@@ -17,18 +17,18 @@
             android:text="test fragment"
             android:gravity="center"/>
 
-    <kv.vension.fastframe.views.QMUIRadiusImageView
-            android:clickable="true"
-            android:id="@+id/radiusImageView"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:src="@drawable/banner_1"
-            android:layout_marginTop="10dp"
-            app:qmui_border_color="@color/colorAppTheme"
-            app:qmui_border_width="2dp"
-            app:qmui_corner_radius="15dp"
-            app:qmui_selected_border_color="@color/color_orange"
-            app:qmui_selected_border_width="10dp"
-            app:qmui_selected_mask_color="@color/color_red"/>
+    <!--<kv.vension.fastframe.views.QMUIRadiusImageView-->
+            <!--android:clickable="true"-->
+            <!--android:id="@+id/radiusImageView"-->
+            <!--android:layout_width="300dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/banner_1"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--app:qmui_border_color="@color/colorAppTheme"-->
+            <!--app:qmui_border_width="2dp"-->
+            <!--app:qmui_corner_radius="15dp"-->
+            <!--app:qmui_selected_border_color="@color/color_orange"-->
+            <!--app:qmui_selected_border_width="10dp"-->
+            <!--app:qmui_selected_mask_color="@color/color_red"/>-->
 
 </androidx.appcompat.widget.LinearLayoutCompat>

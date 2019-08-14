@@ -36,13 +36,14 @@
         <attr name="kv_indicator_is_circle" format="boolean"></attr>
     </declare-styleable>
 
+
     <declare-styleable name="GridPagerIndicator">
         <!-- 设置子控件显示的宽度 -->
-        <attr name="kv_child_width" format="dimension" />
+        <attr name="kv_child_width" format="dimension|reference" />
         <!-- 设置子控件显示的高度 -->
-        <attr name="kv_child_height" format="dimension"></attr>
+        <attr name="kv_child_height" format="dimension|reference"></attr>
         <!-- 设置子控件之间的间距 -->
-        <attr name="kv_child_margin" format="dimension"></attr>
+        <attr name="kv_child_margin" format="dimension|reference"></attr>
         <!-- 子空间是否显示为圆形，默认为true，此时控件的大小为宽和高中的最小值 -->
         <attr name="kv_is_circle" format="boolean"></attr>
         <!-- 正常情况下显示的颜色 -->
