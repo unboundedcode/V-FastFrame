@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:tools="http://schemas.android.com/tools"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:background="?android:attr/selectableItemBackground"
@@ -10,7 +11,7 @@
             android:id="@+id/item_image"
             android:layout_width="44dp"
             android:layout_height="44dp"
-            android:src="@drawable/place_image_default"/>
+            tools:src="@drawable/place_image_default"/>
 
     <TextView
             android:id="@+id/item_text"
@@ -19,7 +20,7 @@
             android:layout_marginTop="6dp"
             android:maxLines="1"
             android:ellipsize="end"
-            android:text="@string/app_name"
+            tools:text="@string/app_name"
             android:textColor="@android:color/black"
             android:textSize="14sp" />
 </LinearLayout>

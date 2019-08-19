@@ -19,8 +19,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:scrollbars="vertical"
-                    android:fadeScrollbars="false"
-                    android:scrollbarThumbVertical="@color/color_white_alpha_50"/>
+                    android:fadeScrollbars="false"/>
         </kv.vension.fastframe.views.MultiStateLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

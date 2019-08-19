@@ -17,7 +17,7 @@ class TabPresenter_1 : AbsPresenter<TabContract_1.View>(),TabContract_1.Presente
     override fun getHomeDatas() {
         mView?.showLoading()
         Handler().postDelayed({
-            var lists :MutableList<TestBean> = ArrayList()
+            var lists :MutableList<TestBean> = mutableListOf()
             lists.add(TestBean(0,"I am test banners"))
             lists.add(TestBean(1,"I am test viewFlipper"))
             lists.add(TestBean(2,"I am test gridPagerMenu"))
