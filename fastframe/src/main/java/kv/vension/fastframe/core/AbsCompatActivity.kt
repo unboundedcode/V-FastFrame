@@ -1,7 +1,6 @@
 package kv.vension.fastframe.core
 
 import android.content.Intent
-import android.content.IntentFilter
 import android.os.Bundle
 import android.view.*
 import android.widget.FrameLayout
@@ -60,11 +59,6 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
      */
     private var hasNetwork: Boolean by PreferenceUtil("has_network", true)
     /**
-     * 网络状态变化的广播
-     */
-    private var mNetworkChangeReceiver: NetworkChangeReceiver? = null
-
-    /**
      * LoadingDialog
      */
     protected val mLoadingDialog: LoadingDialog by lazy { LoadingDialog.Builder(this).setCancelable(false).setCancelOutside(false).create() }
@@ -118,10 +112,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
             ex.printStackTrace()
         }finally {
             // 动态注册网络变化广播
-            if (mNetworkChangeReceiver == null){
-                mNetworkChangeReceiver = NetworkChangeReceiver()
-            }
-            registerReceiver(mNetworkChangeReceiver, IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
+            NetworkChangeReceiver.register(this@AbsCompatActivity)
             PageCache.pageActivityCache.add(this)//activity进栈
         }
     }
@@ -162,10 +153,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
         if (useEventBus()) {
             EventBus.getDefault().unregister(this)
         }
-        mNetworkChangeReceiver?.let {
-            unregisterReceiver(it)
-            mNetworkChangeReceiver = null
-        }
+        NetworkChangeReceiver.unRegister(this@AbsCompatActivity)
         rootView = null
         if(mLoadingDialog.isShowing){
             mLoadingDialog.dismiss()
@@ -210,7 +198,10 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
     /** ============================= 抽象方法 ===============================*/
     /**
      *  加载布局
+     *   @get:LayoutRes
+     *   protected abstract val layoutResId: Int
      */
+
     @LayoutRes
     abstract fun attachLayoutRes(): Int
     /**

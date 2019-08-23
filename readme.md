@@ -2,29 +2,25 @@
   <a href="https://android-arsenal.com/api?level=19">
     <img src="https://img.shields.io/badge/API-19%2B-green.svg?style=flat-square" alt="Min Sdk Version" />
   </a>
-   <a href="https://bintray.com/vension/vensionCenter/V-FastFrame/_latestVersion">
-    <img src="https://api.bintray.com/packages/vension/vensionCenter/V-FastFrame/images/download.svg?style=flat-square" alt="JCenter" />
-  </a>
-   <a href="http://www.apache.org/licenses/LICENSE-2.0">
-    <img src="http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
-  </a>
-  <a href="#">
-    <img src="https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square" alt="Author" />
-  </a>
-   <a href="https://developer.android.com/jetpack/">
-    <img src="https://img.shields.io/badge/Jetpack-Vension-brightgreen.svg" alt="jetpack" />
+  <a href="http://www.apache.org/licenses/LICENSE-2.0">
+     <img src="http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
   </a>
   <a href="#"><img src="https://img.shields.io/badge/%E9%9D%A2%E5%90%91-Android%E5%BC%80%E5%8F%91-%232CC159.svg"></a>
   <a href="#"><img src="https://img.shields.io/badge/language-kotlin-orange.svg"></a>
+  <a href="https://github.com/Vension">
+    <img src="https://img.shields.io/badge/Author-Vension-brightgreen.svg?style=flat-square" alt="Author" />
+  </a>
   <a href="#"><img src="https://img.shields.io/github/languages/count/unboundedcode/V-FastFrame.svg"></a>
-  <a href="#"><img src="https://img.shields.io/github/languages/top/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/top-orange/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
   <a href="https://github.com/unboundedcode/V-FastFrame/releases">
     <img src="https://img.shields.io/github/release/unboundedcode/V-FastFrame.svg">
+  </a>
+  <a href="https://bintray.com/vension/vensionCenter/V-FastFrame/_latestVersion">
+     <img src="https://api.bintray.com/packages/vension/vensionCenter/V-FastFrame/images/download.svg?style=flat-square" alt="JCenter" />
   </a>
   <a href="#"><img src="https://img.shields.io/github/repo-size/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
   <a href="#"><img src="https://img.shields.io/github/languages/code-size/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
   <a href="#"><img src="https://img.shields.io/github/downloads/unboundedcode/V-FastFrame/total.svg?style=flat-square"></a>
-  <a href="#"><img src="https://img.shields.io/badge/version-0.0.1-blue.svg"></a>
 </p>
 
 # V-FastFrame

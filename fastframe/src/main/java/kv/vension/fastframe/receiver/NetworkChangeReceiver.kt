@@ -3,7 +3,9 @@ package kv.vension.fastframe.receiver
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.util.Log
+import kv.vension.fastframe.core.AbsCompatActivity
 import kv.vension.fastframe.event.BaseEvent
 import kv.vension.fastframe.utils.NetWorkUtil
 import kv.vension.fastframe.utils.PreferenceUtil
@@ -21,6 +23,28 @@ class NetworkChangeReceiver : BroadcastReceiver() {
 
     private val netTAG = "NetworkConnectChanged"
     private var hasNetwork: Boolean by PreferenceUtil("has_network", true)
+
+
+    companion object{
+        private var mReceiver : NetworkChangeReceiver ?= null
+
+        fun getInstance():NetworkChangeReceiver{
+            if(mReceiver == null){
+                mReceiver = NetworkChangeReceiver()
+            }
+            return mReceiver!!
+        }
+        fun register(activity : AbsCompatActivity) {
+            activity.registerReceiver(getInstance(), IntentFilter("android.net.conn.CONNECTIVITY_CHANGE"))
+        }
+        fun unRegister(activity : AbsCompatActivity) {
+            mReceiver?.let {
+                activity.unregisterReceiver(it)
+                mReceiver = null
+            }
+        }
+    }
+
 
     override fun onReceive(context: Context, intent: Intent) {
         //判断当前的网络连接状态是否可用
