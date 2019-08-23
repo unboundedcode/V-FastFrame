@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://developer.android.com/about/versions/android-4.0.html">
+  <a href="https://android-arsenal.com/api?level=19">
     <img src="https://img.shields.io/badge/API-19%2B-green.svg?style=flat-square" alt="Min Sdk Version" />
   </a>
    <a href="https://bintray.com/vension/vensionCenter/V-FastFrame/_latestVersion">
@@ -11,11 +11,21 @@
   <a href="#">
     <img src="https://img.shields.io/badge/Author-Vension-orange.svg?style=flat-square" alt="Author" />
   </a>
+   <a href="https://developer.android.com/jetpack/">
+    <img src="https://img.shields.io/badge/Jetpack-Vension-brightgreen.svg" alt="jetpack" />
+  </a>
   <a href="#"><img src="https://img.shields.io/badge/%E9%9D%A2%E5%90%91-Android%E5%BC%80%E5%8F%91-%232CC159.svg"></a>
   <a href="#"><img src="https://img.shields.io/badge/language-kotlin-orange.svg"></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/count/unboundedcode/V-FastFrame.svg"></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/top/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
+  <a href="https://github.com/unboundedcode/V-FastFrame/releases">
+    <img src="https://img.shields.io/github/release/unboundedcode/V-FastFrame.svg">
+  </a>
+  <a href="#"><img src="https://img.shields.io/github/repo-size/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/code-size/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
+  <a href="#"><img src="https://img.shields.io/github/downloads/unboundedcode/V-FastFrame/total.svg?style=flat-square"></a>
   <a href="#"><img src="https://img.shields.io/badge/version-0.0.1-blue.svg"></a>
 </p>
-
 
 # V-FastFrame
 无界编码，快捷构建，助你起飞 - use Kotlin abd support androidX
