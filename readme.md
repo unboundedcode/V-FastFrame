@@ -11,7 +11,7 @@
     <img src="https://img.shields.io/badge/Author-Vension-brightgreen.svg?style=flat-square" alt="Author" />
   </a>
   <a href="#"><img src="https://img.shields.io/github/languages/count/unboundedcode/V-FastFrame.svg"></a>
-  <a href="#"><img src="https://img.shields.io/github/languages/top-orange/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
+  <a href="#"><img src="https://img.shields.io/github/languages/top/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
   <a href="https://github.com/unboundedcode/V-FastFrame/releases">
     <img src="https://img.shields.io/github/release/unboundedcode/V-FastFrame.svg">
   </a>
