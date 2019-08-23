@@ -17,12 +17,22 @@ import kv.vension.fastframe.utils.NetWorkUtil
 
 
 /**
- * ========================================================
- * 作  者：Vension
- * 日  期：2018/10/29 12:21
- * 描  述：带 MVP 的列表 Fragment - 基类
+ * ========================================================================
+ * 作 者：Vension
+ * 主 页：Github: https://github.com/Vension
+ * 日 期：2019/8/23 14:26
+ *   ______       _____ _______ /\/|_____ _____            __  __ ______
+ *  |  ____/\    / ____|__   __|/\/  ____|  __ \     /\   |  \/  |  ____|
+ *  | |__ /  \  | (___    | |     | |__  | |__) |   /  \  | \  / | |__
+ *  |  __/ /\ \  \___ \   | |     |  __| |  _  /   / /\ \ | |\/| |  __|
+ *  | | / ____ \ ____) |  | |     | |    | | \ \  / ____ \| |  | | |____
+ *  |_|/_/    \_\_____/   |_|     |_|    |_|  \_\/_/    \_\_|  |_|______|
  *
- *       repeat：函数是一个单独的函数,repeat(3) { block }->就是循环执行多少次block中内容
+ * Take advantage of youth and toss about !
+ * ------------------------------------------------------------------------
+ * 描述：带 MVP 的列表 Fragment - 基类
+ *
+ * repeat：函数是一个单独的函数,repeat(3) { block }->就是循环执行多少次block中内容
  *       with：  函数也是一个单独的函数，并不是Kotlin中的extension，指定的T作为闭包的receiver，使用参数中闭包的返回结果
  *       let:    首先let()的定义是这样的，默认当前这个对象作为闭包的it参数，返回值是函数里面最后一行，或者指定return
  *       apply： 函数是这样的，调用某对象的apply函数，在函数范围内，可以任意调用该对象的任意方法，并返回该对象
@@ -30,8 +40,7 @@ import kv.vension.fastframe.utils.NetWorkUtil
  *       also:   执行block，返回this，
  *       takeIf: 满足block中条件，则返回当前值，否则返回null，block的返回值Boolean类型
  *       takeUnless : 和takeIf相反，如不满足block中的条件，则返回当前对象，否则为null
- *
- * ========================================================
+ * ========================================================================
  */
 @SuppressLint("RestrictedApi")
 abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPresenter<V>>

@@ -22,19 +22,21 @@ import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
-
-
-
-
-
-
-
 /**
- * ========================================================
+ * ========================================================================
  * 作 者：Vension
+ * 主 页：Github: https://github.com/Vension
  * 日 期：2019/7/15 12:12
- * 更 新：2019/7/15 12:12
- * 描 述：Fragment-基类
+ *   ______       _____ _______ /\/|_____ _____            __  __ ______
+ *  |  ____/\    / ____|__   __|/\/  ____|  __ \     /\   |  \/  |  ____|
+ *  | |__ /  \  | (___    | |     | |__  | |__) |   /  \  | \  / | |__
+ *  |  __/ /\ \  \___ \   | |     |  __| |  _  /   / /\ \ | |\/| |  __|
+ *  | | / ____ \ ____) |  | |     | |    | | \ \  / ____ \| |  | | |____
+ *  |_|/_/    \_\_____/   |_|     |_|    |_|  \_\/_/    \_\_|  |_|______|
+ *
+ * Take advantage of youth and toss about !
+ * ------------------------------------------------------------------------
+ * 描述：Fragment-基类
  *
  * 生命周期执行的方法 如下：
  * 第一次生成页面-->可见
@@ -62,9 +64,8 @@ import org.greenrobot.eventbus.ThreadMode
  * onDestroyView: -----> onDestroyView
  *
  * 我们可以更具以上生命周期来操作不同的业务逻辑
- * ========================================================
+ * ========================================================================
  */
-
 abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
 
     val TAG = this.javaClass.simpleName //获取上下文并设置log标记
