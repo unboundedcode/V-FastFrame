@@ -18,42 +18,9 @@ import java.net.SocketException
 import java.net.URL
 
 
-object NetWorkUtil {
-    private val TAG = NetWorkUtil::class.java.simpleName
-    val NET_BROADCAST_ACTION = "com.network.state.action"
-    val NET_STATE_NAME = "network_state"
+object NetworkUtil {
+    private val TAG = NetworkUtil::class.java.simpleName
 
-    enum class NetType(var value: Int, var desc: String) {
-        /**
-         * 当前网络状态
-         */
-        None(1, "无网络连接"),
-        Mobile(2, "移动网络"),
-        Wifi(4, "Wifi网络"),
-        Other(8, "未知网络")
-    }
-
-    /**
-     * 接受服务上发过来的广播
-     */
-    private val mReceiver = object : BroadcastReceiver() {
-
-        override fun onReceive(context: Context, intent: Intent?) {
-            if (intent != null) {
-                /*
-                  -1 为无网络连接
-                   1 为WIFI
-                   2 为移动网络
-                */
-                val CURRENT_NETWORK_STATE = intent.getIntExtra(NET_STATE_NAME, -1)
-                when (CURRENT_NETWORK_STATE) {
-                    -1 -> Log.i(TAG, "网络更改为 无网络  CURRENT_NETWORK_STATE =$CURRENT_NETWORK_STATE")
-                    1 -> Log.i(TAG, "网络更改为 WIFI网络  CURRENT_NETWORK_STATE=$CURRENT_NETWORK_STATE")
-                    2 -> Log.i(TAG, "网络更改为 移动网络  CURRENT_NETWORK_STATE =$CURRENT_NETWORK_STATE")
-                }
-            }
-        }
-    }
 
     /**
      * 获取TelephonyManager
@@ -108,26 +75,30 @@ object NetWorkUtil {
         return false
     }
 
+
+
     /**
-     * 获取当前网络类型（移动网络还是Wifi）
+     * 获取当前网络连接类型
+     *
+     * @param context context
+     * @return -1不可用，0移动网络，WIFI网络
      */
-    fun getConnectedType(context: Context): NetType {
-        val NET = getConnectivityManager(context).activeNetworkInfo
-        if (NET != null) {
-            when (NET.subtype) {
-                ConnectivityManager.TYPE_WIFI -> return NetWorkUtil.NetType.Wifi
-                ConnectivityManager.TYPE_MOBILE -> return NetWorkUtil.NetType.Mobile
-                else -> return NetWorkUtil.NetType.Other
-            }
+    fun getNetWorkType(context: Context?): Int {
+        var mNetworkInfo: NetworkInfo? = null
+        if (context != null) {
+            val mConnectivityManager =
+                context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            mNetworkInfo = mConnectivityManager.activeNetworkInfo
         }
-        return NetWorkUtil.NetType.None
+
+        return if (mNetworkInfo != null && mNetworkInfo.isAvailable) mNetworkInfo.type else -1
     }
 
 
     /**
-     * check NetworkAvailable
+     * 判断当前网络状态是否可用
      *
-     * @return
+     * @return 可用返回true, 否则false
      */
     @JvmStatic
     fun isNetworkAvailable(): Boolean {
@@ -138,18 +109,27 @@ object NetWorkUtil {
 
 
     /**
-     * 获取当前是否存在有效的Wifi连接
+     * 当前是否为WIFI连接
+     * @param context
+     * @return
      */
     fun isWifiConnected(context: Context): Boolean {
-        val networkInfo = getConnectivityManager(context).activeNetworkInfo
-        return networkInfo != null && networkInfo.type == ConnectivityManager.TYPE_WIFI && networkInfo.isConnected
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connectivityManager.activeNetworkInfo
+        return networkInfo != null && networkInfo.isConnected && networkInfo.type == ConnectivityManager.TYPE_WIFI
     }
 
+
     /**
-     * 获取当前是否存在有效的网络连接
+     * 当前是否为移动网络
+     * @param context
+     * @return
      */
     fun isMobileConnected(context: Context): Boolean {
-        val networkInfo = getConnectivityManager(context).activeNetworkInfo
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connectivityManager.activeNetworkInfo
         return networkInfo != null && networkInfo.type == ConnectivityManager.TYPE_MOBILE && networkInfo.isConnected
     }
 
@@ -230,6 +210,20 @@ object NetWorkUtil {
         intent.component = cm
         intent.action = "android.intent.action.VIEW"
         activity.startActivityForResult(intent, 0)
+    }
+
+    /**
+     * 获取apn 类型
+     *
+     * @param context context
+     * @return 类型
+     */
+    fun getAPNType(context: Context): String? {
+        val connMgr = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val networkInfo = connMgr.activeNetworkInfo ?: return null
+        return if (networkInfo.extraInfo == null) {
+            null
+        } else networkInfo.extraInfo.toLowerCase()
     }
 
 

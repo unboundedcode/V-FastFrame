@@ -7,12 +7,18 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
-import cn.jzvd.JZDataSource;
-import cn.jzvd.JzvdStd;
+
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.orhanobut.logger.Logger;
@@ -27,14 +33,33 @@ import com.vension.fastframe.module_news.widget.UpDownViewSwitcher;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.listener.OnBannerListener;
-import com.youth.banner.transformer.*;
-import kv.vension.fastframe.glide.GlideApp;
-import kv.vension.fastframe.views.ShapeImageView;
-import lib.vension.fastframe.common.utils.GlideImageLoader;
+import com.youth.banner.transformer.AccordionTransformer;
+import com.youth.banner.transformer.BackgroundToForegroundTransformer;
+import com.youth.banner.transformer.CubeInTransformer;
+import com.youth.banner.transformer.CubeOutTransformer;
+import com.youth.banner.transformer.DefaultTransformer;
+import com.youth.banner.transformer.DepthPageTransformer;
+import com.youth.banner.transformer.FlipHorizontalTransformer;
+import com.youth.banner.transformer.FlipVerticalTransformer;
+import com.youth.banner.transformer.ForegroundToBackgroundTransformer;
+import com.youth.banner.transformer.RotateDownTransformer;
+import com.youth.banner.transformer.RotateUpTransformer;
+import com.youth.banner.transformer.ScaleInOutTransformer;
+import com.youth.banner.transformer.StackTransformer;
+import com.youth.banner.transformer.TabletTransformer;
+import com.youth.banner.transformer.ZoomInTransformer;
+import com.youth.banner.transformer.ZoomOutSlideTransformer;
+import com.youth.banner.transformer.ZoomOutTranformer;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
+
+import cn.jzvd.JZDataSource;
+import cn.jzvd.JzvdStd;
+import kv.vension.fastframe.image.glide.GlideProxy;
+import kv.vension.fastframe.views.ShapeImageView;
+import lib.vension.fastframe.common.utils.GlideImageLoader;
 
 /**
  * @author dingcl 数据绑定未进行详细的数据验证，再实际使用中不可取
@@ -160,7 +185,7 @@ public class HomeHottopMultipleRecycleAdapter extends
         helper.setText(R.id.tvVideoTitle, item.title == null ? "" : item.title);
         helper.setText(R.id.tvSourceName_best, item.mediaName == null ? "" : item.mediaName);
 
-        GlideApp.with(mContext).load(item.getPics().get(0) == null ? "" : item.getPics().get(0).url).into(((ShapeImageView) helper.getView(R.id.img_video)));
+        GlideProxy.with(mContext).load(item.getPics().get(0) == null ? "" : item.getPics().get(0).url).into(((ShapeImageView) helper.getView(R.id.img_video)));
         helper.addOnClickListener(R.id.flVideo);
         helper.setOnClickListener(R.id.flVideo, new View.OnClickListener() {
             @Override

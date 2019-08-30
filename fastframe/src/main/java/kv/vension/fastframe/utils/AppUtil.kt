@@ -3,6 +3,7 @@ package kv.vension.fastframe.utils
 import android.annotation.SuppressLint
 import android.app.ActivityManager
 import android.content.Context
+import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import java.security.MessageDigest
 
@@ -16,6 +17,19 @@ import java.security.MessageDigest
  */
 
 object AppUtil {
+
+    /**
+     * 判断当前应用是否是debug模式
+     */
+    fun isApkInDebug(context: Context): Boolean {
+        try {
+            val info = context.applicationInfo
+            return info.flags and ApplicationInfo.FLAG_DEBUGGABLE != 0
+        } catch (e: Exception) {
+            return false
+        }
+
+    }
 
     /**
      * 得到软件显示版本信息
@@ -126,6 +140,7 @@ object AppUtil {
         // 返回当前系统的可用内存
         return (mi.availMem / (1024 * 1024)).toInt()
     }
+
 
     /**
      * 获取手机系统SDK版本

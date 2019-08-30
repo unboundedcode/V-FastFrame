@@ -1,6 +1,6 @@
 package kv.vension.fastframe.net.intercepter
 
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 import okhttp3.CacheControl
 import okhttp3.Interceptor
 import okhttp3.Response
@@ -20,13 +20,13 @@ class NetCacheInterceptor : Interceptor {
      */
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
-        if (!NetWorkUtil.isNetworkAvailable()) {
+        if (!NetworkUtil.isNetworkAvailable()) {
             request = request.newBuilder()
                     .cacheControl(CacheControl.FORCE_CACHE)
                     .build()
         }
         val response = chain.proceed(request)
-        if (NetWorkUtil.isConnected()) {
+        if (NetworkUtil.isConnected()) {
             val maxAge = 60 * 3
             // 有网络时 设置缓存超时时间0个小时 ,意思就是不读取缓存数据,只对get有用,post没有缓冲
             response.newBuilder()

@@ -29,8 +29,11 @@ android {
     dexOptions {
         jumboMode true
     }
+
+    // 移除lint检查的error，可以避免由于编译条件太过严格而编译不过的问题
     lintOptions {
         abortOnError false
+        checkReleaseBuilds false
     }
 
 }
@@ -51,7 +54,7 @@ dependencies {
     //Android Kotlin 扩展库 KTX
     api "androidx.core:core-ktx:$rootProject.ext.androidXCoreVersion"
     api 'androidx.constraintlayout:constraintlayout:1.1.3'
-    api 'androidx.navigation:navigation-ui-ktx:2.1.0-beta02'
+    api 'androidx.navigation:navigation-ui-ktx:2.2.0-alpha01'
      //Kotlin 协程
 //    api 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.0-RC2'
 //    api 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.0-RC2'
@@ -72,31 +75,39 @@ dependencies {
 
     //Retrofit 2.0
     api 'com.squareup.retrofit2:retrofit:2.6.0'
-    api 'com.squareup.retrofit2:converter-gson:2.5.0'
-    api 'com.squareup.retrofit2:adapter-rxjava2:2.5.0'
+    api 'com.squareup.retrofit2:converter-gson:2.6.0'
+    api 'com.squareup.retrofit2:adapter-rxjava2:2.6.0'
     api 'com.squareup.okhttp3:logging-interceptor:3.12.0'
     api 'com.squareup.retrofit2:converter-scalars:2.4.0'
     api 'com.squareup.retrofit2:converter-moshi:2.4.0'
     api 'com.squareup.moshi:moshi-kotlin:1.8.0'
     //Rx系列
-    api 'io.reactivex.rxjava2:rxjava:2.2.6'
+    api 'io.reactivex.rxjava2:rxjava:2.2.10'
     api 'io.reactivex.rxjava2:rxandroid:2.1.1'
     api 'io.reactivex.rxjava2:rxkotlin:2.3.0'
     api 'org.jetbrains.anko:anko:0.10.8'
 
-    //Glide4.0
+    //Glide4.+
     api 'com.github.bumptech.glide:glide:4.9.0'
     kapt  'com.github.bumptech.glide:compiler:4.9.0'
     api 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
+    api 'jp.wasabeef:glide-transformations:4.0.1'//图片转换工具
 
     //logger --> https://github.com/orhanobut/logger
     api 'com.orhanobut:logger:2.2.0'
-    // 事件总线 eventbus --> https://github.com/greenrobot/EventBus
-    api 'org.greenrobot:eventbus:3.1.1'
-    //适配5.0动态权限 --> https://github.com/tbruyelle/RxPermissions
+
+    //RxPermission适配5.0动态权限 --> https://github.com/tbruyelle/RxPermissions
     api 'com.github.tbruyelle:rxpermissions:0.10.2'
-//    api 'com.jakewharton:butterknife:10.1.0'
-//    kapt 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    //dagger2依赖注入
+    api 'com.google.dagger:dagger:2.23.2'
+    kapt 'com.google.dagger:dagger-compiler:2.23.2'
+
+    // EventBus事件总线 --> https://github.com/greenrobot/EventBus
+    api 'org.greenrobot:eventbus:3.1.1'
+
+    //greenDAO数据库
+//    api 'org.greenrobot:greendao:3.2.2'
 
     /** ============================ Views ================================= */
     //通用标题栏 --> https://github.com/wuhenzhizao/android-titlebar
@@ -105,6 +116,10 @@ dependencies {
     api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.49-androidx'
     // 侧滑返回 --> https://github.com/gongwen/SwipeBackLayout
     api 'com.gongwen:swipeback:1.0.2'
+
+
+
 }
 
+//用于上传至Jcenter
 apply from: 'bintray.gradle'

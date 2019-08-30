@@ -41,4 +41,5 @@ dependencies {
         implementation project(path: ':module_course')
         implementation project(path: ':module_news')
     }
+    implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 }

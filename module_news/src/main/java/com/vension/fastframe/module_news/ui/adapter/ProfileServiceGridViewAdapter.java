@@ -9,8 +9,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.vension.fastframe.module_news.R;
 import com.vension.fastframe.module_news.bean.ProfileServiceGridBean;
-import kv.vension.fastframe.glide.GlideApp;
 import java.util.List;
+import kv.vension.fastframe.image.glide.GlideProxy;
+
 
 /**
  * author：JSYL-DCL on 2019/3/8
@@ -54,7 +55,7 @@ public class ProfileServiceGridViewAdapter extends BaseAdapter {
             holder = (ViewHolder)convertView.getTag();
         }
 
-        GlideApp.with(context).load(resBean.get(position).icoUrl == null? "" : resBean.get(position).icoUrl).into(holder.imageView);
+        GlideProxy.with(context).load(resBean.get(position).icoUrl == null? "" : resBean.get(position).icoUrl).into(holder.imageView);
         holder.textView.setText(resBean.get(position).titleName == null? "" : resBean.get(position).titleName+"");
         return convertView;
     }

@@ -19,7 +19,7 @@ import io.reactivex.Observable
 import kotlinx.android.synthetic.main.item_recy_wan_home_banner.view.*
 import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import kv.vension.fastframe.ext.showToast
-import kv.vension.fastframe.glide.ImageLoader
+import kv.vension.fastframe.image.glide.ImageLoader
 
 /**
  * ===================================================================

@@ -14,7 +14,7 @@ import com.alibaba.android.arouter.launcher.ARouter
 import io.reactivex.Observable
 import kotlinx.android.synthetic.main.activity_splash.*
 import kv.vension.fastframe.core.AbsCompatActivity
-import kv.vension.fastframe.glide.ImageLoader
+import kv.vension.fastframe.image.glide.ImageLoader
 import kv.vension.fastframe.net.rx.RxHandler
 import kv.vension.fastframe.utils.TimeUtil
 import kv.vension.fastframe.views.CircleCountDownView

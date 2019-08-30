@@ -2,7 +2,7 @@ package kv.vension.fastframe.net.rx
 
 import io.reactivex.observers.ResourceObserver
 import kv.vension.fastframe.core.mvp.IView
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 import kv.vension.fastframe.net.exception.ErrorStatus
 import kv.vension.fastframe.net.exception.ExceptionHandle
 import kv.vension.fastframe.net.response.BaseBean
@@ -27,7 +27,7 @@ abstract class AbsObserver<T : BaseBean>(view: IView? = null) : ResourceObserver
     override fun onStart() {
         super.onStart()
         mView?.showLoading()
-        if (!NetWorkUtil.isConnected()) {
+        if (!NetworkUtil.isConnected()) {
             mView?.showMessage("网络连接不可用,请检查网络设置!")
             onComplete()
         }

@@ -48,8 +48,6 @@ import org.greenrobot.eventbus.ThreadMode
  */
 abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
 
-    val TAG = this.javaClass.simpleName //获取上下文并设置log标记
-
     /**
      * 在使用自定义toolbar时候的根布局 = toolBarView+childView
      */
@@ -196,7 +194,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
             val v = currentFocus
             // 如果不是落在EditText区域，则需要关闭输入法
             if (KeyBoardUtil.isHideKeyboard(v, ev)) {
-                KeyBoardUtil.hideKeyBoard(this, v)
+                KeyBoardUtil.closeKeyBoard(this, v!!)
             }
         }
         return super.dispatchTouchEvent(ev)

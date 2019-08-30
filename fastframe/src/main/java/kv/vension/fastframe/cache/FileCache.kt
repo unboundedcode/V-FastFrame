@@ -2,8 +2,8 @@ package kv.vension.fastframe.cache
 
 import android.content.Context
 import android.os.Environment
+import kv.vension.fastframe.utils.FileUtil.getFileSize
 import java.io.File
-import java.io.FileInputStream
 import java.text.DecimalFormat
 
 /**
@@ -167,22 +167,6 @@ object FileCache {
     }
 
     /**
-     * 获取指定文件大小
-     */
-    @Throws(Exception::class)
-    fun getFileSize(file: File?): Long {
-        var size: Long = 0
-        if (file != null && file.exists()) {
-            var mInputStream: FileInputStream? = FileInputStream(file)
-            size = mInputStream!!.available().toLong()
-            mInputStream.close()
-        } else {
-            file!!.createNewFile()
-        }
-        return size
-    }
-
-    /**
      * 获取指定文件夹大小
      */
     @Throws(Exception::class)
@@ -205,7 +189,7 @@ object FileCache {
     /**
      * 转换文件大小
      */
-    private fun formetFileSize(fileS: Long): String {
+    fun formetFileSize(fileS: Long): String {
         val df = DecimalFormat("#.00")
         var fileSizeString :String = ""
         val wrongSize = "0B"

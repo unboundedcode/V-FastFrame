@@ -7,7 +7,7 @@ import android.content.IntentFilter
 import android.util.Log
 import kv.vension.fastframe.core.AbsCompatActivity
 import kv.vension.fastframe.event.BaseEvent
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 import kv.vension.fastframe.utils.PreferenceUtil
 import org.greenrobot.eventbus.EventBus
 
@@ -48,7 +48,7 @@ class NetworkChangeReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
         //判断当前的网络连接状态是否可用
-        val isConnected = NetWorkUtil.isConnected()
+        val isConnected = NetworkUtil.isConnected()
         Log.d(netTAG, "onReceive: 当前网络 $isConnected")
         val event = BaseEvent<Any>()
         event.isNetConnected = isConnected

@@ -12,7 +12,7 @@ import com.vension.fastframe.module_news.R
 import com.vension.fastframe.module_news.bean.ProfileCareModel
 import com.vension.fastframe.module_news.bean.ProfileServiceGridBean
 import kv.vension.fastframe.ext.showToast
-import kv.vension.fastframe.glide.GlideApp
+import kv.vension.fastframe.image.glide.GlideProxy
 import kv.vension.fastframe.views.AtMostGridView
 import java.util.*
 
@@ -73,12 +73,12 @@ class ProfileAdapter(private val context: Context, data: List<ProfileCareModel.P
         linearLayouts.add(holder.getView(R.id.llOrder4) as LinearLayout)
         linearLayouts.add(holder.getView(R.id.llOrder5) as LinearLayout)
         if (data != null && linearLayouts != null) {
-            GlideApp.with(context).load(if (data!!.title_url == null) "" else data!!.title_url).into(civTitle)
+            GlideProxy.with(context).load(if (data!!.title_url == null) "" else data!!.title_url).into(civTitle)
             for (i in linearLayouts.indices) {
                 val ico = (linearLayouts[i] as ViewGroup).getChildAt(0) as AppCompatImageView
                 val name = (linearLayouts[i] as ViewGroup).getChildAt(1) as TextView
                 name.text = if (data!!.item_list.get(i).below_text == null) "" else data!!.item_list.get(i).below_text
-                GlideApp.with(context).load(if (data!!.item_list[i].above_image.img_url == null) "" else data!!.item_list[i].above_image.img_url).into(ico)
+                GlideProxy.with(context).load(if (data!!.item_list[i].above_image.img_url == null) "" else data!!.item_list[i].above_image.img_url).into(ico)
                 linearLayouts[i].setOnClickListener { showToast(data!!.item_list[i].below_text + "") }
             }
         }
@@ -98,7 +98,7 @@ class ProfileAdapter(private val context: Context, data: List<ProfileCareModel.P
         linearLayouts.add(holder.getView(R.id.llWallet3) as LinearLayout)
         linearLayouts.add(holder.getView(R.id.llWallet4) as LinearLayout)
         if (data != null && linearLayouts != null) {
-            GlideApp.with(context).load(if (data!!.title_url == null) "" else data!!.title_url).into(civTitle)
+            GlideProxy.with(context).load(if (data!!.title_url == null) "" else data!!.title_url).into(civTitle)
             for (i in linearLayouts.indices) {
                 val num = (linearLayouts[i] as ViewGroup).getChildAt(0) as TextView
                 val name = (linearLayouts[i] as ViewGroup).getChildAt(1) as TextView
@@ -121,7 +121,7 @@ class ProfileAdapter(private val context: Context, data: List<ProfileCareModel.P
         val civTitle = holder.getView(R.id.civTitle) as AppCompatImageView
         val mySrviceGrid = holder.getView(R.id.mySrviceGrid) as AtMostGridView
         if (data != null) {
-            GlideApp.with(context).load(if (data!!.title_url == null) "" else data!!.title_url).into(civTitle)
+            GlideProxy.with(context).load(if (data!!.title_url == null) "" else data!!.title_url).into(civTitle)
             if (data!!.item_list != null) {
                 for (a in data!!.item_list) {
                     profileServiceGridBeans.add(ProfileServiceGridBean(a.above_image.img_url, a.below_text))

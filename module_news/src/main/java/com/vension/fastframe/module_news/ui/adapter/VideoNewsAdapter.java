@@ -7,16 +7,18 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import cn.jzvd.JZDataSource;
-import cn.jzvd.JzvdStd;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.vension.fastframe.module_news.R;
 import com.vension.fastframe.module_news.bean.VideoNewsModel;
-import kv.vension.fastframe.glide.GlideApp;
 
 import java.util.LinkedHashMap;
 import java.util.List;
+
+import cn.jzvd.JZDataSource;
+import cn.jzvd.JzvdStd;
+import kv.vension.fastframe.image.glide.GlideProxy;
 
 /**
  * Created by dingcl.
@@ -96,7 +98,7 @@ public class VideoNewsAdapter extends BaseQuickAdapter<VideoNewsModel.Articles, 
         // 高度为宽度的9/16
         params.height = (int) (params.width * 9f / 16f);
         mVideoPlayer.setLayoutParams(params);
-        GlideApp.with(mContext).load(articles.pics.get(0).url).into(mVideoPlayer.thumbImageView);
+        GlideProxy.with(mContext).load(articles.pics.get(0).url).into(mVideoPlayer.thumbImageView);
     }
 
 }

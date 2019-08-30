@@ -39,7 +39,7 @@ ext {
     minSdkVersion = 19
     targetSdkVersion = 29
     androidXCompatVersion = "1.0.2"
-    androidXCoreVersion = "1.0.2"
+    androidXCoreVersion = "1.2.0-alpha03"
     versionCode = 001
     versionName = 'V_0.0.1'
 }

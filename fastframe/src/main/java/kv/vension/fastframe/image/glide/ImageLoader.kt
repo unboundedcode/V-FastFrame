@@ -1,16 +1,13 @@
-package kv.vension.fastframe.glide
+package kv.vension.fastframe.image.glide
 
 import android.content.Context
 import android.net.Uri
-import android.preference.PreferenceManager
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.resource.bitmap.BitmapTransformation
 import com.bumptech.glide.request.RequestOptions
 import kv.vension.fastframe.R
-import kv.vension.fastframe.VFrame
-import kv.vension.fastframe.utils.NetWorkUtil
 
 
 /**
@@ -21,16 +18,11 @@ import kv.vension.fastframe.utils.NetWorkUtil
  * ========================================================
  */
 object ImageLoader {
-    private val setting = PreferenceManager.getDefaultSharedPreferences(VFrame.getContext())
 
     val ANDROID_RESOURCE = "android.resource://"
     val FILE = "file://"
     val SEPARATOR = "/"
 
-    /**
-     * 1.开启无图模式 2.非WiFi环境 不加载图片
-     */
-    private val isLoadImage = !setting.getBoolean("switch_noPhotoMode", false) || NetWorkUtil.isWifi()
 
     fun resId2Uri(context: Context,@DrawableRes resId: Int): String {
         return Uri.parse(ANDROID_RESOURCE + context.packageName + SEPARATOR + resId).toString()
@@ -40,10 +32,19 @@ object ImageLoader {
      *  加载本地资源
      */
     fun loadResource(context: Context,@DrawableRes resId:Int,imageView: ImageView){
-        loadImage(context,imageView, resId2Uri(context,resId))
+        loadImage(
+            context,
+            imageView,
+            resId2Uri(context, resId)
+        )
     }
     fun loadResource(context: Context,@DrawableRes resId:Int,imageView: ImageView,transformation : BitmapTransformation){
-        loadImage(context,imageView, resId2Uri(context,resId),transformation)
+        loadImage(
+            context,
+            imageView,
+            resId2Uri(context, resId),
+            transformation
+        )
     }
 
 
@@ -51,25 +52,28 @@ object ImageLoader {
      *  加载网络图片
      */
     fun loadImage(context: Context, imageView: ImageView, uri: String) {
-        loadImage(context,imageView,uri,0)
+        loadImage(context, imageView, uri, 0)
     }
     fun loadImage(context: Context, imageView: ImageView, uri: String, placeholderId : Int) {
-        if (isLoadImage) {
-            GlideApp
+            GlideProxy
                 .with(context)
                 .load(uri)
                 .centerCrop()
                 .priority(Priority.HIGH)
                 .placeholder(if(placeholderId > 0) placeholderId else R.color.placeholder_color)
                 .into(imageView)
-        }
     }
     fun loadImage(context: Context, imageView: ImageView, uri: String,transformation : BitmapTransformation) {
-        loadImage(context,imageView,uri,0,transformation)
+        loadImage(
+            context,
+            imageView,
+            uri,
+            0,
+            transformation
+        )
     }
     fun loadImage(context: Context, imageView: ImageView, uri: String,placeholderId : Int,transformation : BitmapTransformation) {
-        if (isLoadImage) {
-            GlideApp
+            GlideProxy
                 .with(context)
                 .load(uri)
                 .centerCrop()
@@ -77,7 +81,6 @@ object ImageLoader {
                 .placeholder(if(placeholderId > 0) placeholderId else R.color.placeholder_color)
                 .apply( RequestOptions.bitmapTransform(transformation))
                 .into(imageView)
-        }
     }
 
 
@@ -85,7 +88,7 @@ object ImageLoader {
      *  加载网络图片缩略图
      */
     fun loadThumbnail(context: Context,imageView: ImageView, resize: Int, placeholderId: Int,  uri: String) {
-        GlideApp
+        GlideProxy
             .with(context)
             .asBitmap()
             .load(uri)
@@ -98,7 +101,7 @@ object ImageLoader {
      *  加载网络图片缩略图
      */
     fun loadThumbnail(context: Context,imageView: ImageView, resize: Int, placeholderId: Int,  uri: String,transformation : BitmapTransformation) {
-        GlideApp
+        GlideProxy
             .with(context)
             .asBitmap()
             .load(uri)
@@ -114,7 +117,7 @@ object ImageLoader {
      *  加载网络Gif缩略图
      */
     fun loadGifThumbnail(context: Context, resize: Int, placeholderId : Int, imageView: ImageView, uri: String) {
-            GlideApp
+        GlideProxy
                 .with(context)
                 .asBitmap()
                 .load(uri)
@@ -129,8 +132,7 @@ object ImageLoader {
      *  加载网络Gif
      */
     fun loadGifImage(context: Context, imageView: ImageView, uri: String) {
-        if (isLoadImage) {
-            GlideApp
+            GlideProxy
                 .with(context)
                 .asGif()
                 .load(uri)
@@ -138,7 +140,6 @@ object ImageLoader {
                 .priority(Priority.HIGH)
                 .placeholder(R.color.placeholder_color)
                 .into(imageView)
-        }
     }
 
     fun supportAnimatedGif(): Boolean {

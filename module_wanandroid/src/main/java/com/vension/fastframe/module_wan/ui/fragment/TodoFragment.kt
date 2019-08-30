@@ -23,7 +23,7 @@ import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.core.adapter.recy.decoration.SpaceItemDecoration
 import kv.vension.fastframe.core.mvp.AbsCompatMVPFragment
 import kv.vension.fastframe.ext.showToast
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
@@ -172,7 +172,7 @@ class TodoFragment : AbsCompatMVPFragment<TodoContract.View, TodoContract.Presen
                 val data = datas[position].t
                 when (view.id) {
                     R.id.btn_delete -> {
-                        if (!NetWorkUtil.isNetworkAvailable()) {
+                        if (!NetworkUtil.isNetworkAvailable()) {
                             showToast(resources.getString(R.string.no_network_view_hint))
                             return@OnItemChildClickListener
                         }
@@ -185,7 +185,7 @@ class TodoFragment : AbsCompatMVPFragment<TodoContract.View, TodoContract.Presen
                         }
                     }
                     R.id.btn_done -> {
-                        if (!NetWorkUtil.isNetworkAvailable()) {
+                        if (!NetworkUtil.isNetworkAvailable()) {
                             showToast(resources.getString(R.string.no_network_view_hint))
                             return@OnItemChildClickListener
                         }

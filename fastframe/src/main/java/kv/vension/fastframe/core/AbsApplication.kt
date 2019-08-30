@@ -69,5 +69,4 @@ abstract class AbsApplication : MultiDexApplication(){
         PageCache.pageActivityCache.quit()
     }
 
-
 }

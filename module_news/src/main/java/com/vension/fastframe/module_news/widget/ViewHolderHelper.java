@@ -13,11 +13,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
-import android.widget.*;
+import android.widget.Checkable;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.RatingBar;
+import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
-import kv.vension.fastframe.glide.GlideApp;
-
 import java.io.File;
+import kv.vension.fastframe.image.glide.GlideProxy;
 
 public class ViewHolderHelper extends RecyclerView.ViewHolder {
     private SparseArray<View> mViews;
@@ -99,27 +102,27 @@ public class ViewHolderHelper extends RecyclerView.ViewHolder {
 
     public ViewHolderHelper setImageUrl(int viewId, String url) {
         ImageView view = getView(viewId);
-        GlideApp.with(mContext).load(url).into(view);
+        GlideProxy.with(mContext).load(url).into(view);
         return this;
     }
     public ViewHolderHelper setBigImageUrl(int viewId, String url) {
         ImageView view = getView(viewId);
-        GlideApp.with(mContext).load(url).into(view);
+        GlideProxy.with(mContext).load(url).into(view);
         return this;
     }
     public ViewHolderHelper setSmallImageUrl(int viewId, String url) {
         ImageView view = getView(viewId);
-        GlideApp.with(mContext).load(url).into(view);
+        GlideProxy.with(mContext).load(url).into(view);
         return this;
     }
     public ViewHolderHelper setImageRoundUrl(int viewId, String url) {
         ImageView view = getView(viewId);
-        GlideApp.with(mContext).load(url).into(view);
+        GlideProxy.with(mContext).load(url).into(view);
         return this;
     }
     public ViewHolderHelper setImageFile(int viewId, File url) {
         ImageView view = getView(viewId);
-        GlideApp.with(mContext).load(url).into(view);
+        GlideProxy.with(mContext).load(url).into(view);
         return this;
     }
     public ViewHolderHelper setImageDrawable(int viewId, Drawable drawable) {

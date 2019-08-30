@@ -29,7 +29,7 @@ import com.youth.banner.BannerConfig
 import com.youth.banner.listener.OnBannerListener
 import com.youth.banner.transformer.*
 import kv.vension.fastframe.core.AbsCompatFragment
-import kv.vension.fastframe.glide.GlideApp
+import kv.vension.fastframe.image.glide.GlideProxy
 import kv.vension.fastframe.views.ShapeImageView
 import lib.vension.fastframe.common.utils.GlideImageLoader
 import java.util.*
@@ -301,7 +301,7 @@ class HomeRecommendAdapter(private val mFragment: AbsCompatFragment, data: Array
         helper.setText(R.id.tvVideoTitle, if (item.title == null) "" else item.title)
         helper.setText(R.id.tvSourceName_best, if (item.mediaName == null) "" else item.mediaName)
 
-        GlideApp.with(mContext).load(if (item.pics[0] == null) "" else item.pics[0].url)
+        GlideProxy.with(mContext).load(if (item.pics[0] == null) "" else item.pics[0].url)
             .into(helper.getView<View>(R.id.img_video) as ShapeImageView)
         helper.addOnClickListener(R.id.flVideo)
         helper.setOnClickListener(

@@ -4,15 +4,18 @@ import android.content.Context;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.vension.fastframe.module_news.NewsConstant;
 import com.vension.fastframe.module_news.R;
 import com.vension.fastframe.module_news.bean.FrontNewsModel;
 import com.vension.fastframe.module_news.utils.StringUtils;
-import kv.vension.fastframe.glide.GlideApp;
-import kv.vension.fastframe.views.ShapeImageView;
+
 import java.util.List;
+
+import kv.vension.fastframe.image.glide.GlideProxy;
+import kv.vension.fastframe.views.ShapeImageView;
 /**
  */
 public class FrontNewsAdapter extends BaseQuickAdapter<FrontNewsModel.Articles, BaseViewHolder> {
@@ -37,7 +40,7 @@ public class FrontNewsAdapter extends BaseQuickAdapter<FrontNewsModel.Articles, 
         TextView tvGUBINum =  helper.getView(R.id.tvGUBINum);
         TextView tvFlagJoinNum =  helper.getView(R.id.tvFlagJoinNum);
         helper.setText(R.id.tvBottom, articles.title == null ? "" : articles.title);
-        GlideApp.with(mContext).load(articles.pics.get(0) == null ? "" : articles.pics.get(0).url).into(imgTop);
+        GlideProxy.with(mContext).load(articles.pics.get(0) == null ? "" : articles.pics.get(0).url).into(imgTop);
         if (NewsConstant.FRONT_NEWS_RIGHT_BOTTOM_RIGHTNOW == articles.isjoinOrPublish){//马上参与
             imgTop.setAlpha(255);
             tvStatus.setVisibility(View.GONE);

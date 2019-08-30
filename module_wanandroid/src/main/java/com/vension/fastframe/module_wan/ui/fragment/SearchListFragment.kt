@@ -14,7 +14,7 @@ import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import kv.vension.fastframe.ext.showToast
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 
 /**
  * ========================================================
@@ -66,7 +66,7 @@ class SearchListFragment : AbsCompatMVPRefreshFragment<Article, SearchListContra
                 when(view.id){
                     R.id.iv_like -> {
                         if (isLogin) {
-                            if (!NetWorkUtil.isNetworkAvailable()) {
+                            if (!NetworkUtil.isNetworkAvailable()) {
                                 showToast(resources.getString(R.string.no_network_view_hint))
                                 return@setOnItemChildClickListener
                             }

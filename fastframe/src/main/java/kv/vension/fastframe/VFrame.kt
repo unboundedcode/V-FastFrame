@@ -1,6 +1,7 @@
 package kv.vension.fastframe
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import android.content.res.AssetManager
@@ -8,6 +9,7 @@ import android.content.res.ColorStateList
 import android.content.res.Configuration
 import android.content.res.Resources
 import android.graphics.drawable.Drawable
+import android.os.Bundle
 import android.util.DisplayMetrics
 import androidx.annotation.ArrayRes
 import androidx.annotation.ColorRes
@@ -19,6 +21,8 @@ import com.orhanobut.logger.LogcatLogStrategy
 import com.orhanobut.logger.Logger
 import com.orhanobut.logger.PrettyFormatStrategy
 import kv.vension.fastframe.cache.FileCache
+import kv.vension.fastframe.image.ImageLoaderHelper
+import kv.vension.fastframe.image.glide.GlideLoaderStrategy
 import kv.vension.fastframe.utils.CrashUtil
 import kv.vension.fastframe.utils.SharedPreferencesUtil
 
@@ -36,7 +40,7 @@ import kv.vension.fastframe.utils.SharedPreferencesUtil
  *
  * Take advantage of youth and toss about !
  * ------------------------------------------------------------------------
- * 描述：
+ * 描述：FastFrame库核心操作类
  * ========================================================================
  */
 @SuppressLint("StaticFieldLeak")
@@ -44,16 +48,18 @@ object VFrame {
 
     lateinit var mContext: Context
         private set
-    lateinit var mApplication: Context
+    lateinit var mApplication: Application
         private set
 
 
     fun init(application: Application) {
         mApplication = application
         mContext = application.applicationContext
-        FileCache.init(application.applicationContext)
+//        application.registerActivityLifecycleCallbacks(ActivityLifeCallback())
+        FileCache.init(application.applicationContext)//初始化缓存文件
         initLogger()//初始化Logger日志打印
-        initCrash()//崩溃日志收集
+        CrashUtil.init()//崩溃日志收集
+        ImageLoaderHelper.getInstance()?.imageLoaderStrategy = GlideLoaderStrategy()//初始化图片加载框架
     }
 
 
@@ -76,10 +82,6 @@ object VFrame {
         })
     }
 
-
-    private fun initCrash() {
-        CrashUtil.init()
-    }
 
     fun getContext(): Context {
         return mContext
@@ -147,6 +149,42 @@ object VFrame {
 
     fun getPreferenceHelper(): SharedPreferencesUtil? {
        return SharedPreferencesUtil.getSingleInstance(getContext())
+    }
+
+
+    /**
+     * Activity各生命周期回调处理
+     */
+    private class ActivityLifeCallback : Application.ActivityLifecycleCallbacks{
+
+        override fun onActivityPaused(p0: Activity) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun onActivityStarted(p0: Activity) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun onActivityDestroyed(p0: Activity) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun onActivitySaveInstanceState(p0: Activity, p1: Bundle) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun onActivityStopped(p0: Activity) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun onActivityCreated(p0: Activity, p1: Bundle?) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
+        override fun onActivityResumed(p0: Activity) {
+            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        }
+
     }
 
 }

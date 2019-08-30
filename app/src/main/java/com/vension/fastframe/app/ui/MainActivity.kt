@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.google.android.material.navigation.NavigationView
 import com.vension.fastframe.app.R
+import com.vension.fastframe.app.ui.image.TabFragmentImage
 import com.vension.fastframe.app.ui.tab1.TabFragment_1
 import com.wuhenzhizao.titlebar.statusbar.StatusBarUtils
 import kotlinx.android.synthetic.main.activity_main.*
@@ -36,9 +37,10 @@ import lib.vension.fastframe.common.test.TestRefreshFragment
 @Route(path = RouterConfig.PATH_APP_MAINACTIVITY)
 class MainActivity : AbsCompatActivity(){
 
-    private val titles = listOf("首页", "热门", "发现", "我的")
+    private val titles = listOf("首页", "图片", "发现", "我的")
     private val mFragments = listOf(
         TabFragment_1.newInstance(),
+        TabFragmentImage.newInstance(),
         TestFragment.getInstance("热门"),
         TestFragment.getInstance("发现"),
         TestFragment.getInstance("我的")

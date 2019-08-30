@@ -16,7 +16,7 @@ import com.vension.fastframe.module_wan.ui.fragment.AgentWebFragment
 import com.vension.fastframe.module_wan.ui.fragment.LoginFragment
 import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import kv.vension.fastframe.ext.showToast
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 
 /**
  * ========================================================
@@ -79,7 +79,7 @@ class ProjectListFragment : AbsCompatMVPRefreshFragment<Article, ProjectListCont
                 when(view.id){
                     R.id.item_project_list_like_iv -> {
                         if (isLogin) {
-                            if (!NetWorkUtil.isNetworkAvailable()) {
+                            if (!NetworkUtil.isNetworkAvailable()) {
                                 showToast(resources.getString(R.string.no_network_view_hint))
                                 return@setOnItemChildClickListener
                             }

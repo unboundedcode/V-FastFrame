@@ -47,7 +47,7 @@ open class ProxyActivity : AbsCompatActivity() {
     }
 
 
-    override fun onSaveInstanceState(outState: Bundle?) {
+    override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         if (mFragment != null) {
             supportFragmentManager.putFragment(outState!!, "ProxyFragment", mFragment!!)

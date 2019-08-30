@@ -14,7 +14,7 @@ import com.vension.fastframe.module_wan.mvp.presenter.KnowledgePresenter
 import com.vension.fastframe.module_wan.ui.adapter.KnowledgeAdapter
 import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
 import kv.vension.fastframe.ext.showToast
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 
 /**
  * ========================================================
@@ -73,7 +73,7 @@ class KnowledgeFragment : AbsCompatMVPRefreshFragment<Article, KnowledgeContract
                 when(view.id){
                     R.id.iv_like -> {
                         if (isLogin) {
-                            if (!NetWorkUtil.isNetworkAvailable()) {
+                            if (!NetworkUtil.isNetworkAvailable()) {
                                 showToast(resources.getString(R.string.no_network_view_hint))
                                 return@setOnItemChildClickListener
                             }

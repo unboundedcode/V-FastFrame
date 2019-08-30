@@ -1,4 +1,4 @@
-package kv.vension.fastframe.glide.transformation;
+package kv.vension.fastframe.image.glide.transformation;
 
 import android.annotation.TargetApi;
 import android.content.Context;

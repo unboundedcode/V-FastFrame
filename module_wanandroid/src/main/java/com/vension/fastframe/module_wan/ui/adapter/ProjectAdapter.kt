@@ -6,7 +6,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.bean.Article
-import kv.vension.fastframe.glide.ImageLoader
+import kv.vension.fastframe.image.glide.ImageLoader
 
 /**
  * ========================================================

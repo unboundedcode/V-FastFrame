@@ -13,7 +13,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton
 import kv.vension.fastframe.R
 import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.ext.showToast
-import kv.vension.fastframe.utils.NetWorkUtil
+import kv.vension.fastframe.utils.NetworkUtil
 
 
 /**
@@ -194,7 +194,7 @@ abstract class AbsCompatMVPRefreshFragment<data,in V: IViewRefresh<data>,P : IPr
     override fun onRefresh() {
         mRefreshFloatingActionButton.visibility = View.INVISIBLE
         if (isCheckNet()){
-            if (!NetWorkUtil.isNetworkAvailable()){
+            if (!NetworkUtil.isNetworkAvailable()){
                 showNoNetwork()
                 return
             }
