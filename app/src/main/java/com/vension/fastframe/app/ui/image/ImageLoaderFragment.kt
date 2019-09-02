@@ -36,14 +36,15 @@ import java.io.FileOutputStream
  * @desc: happy code -> 图片加载模块
  * ========================================================================
  */
-class TabFragmentImage : AbsCompatFragment() {
+class ImageLoaderFragment : AbsCompatFragment() {
 
     private var useUniversalLoader = false
     private val picUrl = "http://guolin.tech/book.png"
     private val picUrl2 = "http://static.aiyanxueonline.com/tmp/wxd32f1d99a874af10.o6zAJs46gNQW3Mz32eLJN34YWHpM.igiYgFLqOEmXc72ff925a26dc18be14a4d962963ec1d.png"
+
     companion object{
-        fun newInstance() : TabFragmentImage {
-            return TabFragmentImage()
+        fun newInstance() : ImageLoaderFragment {
+            return ImageLoaderFragment()
         }
     }
 
@@ -52,7 +53,7 @@ class TabFragmentImage : AbsCompatFragment() {
     }
 
     override fun attachLayoutRes(): Int {
-        return com.vension.fastframe.app.R.layout.fragment_tab_image
+        return R.layout.fragment_tab_image
     }
 
     override fun initViewAndData(view: View, savedInstanceState: Bundle?) {
@@ -102,43 +103,40 @@ class TabFragmentImage : AbsCompatFragment() {
         super.onClick(v)
         when(v?.id){
             R.id.btn_net -> {//加载网络图片
-                ImageLoaderHelper.getInstance()?.loadImage(mContext,picUrl,iv_common)
+                ImageLoaderHelper.getInstance().loadImage(mContext,picUrl,iv_common)
             }
             R.id.btn_res -> { //加载Res资源图片
                 if(useUniversalLoader){
-//                    val imageUri = "drawable://" + com.vension.fastframe.app.R.drawable.image // from drawables
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext, "drawable://" + com.vension.fastframe.app.R.drawable.img_advertisment,iv_common)
+                    ImageLoaderHelper.getInstance().loadImage(mContext, "drawable://" + com.vension.fastframe.app.R.drawable.img_advertisment,iv_common)
                 }else{
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext, com.vension.fastframe.app.R.drawable.img_advertisment,iv_common)
+                    ImageLoaderHelper.getInstance().loadImage(mContext, com.vension.fastframe.app.R.drawable.img_advertisment,iv_common)
                 }
             }
             R.id.btn_assets -> {//加载assets资源图片
                 if(useUniversalLoader){
-                    // String imageUri = "assets://image.png"; // from assets
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext, "assets://image_fast_frame.png",iv_common)
+                    ImageLoaderHelper.getInstance().loadImage(mContext, "assets://image_fast_frame.png",iv_common)
                 }else{
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,"file:///android_asset/image_fast_frame.png",iv_common)
+                    ImageLoaderHelper.getInstance().loadImage(mContext,"file:///android_asset/image_fast_frame.png",iv_common)
                 }
             }
             R.id.btn_local -> { //加载本地图片
                 val file = FileUtil.getFile(FileUtil.getExternalCacheDir(mContext), "image_fast_frame.png")
                 if(useUniversalLoader){
-                    // String imageUri = "file:///mnt/sdcard/image.png"; // from SD card
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,"file:///" + file!!.absolutePath,iv_common)
+                    ImageLoaderHelper.getInstance().loadImage(mContext,"file:///" + file!!.absolutePath,iv_common)
                 }else{
                     ImageLoaderHelper.getInstance().loadImage(mContext,file!!, iv_common)
                 }
             }
             R.id.btn_circle -> { //指定图片加载为圆形
                 if(useUniversalLoader){
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                    ImageLoaderHelper.getInstance().loadImage(mContext,
                         UniversalConfigImpl.builder()
                             .url(picUrl2)
                             .imageView(iv_option)
                             .isCircle(true)
                             .build())
                 }else{
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                    ImageLoaderHelper.getInstance().loadImage(mContext,
                         GlideConfigImpl.builder()
                             .url(picUrl2)
                             .imageView(iv_option)
@@ -148,14 +146,14 @@ class TabFragmentImage : AbsCompatFragment() {
             }
             R.id.btn_round -> { //指定图片加载为圆角
                 if(useUniversalLoader){
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                    ImageLoaderHelper.getInstance().loadImage(mContext,
                         UniversalConfigImpl.builder()
                             .url(picUrl2)
                             .imageView(iv_option)
                             .roundRadius(12)
                             .build())
                 }else{
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                    ImageLoaderHelper.getInstance().loadImage(mContext,
                         GlideConfigImpl.builder()
                             .url(picUrl2)
                             .imageView(iv_option)
@@ -164,7 +162,7 @@ class TabFragmentImage : AbsCompatFragment() {
                 }
             }
             R.id.btn_blur -> { //指定图片加载为模糊效果
-                ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                ImageLoaderHelper.getInstance().loadImage(mContext,
                     GlideConfigImpl.builder()
                         .url(picUrl)
                         .imageView(iv_option)
@@ -172,7 +170,7 @@ class TabFragmentImage : AbsCompatFragment() {
                         .build())
             }
             R.id.btn_gray -> { //指定图片加载为灰白效果
-                ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                ImageLoaderHelper.getInstance().loadImage(mContext,
                     GlideConfigImpl.builder()
                         .url(picUrl)
                         .imageView(iv_option)
@@ -181,22 +179,22 @@ class TabFragmentImage : AbsCompatFragment() {
             }
             R.id.btn_circle_border -> { //指定图片边框的粗细以及颜色（目前边框仅适用于圆形条件下）
                 if(useUniversalLoader){
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                    ImageLoaderHelper.getInstance().loadImage(mContext,
                         UniversalConfigImpl.builder()
                             .url(picUrl2)
                             .imageView(iv_option)
                             .isCircle(true)
                             .borderWidth(4.0f)
-                            .borderColor(com.vension.fastframe.app.R.color.color_red)
+                            .borderColor(R.color.color_red)
                             .build())
                 }else{
-                    ImageLoaderHelper.getInstance()?.loadImage(mContext,
+                    ImageLoaderHelper.getInstance().loadImage(mContext,
                         GlideConfigImpl.builder()
                             .url(picUrl2)
                             .imageView(iv_option)
                             .isCircle(true)
                             .borderWidth(4)
-                            .borderColor(com.vension.fastframe.app.R.color.color_red)
+                            .borderColor(R.color.color_red)
                             .build())
                 }
 
@@ -220,7 +218,7 @@ class TabFragmentImage : AbsCompatFragment() {
                         runOnUiThread {
                             if(useUniversalLoader){
                                 // String imageUri = "file:///mnt/sdcard/image.png"; // from SD card
-                                ImageLoaderHelper.getInstance()?.loadImage(mContext,"file:///" + result.absolutePath,iv_download)
+                                ImageLoaderHelper.getInstance().loadImage(mContext,"file:///" + result.absolutePath,iv_download)
                             }else{
                                 ImageLoaderHelper.getInstance().loadImage(mContext,result, iv_download)
                             }

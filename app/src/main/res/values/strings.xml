@@ -4,7 +4,7 @@
     <!-- Nav Menu -->
     <string name="menu_tab_1">首页</string>
     <string name="menu_tab_2">图片</string>
-    <string name="menu_tab_3">发现</string>
+    <string name="menu_tab_3">事件总线</string>
     <string name="menu_tab_4">我的</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

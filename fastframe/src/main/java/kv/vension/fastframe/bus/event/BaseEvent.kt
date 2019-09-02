@@ -1,4 +1,4 @@
-package kv.vension.fastframe.event
+package kv.vension.fastframe.bus.event
 
 /**
  * 自定义eventbus发送实体

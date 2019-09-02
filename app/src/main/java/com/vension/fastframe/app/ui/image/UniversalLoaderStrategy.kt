@@ -26,6 +26,8 @@ import kv.vension.fastframe.image.ImageLoaderCallback
 import kv.vension.fastframe.utils.BitmapUtil
 import kv.vension.fastframe.utils.FileUtil
 import java.io.File
+import javax.inject.Inject
+import javax.inject.Singleton
 
 
 /**
@@ -45,7 +47,12 @@ import java.io.File
  * @desc: happy code ->
  * ========================================================================
  */
+
+@Singleton
 class UniversalLoaderStrategy : ILoaderStrategy<UniversalConfigImpl> {
+
+    @Inject
+    constructor()
 
     private val universalLoader by lazy {
         val configuration = ImageLoaderConfiguration.createDefault(VFrame.getContext())

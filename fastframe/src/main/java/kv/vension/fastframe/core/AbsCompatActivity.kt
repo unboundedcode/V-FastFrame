@@ -18,14 +18,14 @@ import com.wuhenzhizao.titlebar.statusbar.StatusBarUtils
 import com.wuhenzhizao.titlebar.utils.KeyboardConflictCompat
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kv.vension.fastframe.R
+import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
-import kv.vension.fastframe.event.BaseEvent
+import kv.vension.fastframe.bus.event.BaseEvent
 import kv.vension.fastframe.receiver.NetworkChangeReceiver
 import kv.vension.fastframe.utils.KeyBoardUtil
 import kv.vension.fastframe.utils.PreferenceUtil
 import kv.vension.fastframe.views.MultiStateLayout
-import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
@@ -103,7 +103,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
 
             //开启事件总线
             if (useEventBus()) {
-                EventBus.getDefault().register(this)
+                VFrame.busManager.register(this)
             }
 
             //初始化view和数据
@@ -157,7 +157,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
     override fun onDestroy() {
         super.onDestroy()
         if (useEventBus()) {
-            EventBus.getDefault().unregister(this)
+            VFrame.busManager.unRegister(this)
         }
         NetworkChangeReceiver.unRegister(this@AbsCompatActivity)
         rootView = null

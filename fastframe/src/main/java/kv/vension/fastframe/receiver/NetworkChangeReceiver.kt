@@ -6,7 +6,7 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.util.Log
 import kv.vension.fastframe.core.AbsCompatActivity
-import kv.vension.fastframe.event.BaseEvent
+import kv.vension.fastframe.bus.event.BaseEvent
 import kv.vension.fastframe.utils.NetworkUtil
 import kv.vension.fastframe.utils.PreferenceUtil
 import org.greenrobot.eventbus.EventBus
@@ -30,7 +30,12 @@ class NetworkChangeReceiver : BroadcastReceiver() {
 
         fun getInstance():NetworkChangeReceiver{
             if(mReceiver == null){
-                mReceiver = NetworkChangeReceiver()
+                synchronized(NetworkChangeReceiver::class.java){
+                    if(mReceiver == null){
+
+                        mReceiver = NetworkChangeReceiver()
+                    }
+                }
             }
             return mReceiver!!
         }

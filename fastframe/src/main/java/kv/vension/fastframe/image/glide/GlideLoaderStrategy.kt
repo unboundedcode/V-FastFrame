@@ -28,6 +28,8 @@ import kv.vension.fastframe.image.glide.transformation.CircleBorderTransformatio
 import kv.vension.fastframe.utils.FileUtil
 import java.io.File
 import java.util.concurrent.Executors
+import javax.inject.Inject
+import javax.inject.Singleton
 
 /**
  * ========================================================================
@@ -47,7 +49,12 @@ import java.util.concurrent.Executors
  * 复杂的场景可自行实现 [ILoaderStrategy] 和 [ImageLoaderConfig] 替换现有策略
  * ========================================================================
  */
+
+@Singleton
 class GlideLoaderStrategy : ILoaderStrategy<GlideConfigImpl>, GlideAppOptions {
+
+    @Inject
+    constructor()
 
     private val cacheThreadPool by lazy {
         Executors.newCachedThreadPool()

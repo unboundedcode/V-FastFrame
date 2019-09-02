@@ -23,7 +23,9 @@ android {
         versionCode rootProject.ext.versionCode
         versionName rootProject.ext.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
         vectorDrawables.useSupportLibrary = true
+
         multiDexEnabled true
         flavorDimensions "versionCode"
         ndk { //设置支持的SO库架构（开发者可以根据需要，选择一个或多个平台的so）

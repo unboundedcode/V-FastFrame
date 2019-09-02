@@ -12,13 +12,13 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
+import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
-import kv.vension.fastframe.event.BaseEvent
+import kv.vension.fastframe.bus.event.BaseEvent
 import kv.vension.fastframe.ext.Logi
 import kv.vension.fastframe.utils.PreferenceUtil
 import kv.vension.fastframe.views.MultiStateLayout
-import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 
@@ -151,7 +151,7 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
 
         //开启事件总线
         if (useEventBus()) {
-            EventBus.getDefault().register(this)
+            VFrame.busManager.register(this)
         }
 
         //初始化view和数据
@@ -201,7 +201,7 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
         super.onDestroy()
         //当 View 被销毁的时候我们需要重新设置 isViewCreated mIsFirstVisible 的状态
         if (useEventBus()) {
-            EventBus.getDefault().unregister(this)
+            VFrame.busManager.unRegister(this)
         }
         rootView = null
         if(mLoadingDialog.isShowing){

@@ -15,7 +15,7 @@
                 android:layout_margin="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="下面演示使用策略模式动态调用图片加载框架，具体使用请看Demo代码"/>
+                android:text="下面演示使用策略模式动态调用图片加载框架（目前只使用了Glide/UniversalLoader,其他框架请自行实现），具体使用请看Demo代码"/>
 
         <LinearLayout
                 android:layout_width="match_parent"
