@@ -14,7 +14,8 @@ object RouterConfig {
     val MODULE_APPLICATION = arrayOf(
         "com.vension.fastframe.module_wan.WanAndroidApplication",
         "com.vension.fastframe.module_course.CourseApplication",
-        "com.vension.fastframe.module_news.NewsApplication"
+        "com.vension.fastframe.module_news.NewsApplication",
+        "com.vension.fastframe.view.ViewApplication"
     )
 
     /**
@@ -42,6 +43,11 @@ object RouterConfig {
      */
     const val PATH_NEWS_MAINACTIVITY = "/news/NewsMainActivity"
 
+
+    /**
+     * 第三方自定义控件
+     */
+    const val PATH_VIEW_MAINACTIVITY = "/view/ViewMainActivity"
 
     /**
      * common

@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+        package="com.vension.fastframe.view">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+            android:allowBackup="true">
+
+        <activity android:name=".ui.ViewMainActivity"
+                android:exported="false"
+                android:launchMode="singleTask"
+                android:theme="@style/SwipeBackTheme"
+                android:configChanges="orientation|screenSize|keyboardHidden"
+                android:windowSoftInputMode="stateHidden|adjustResize"
+                android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.StarLandActivity"
+                android:theme="@style/LandTheme"
+                android:screenOrientation="landscape"/>
+
+    </application>
+
+</manifest>
+

@@ -40,6 +40,7 @@ dependencies {
         implementation project(path: ':module_wanandroid')
         implementation project(path: ':module_course')
         implementation project(path: ':module_news')
+        implementation project(path: ':module_view')
     }
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
 }

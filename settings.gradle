@@ -1,1 +1,1 @@
-include ':app', ':fastframe',':lib_common', ':module_wanandroid',  ':module_course',':module_news'
+include ':app', ':fastframe',':lib_common', ':module_wanandroid',  ':module_course',':module_news', ':module_view'

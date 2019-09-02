@@ -26,6 +26,11 @@
                 android:icon="@drawable/ic_store_mall"
                 android:title="商城" />
 
+        <item
+                android:id="@+id/nav_NiceWidget"
+                android:icon="@drawable/ic_spa_black_24dp"
+                android:title="优秀开源控件" />
+
     </group>
 
     <group android:id="@+id/test">

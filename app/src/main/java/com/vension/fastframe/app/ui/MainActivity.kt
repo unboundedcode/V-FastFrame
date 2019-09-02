@@ -85,6 +85,9 @@ class MainActivity : AbsCompatActivity(){
                 R.id.nav_ShoppingMall ->{//商城
                     showToast("敬请期待")
                 }
+                R.id.nav_NiceWidget ->{//收集一些优秀的第三方开源控件
+                    ARouter.getInstance().build(RouterConfig.PATH_VIEW_MAINACTIVITY).navigation()
+                }
                 R.id.nav_test -> {
                     val bundle = Bundle()
                     bundle.putString("key_content","测试")

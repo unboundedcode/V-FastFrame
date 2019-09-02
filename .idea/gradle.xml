@@ -13,10 +13,12 @@
             <option value="$PROJECT_DIR$/lib_common" />
             <option value="$PROJECT_DIR$/module_course" />
             <option value="$PROJECT_DIR$/module_news" />
+            <option value="$PROJECT_DIR$/module_view" />
             <option value="$PROJECT_DIR$/module_wanandroid" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
+        <option name="testRunner" value="PLATFORM" />
       </GradleProjectSettings>
     </option>
   </component>
