@@ -7,6 +7,7 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.vension.fastframe.view.R
 import com.vension.fastframe.view.bean.WidgetBean
 import com.vension.fastframe.view.ui.adapter.MainGridAdapter
+import com.vension.fastframe.view.ui.fragments.ProgressFragment
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.view_activity_main_view.*
 import kv.vension.fastframe.core.AbsCompatActivity
@@ -53,7 +54,7 @@ class ViewMainActivity : AbsCompatActivity() {
     }
 
     override fun initViewAndData(savedInstanceState: Bundle?) {
-        rv_thirdWidget.layoutManager = GridLayoutManager(this,3)
+        rv_thirdWidget.layoutManager = GridLayoutManager(this@ViewMainActivity,3)
         rv_thirdWidget.setHasFixedSize(true)
         val divider = GridItemDecoration.Builder(this@ViewMainActivity)
             .setHorizontalSpan(R.dimen.qb_px_1)
@@ -69,9 +70,8 @@ class ViewMainActivity : AbsCompatActivity() {
 
     private fun getDatas(): ArrayList<WidgetBean> {
         val list = ArrayList<WidgetBean>()
-        list.add(WidgetBean(R.drawable.img_star,"八大行星绕太阳3D旋转效果","https://github.com/GarrettLance/Demos"))
-        list.add(WidgetBean(R.drawable.img_star,"八大行星绕太阳3D旋转效果","https://github.com/GarrettLance/Demos"))
-        list.add(WidgetBean(R.drawable.img_star,"八大行星绕太阳3D旋转效果","https://github.com/GarrettLance/Demos"))
+        list.add(WidgetBean(R.drawable.img_bg_star,"八大行星绕太阳3D旋转效果","https://github.com/GarrettLance/Demos"))
+        list.add(WidgetBean(R.drawable.img_bg_progress,"精美、优雅的加载进度控件","https://github.com/Moosphan/Material-ProgressView"))
         return list
     }
 
@@ -84,10 +84,8 @@ class ViewMainActivity : AbsCompatActivity() {
                         putExtra("isDemo",false)
                     })
                 }
-                1 -> {
-                    startActivity(Intent(this@ViewMainActivity, StarLandActivity::class.java).apply{
-                        putExtra("isDemo",true)
-                    })
+                1 -> {//精美、优雅的加载进度控件
+                    startProxyActivity(ProgressFragment::class.java)
                 }
             }
         }

@@ -11,7 +11,7 @@
             android:id="@+id/iv_widgetBg"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/qb_px_60"
-            android:src="@drawable/img_star"/>
+            android:src="@drawable/img_bg_star"/>
     <TextView
             android:id="@+id/tv_widget_name"
             android:layout_width="wrap_content"
@@ -24,6 +24,8 @@
             android:id="@+id/tv_widget_desc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:ellipsize="start"
             android:gravity="center"
             android:textSize="@dimen/sp_12"
             tools:text="desc"
