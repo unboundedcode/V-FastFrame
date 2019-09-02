@@ -27,7 +27,14 @@
 无界编码，快捷构建，助你起飞 - use Kotlin abd support androidX
 
 ## Remark
-个人快捷开发框架，采用Glide4.9+rxjava2+retrofit2+mvp的组件化开发模式，不断完善中。。。
+**FastFrame**是一个提供了常用模块的**个人快捷开发框架**，采用Glide4.9+rxjava2+retrofit2+mvp的组件化开发模式，不断完善中。。。
+<br>
+主要包括 **网络请求**、**图片加载**、**数据库**、**事件总线**、**缓存**、**权限管理**、**工具类** 等模块。
+
+其中，网络请求使用Retrofit+RxJava实现，图片加载使用Glide实现（可替换），数据库使用Room实现（可替换），事件总线使用EventBus实现（可替换），权限管理使用RxPermission实现。
+
+<br>
+
 
 ## Download [ ![Download](https://api.bintray.com/packages/vension/vensionCenter/V-FastFrame/images/download.svg) ](https://bintray.com/vension/vensionCenter/V-FastFrame/_latestVersion)
 ``` gradle
@@ -67,8 +74,13 @@
 <a href="screenshots/news/news_4.png"><img src="screenshots/news/news_4.png" width="30%"/></a> 
 <a href="screenshots/news/news_5.png"><img src="screenshots/news/news_5.png" width="30%"/></a> 
 
-
+## 版本信息
+ - v0.0.1 （2019-07-05）
+   - 初步完成基础功能
+   
 ## License
+
+
 ```
  Copyright 2019, Vension
 
