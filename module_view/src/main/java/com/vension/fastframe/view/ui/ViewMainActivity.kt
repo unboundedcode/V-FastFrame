@@ -8,6 +8,7 @@ import com.vension.fastframe.view.R
 import com.vension.fastframe.view.bean.WidgetBean
 import com.vension.fastframe.view.ui.adapter.MainGridAdapter
 import com.vension.fastframe.view.ui.fragments.ProgressFragment
+import com.vension.fastframe.view.ui.fragments.ToastFragment
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.view_activity_main_view.*
 import kv.vension.fastframe.core.AbsCompatActivity
@@ -72,6 +73,7 @@ class ViewMainActivity : AbsCompatActivity() {
         val list = ArrayList<WidgetBean>()
         list.add(WidgetBean(R.drawable.img_bg_star,"八大行星绕太阳3D旋转效果","https://github.com/GarrettLance/Demos"))
         list.add(WidgetBean(R.drawable.img_bg_progress,"精美、优雅的加载进度控件","https://github.com/Moosphan/Material-ProgressView"))
+        list.add(WidgetBean(R.drawable.img_bg_toast,"可以自由定制的Toast","https://github.com/MrNtlu/Toastie"))
         return list
     }
 
@@ -86,6 +88,9 @@ class ViewMainActivity : AbsCompatActivity() {
                 }
                 1 -> {//精美、优雅的加载进度控件
                     startProxyActivity(ProgressFragment::class.java)
+                }
+                2 -> {//可以自由定制的Toast
+                    startProxyActivity(ToastFragment::class.java)
                 }
             }
         }

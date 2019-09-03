@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+        <Button
+                android:id="@+id/btn_toastNormal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Toast_Normal" />
+        <Button
+                android:id="@+id/btn_toastTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Top" />
+        <Button
+                android:id="@+id/btn_toastCenter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Center" />
+        <Button
+                android:id="@+id/btn_toastBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Bottom" />
+        <Button
+                android:id="@+id/btn_toastInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Info" />
+        <Button
+                android:id="@+id/btn_toastSuccess"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Success" />
+        <Button
+                android:id="@+id/btn_toastWarning"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Warning" />
+        <Button
+                android:id="@+id/btn_toastError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Error" />
+        <Button
+                android:id="@+id/btn_toastVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Vertical" />
+        <Button
+                android:id="@+id/btn_toastCustom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:layout_marginTop="10dp"
+                android:text="Toast_Custom" />
+
+        </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>
