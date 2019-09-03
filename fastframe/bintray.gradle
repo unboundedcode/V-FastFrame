@@ -23,7 +23,7 @@ def libDesc = ":point_right: FastFrame - Android快速开发框架 - use Kotlin 
  *  配置后上传至JCenter后的编译路径是这样的： implementation 'kv.vension.xxx:1.0.0'
  */
 group = "kv.vension"// 唯一包名,比如implementation 'kv.vension.xxx:1.0.0'中的me.vension就是这里配置的。
-version = "0.0.1-beta-0.2"//项目引用的版本号，比如implementation 'kv.vension.xxx:1.0.0'中的1.0.0就是这里配置的。
+version = "0.0.2"//项目引用的版本号，比如implementation 'kv.vension.xxx:1.0.0'中的1.0.0就是这里配置的。
 
 
 // 生成jar包的task，不需要修改。

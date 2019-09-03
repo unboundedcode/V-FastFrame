@@ -75,6 +75,9 @@
 <a href="screenshots/news/news_5.png"><img src="screenshots/news/news_5.png" width="30%"/></a> 
 
 ## 版本信息
+ - v0.0.2 （2019-09-03）
+   - 优化代码，使用策略模式实现时间总线、图片加载模块可动态切换
+   - 新增自定义Toast等工具类
  - v0.0.1 （2019-07-05）
    - 初步完成基础功能
    
