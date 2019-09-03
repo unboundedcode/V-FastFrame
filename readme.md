@@ -15,8 +15,8 @@
   <a href="https://github.com/unboundedcode/V-FastFrame/releases">
     <img src="https://img.shields.io/github/release/unboundedcode/V-FastFrame.svg">
   </a>
-  <a href="https://bintray.com/vension/vensionCenter/V-FastFrame/_latestVersion">
-     <img src="https://api.bintray.com/packages/vension/vensionCenter/V-FastFrame/images/download.svg?style=flat-square" alt="JCenter" />
+  <a href="https://bintray.com/vension/maven/V-FastFrame/_latestVersion">
+     <img src="https://api.bintray.com/packages/vension/maven/V-FastFrame/images/download.svg?style=flat-square" alt="JCenter" />
   </a>
   <a href="#"><img src="https://img.shields.io/github/repo-size/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
   <a href="#"><img src="https://img.shields.io/github/languages/code-size/unboundedcode/V-FastFrame.svg?style=flat-square"></a>
@@ -31,14 +31,13 @@
 <br>
 主要包括 **网络请求**、**图片加载**、**数据库**、**事件总线**、**缓存**、**权限管理**、**工具类** 等模块。
 
-其中，网络请求使用Retrofit+RxJava实现，图片加载使用Glide实现（可替换），数据库使用Room实现（可替换），事件总线使用EventBus实现（可替换），权限管理使用RxPermission实现。
+其中，网络请求使用Retrofit+RxJava实现，图片加载使用Glide实现（可替换），事件总线使用EventBus实现（可替换），数据库使用Room实现（未实现），权限管理使用RxPermission实现。
 
 <br>
 
-
-## Download [ ![Download](https://api.bintray.com/packages/vension/vensionCenter/V-FastFrame/images/download.svg) ](https://bintray.com/vension/vensionCenter/V-FastFrame/_latestVersion)
+## Download [ ![Download](https://api.bintray.com/packages/vension/maven/V-FastFrame/images/download.svg) ](https://bintray.com/vension/maven/V-FastFrame/_latestVersion)
 ``` gradle
-    implementation 'kv.vension:fastframe:_latestVersion'
+    api 'kv.vension:fastframe:_latestVersion'
 ```
 
 ## Screenshots

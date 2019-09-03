@@ -8,12 +8,10 @@ apply plugin: 'com.jfrog.bintray'
  *  @param siteUrl 项目主页
  *  @param gitUrl 项目的Git仓库的url
  *  @param libName 发布到JCenter上的项目名字
- *  @param libDesc 项目描述
  */
 def siteUrl = 'https://github.com/unboundedcode/V-FastFrame'
 def gitUrl = 'https://github.com/unboundedcode/V-FastFrame.git'
 def libName = "V-FastFrame"
-def libDesc = ":point_right: FastFrame - Android快速开发框架 - use Kotlin abd support androidX"
 
 /**
  *  @param group 发布到组织名称名字，必须填写
@@ -25,7 +23,6 @@ def libDesc = ":point_right: FastFrame - Android快速开发框架 - use Kotlin 
 group = "kv.vension"// 唯一包名,比如implementation 'kv.vension.xxx:1.0.0'中的me.vension就是这里配置的。
 version = "0.0.2"//项目引用的版本号，比如implementation 'kv.vension.xxx:1.0.0'中的1.0.0就是这里配置的。
 
-
 // 生成jar包的task，不需要修改。
 task sourcesJar(type: Jar) {
     from android.sourceSets.main.java.srcDirs
@@ -34,23 +31,23 @@ task sourcesJar(type: Jar) {
 
 // 生成jarDoc的task，不需要修改。
 task javadoc(type: Javadoc) {
+    failOnError false// 忽略注释语法错误，如果用jdk1.8你的注释写的不规范就编译不过。
     source = android.sourceSets.main.java.srcDirs
     classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    // destinationDir = file("../javadoc/")
-    failOnError false // 忽略注释语法错误，如果用jdk1.8你的注释写的不规范就编译不过。
+    options{
+        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
+        encoding "UTF-8"
+        charSet 'UTF-8'
+        author true
+        version true
+        links "http://docs.oracle.com/javase/7/docs/api"
+    }
 }
-
 
 // 文档打包成jar/生成javaDoc的jar，不需要修改。
 task javadocJar(type: Jar, dependsOn: javadoc) {
     classifier = 'javadoc'
     from javadoc.destinationDir
-}
-
-//拷贝javadoc文件 不需要修改。
-task copyDoc(type: Copy) {
-    from "${buildDir}/docs/"
-    into "docs"
 }
 
 //上传到JCenter所需要的源码文件 不需要修改。
@@ -59,17 +56,16 @@ artifacts {
     archives sourcesJar
 }
 
+
 // 配置maven库，生成POM.xml文件
 install {
     repositories.mavenInstaller {
         // 生成pom.xml和参数
-        // This generates POM.xml with proper parameters
         pom {
             project {
                 packaging 'aar'
                 // 项目描述，复制我的话，这里需要修改。
                 name libName// 可选，项目名称。
-                description libDesc// 可选，项目描述。
                 url siteUrl // 项目主页，这里是引用上面定义好。
 
                 // 软件开源协议，现在一般都是Apache License2.0吧，复制我的，这里不需要修改。
@@ -114,12 +110,10 @@ bintray {
     configurations = ['archives']
     pkg {
         //注意：这里的repo值必须要和你创建Maven仓库的时候的名字一样
-        repo = "vensionCenter"  //Repository名字 需要自己在bintray网站上先添加
-        //发布到JCenter上的项目名字
-        name = libName
+        repo = "maven"  //Repository名字 需要自己在bintray网站上先添加
+        name = libName //发布到JCenter上的项目名字
         userOrg = 'vension'//Bintray的组织id
         //项目描述
-        desc = libDesc
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
@@ -127,16 +121,6 @@ bintray {
     }
 }
 
-javadoc {
-    options{
-        //如果你的项目里面有中文注释的话，必须将格式设置为UTF-8，不然会出现乱码
-        encoding "UTF-8"
-        charSet 'UTF-8'
-        author true
-        version true
-        links "http://docs.oracle.com/javase/7/docs/api"
-    }
-}
 
 
 /**
