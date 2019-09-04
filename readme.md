@@ -27,12 +27,10 @@
 无界编码，快捷构建，助你起飞 - use Kotlin abd support androidX
 
 ## Remark
-**FastFrame**是一个提供了常用模块的**个人快捷开发框架**，采用Glide4.9+rxjava2+retrofit2+mvp的组件化开发模式，不断完善中（**商用慎重**）。。。
+（**商用慎重**）**FastFrame**是一个提供了常用模块的**个人快捷开发框架**，采用Glide4.9+rxjava2+retrofit2+mvp的组件化开发模式，不断完善中。。。
 <br>
 主要包括 **网络请求**、**图片加载**、**数据库**、**事件总线**、**缓存**、**权限管理**、**工具类** 等模块。
-
 其中，网络请求使用Retrofit+RxJava实现，图片加载使用Glide实现（可替换），事件总线使用EventBus实现（可替换），数据库使用Room实现（未实现），权限管理使用RxPermission实现。
-
 <br>
 
 ## Download （maven上传遇到问题，骚等哈）[ ![Download](https://api.bintray.com/packages/vension/maven/V-FastFrame/images/download.svg) ](https://bintray.com/vension/maven/V-FastFrame/_latestVersion)
