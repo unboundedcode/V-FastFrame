@@ -19,7 +19,7 @@ class CourseAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
     private val mFragment = arrayOfNulls<Fragment>(mTitles.size)
 
 
-    override fun getItem(position: Int): Fragment? {
+    override fun getItem(position: Int): Fragment {
         if (mFragment[position] == null) {
             when (position) {
                 0 ->
@@ -36,7 +36,7 @@ class CourseAdapter(fm: FragmentManager) : FragmentPagerAdapter(fm) {
                     mFragment[position] = CourseCategoryFragment.newInstance(4)
             }
         }
-        return mFragment[position]
+        return mFragment[position]!!
     }
 
     override fun getCount(): Int = mTitles.size

@@ -43,10 +43,9 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     api project(path: ':fastframe')
-//    api 'kv.vension:fastframe:0.0.2'
-    kapt'com.alibaba:arouter-compiler:1.2.2'
+//    api 'kv.vension:fastframe:1.0.0'
     //Arouter路由
-    api'com.alibaba:arouter-api:1.4.1'
+    api'com.alibaba:arouter-api:1.5.0'
     kapt'com.alibaba:arouter-compiler:1.2.2'
     //Flycotablayout
     api 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'

@@ -1,0 +1,15 @@
+apply plugin: 'com.novoda.bintray-release'
+publish {
+    userOrg = 'vension'       //bintray注册的用户名
+    repoName = "maven"        //仓库名称，没有填写默认仓库是maven
+    groupId = 'kv.vension'    //依赖名 api 'x:y:z'中的包名x
+    artifactId = 'fastframe'  //依赖名 api 'x:y:z'中的项目名y
+    publishVersion = '0.0.1'  //依赖名 api 'x:y:z'中的版本号z
+    desc = 'FastFrame是一个提供了常用模块的个人快捷开发框架，采用Glide4.9+rxjava2+retrofit2+mvp的开发模式'//项目描述
+    website = 'https://github.com/unboundedcode/V-FastFrame' //github 托管地址
+}
+/**
+ * 打开Android Studio底部工具栏的Terminal，输入命令：
+ * windows：gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+ * mac：.gradlew clean build bintrayUpload -PbintrayUser=BINTRAY_USERNAME -PbintrayKey=BINTRAY_KEY -PdryRun=false
+ */

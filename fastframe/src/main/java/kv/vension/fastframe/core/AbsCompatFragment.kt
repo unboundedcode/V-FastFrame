@@ -13,9 +13,9 @@ import androidx.fragment.app.FragmentManager
 import com.tbruyelle.rxpermissions2.RxPermissions
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.bus.event.BaseEvent
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
-import kv.vension.fastframe.bus.event.BaseEvent
 import kv.vension.fastframe.ext.Logi
 import kv.vension.fastframe.utils.PreferenceUtil
 import kv.vension.fastframe.views.MultiStateLayout
@@ -102,7 +102,8 @@ abstract class AbsCompatFragment : Fragment(), IFragment,View.OnClickListener {
     private var mIsFirstVisible = true/*当前Fragment是否首次可见，默认是首次可见**/
     private var currentVisibleState = false/*当前Fragment的可见状态，一种当前可见，一种当前不可见**/
 
-    override fun onAttach(context: Context?) {
+
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         mActivity = context as Activity
         mContext = context

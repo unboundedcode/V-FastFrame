@@ -11,12 +11,15 @@ buildscript {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "com.alibaba:arouter-register:1.0.2"
-        // NOTE: Do not place your application dependencies here; they belong
-        // in the individual module build.gradle files
-        //自动上传至Bintray平台插件 --》 https://github.com/dcendents/android-maven-gradle-plugin
-        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        //jcenter plugins
         //自动化maven打包插件 --》 https://github.com/bintray/gradle-bintray-plugin
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.4'
+        //自动上传至Bintray平台插件 --》 https://github.com/dcendents/android-maven-gradle-plugin
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
+        //https://github.com/Kotlin/dokka
+        classpath 'org.jetbrains.dokka:dokka-android-gradle-plugin:0.9.18'
+        //https://github.com/novoda/bintray-release
+        classpath 'com.novoda:bintray-release:0.9.1'
     }
 }
 
@@ -26,6 +29,14 @@ allprojects {
         jcenter()
         mavenCentral()
         maven { url 'https://jitpack.io' }
+        maven { url 'https://dl.bintray.com/vension/maven' }//审核前可使用
+    }
+    tasks.withType(Javadoc) {
+        options{
+            encoding "UTF-8"
+            charSet 'UTF-8'
+            links "http://docs.oracle.com/javase/7/docs/api"
+        }
     }
 }
 
@@ -38,8 +49,8 @@ ext {
     compileSdkVersion = 29
     minSdkVersion = 19
     targetSdkVersion = 29
-    androidXCompatVersion = "1.0.2"
-    androidXCoreVersion = "1.0.2"
+    androidXCompatVersion = "1.1.0"
+    androidXCoreVersion = "1.1.0"
     versionCode = 002
-    versionName = 'V_0.0.2'
+    versionName = '0.0.2'
 }

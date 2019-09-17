@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://android-arsenal.com/api?level=19">
-    <img src="https://img.shields.io/badge/API-19%2B-green.svg?style=flat-square" alt="Min Sdk Version" />
+    <img src="https://img.shields.io/badge/API-19%2B-blueviolet.svg?style=flat-square" alt="Min Sdk Version" />
   </a>
   <a href="http://www.apache.org/licenses/LICENSE-2.0">
      <img src="http://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square" alt="License" />
@@ -33,7 +33,7 @@
 其中，网络请求使用Retrofit+RxJava实现，图片加载使用Glide实现（可替换），事件总线使用EventBus实现（可替换），数据库使用Room实现（未实现），权限管理使用RxPermission实现。
 <br>
 
-## Download （maven上传遇到问题，骚等哈）[ ![Download](https://api.bintray.com/packages/vension/maven/V-FastFrame/images/download.svg) ](https://bintray.com/vension/maven/V-FastFrame/_latestVersion)
+## Download （maven上传遇到问题，骚等哈,有解决办法的请指教）[ ![Download](https://api.bintray.com/packages/vension/maven/V-FastFrame/images/download.svg) ](https://bintray.com/vension/maven/V-FastFrame/_latestVersion)
 ``` gradle
     api 'kv.vension:fastframe:_latestVersion'
 ```

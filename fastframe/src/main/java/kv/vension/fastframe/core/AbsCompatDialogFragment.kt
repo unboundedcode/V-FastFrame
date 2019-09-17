@@ -39,9 +39,9 @@ abstract class AbsCompatDialogFragment : DialogFragment(){
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)//取消标题栏
+        dialog!!.requestWindowFeature(Window.FEATURE_NO_TITLE)//取消标题栏
         //设置dialog的 进出 动画
-        dialog.window!!.setWindowAnimations(R.style.DialogTheme_Animation)
+        dialog!!.window!!.setWindowAnimations(R.style.DialogTheme_Animation)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -56,12 +56,12 @@ abstract class AbsCompatDialogFragment : DialogFragment(){
     }
 
     //仅用于状态跟踪
-    override fun onCancel(dialog: DialogInterface?) {
+    override fun onCancel(dialog: DialogInterface) {
         super.onCancel(dialog)
     }
 
     //仅用户状态跟踪
-    override fun onDismiss(dialog: DialogInterface?) {
+    override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
     }
 
