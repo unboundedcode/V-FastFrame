@@ -19,7 +19,7 @@ import kv.vension.fastframe.R
  */
 abstract class AbsCompatDialog : AppCompatDialog, View.OnClickListener {
 
-    protected lateinit var mContext: Context
+    protected var mContext: Context
     private var tag: Any? = null
 
     protected abstract fun bindLayoutId(): Int //绑定dialog布局

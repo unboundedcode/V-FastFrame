@@ -1,0 +1,130 @@
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
+/** =================== install ==================== */
+
+// Maven Group ID for the artifact
+group = publishedGroupId
+/**
+ * 配置maven库，生成POM.xml文件
+ */
+install {
+    repositories.mavenInstaller {
+        // This generates POM.xml with proper parameters
+        pom {
+            project {
+                packaging 'aar'
+                groupId publishedGroupId
+                artifactId artifact
+
+                // Add your description here
+                name libraryName //项目名字
+                description libraryDescription // 可选，项目描述。
+                url siteUrl // 项目主页。
+
+                // Set your license
+                licenses {// 软件开源协议，现在一般都是Apache License2.0吧，复制我的，这里不需要修改。
+                    license {
+                        name licenseName
+                        url licenseUrl
+                    }
+                }
+                developers {// 填写开发者基本信息
+                    developer {
+                        id developerId
+                        name developerName
+                        email developerEmail
+                    }
+                }
+                scm {
+                    connection gitUrl  // Git仓库地址。
+                    developerConnection gitUrl // Git仓库地址。
+                    url siteUrl // 项目主页。
+
+                }
+            }
+        }
+    }
+}
+//from https://github.com/workarounds/bundler/blob/master/gradle/install-v1.gradle
+
+/** =================== bintray ==================== */
+
+version = libraryVersion
+
+task sourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier = 'sources'
+}
+
+task javadoc(type: Javadoc) {
+    source = android.sourceSets.main.java.srcDirs
+    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+// Avoid Kotlin docs error
+tasks.withType(Javadoc) {
+    enabled = false
+}
+
+artifacts {
+    archives javadocJar
+    archives sourcesJar
+}
+
+
+def _user = System.getenv("BINTRAY_USER")
+def _key = System.getenv("BINTRAY_API_KEY")
+def _passphrase = System.getenv("BINTRAY_PASSPHRASE")
+if (project.rootProject.file('local.properties').exists()) {
+    Properties properties = new Properties()
+    properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+    def local_user = properties.getProperty("bintray.user")
+    if (local_user != null) _user = local_user
+
+    def local_key = properties.getProperty("bintray.apikey")
+    if (local_key != null) _key = local_key
+
+    def local_passphrase = properties.getProperty("bintray.gpg.password")
+    if (local_passphrase != null) _passphrase = local_passphrase
+}
+
+bintray {
+    user = _user
+    key = _key
+    override = true
+    configurations = ['archives']
+    pkg {
+        repo = bintrayRepo //(**慎重填写**)这里填写在bintray中自己新建仓库的名字
+        name = bintrayName //（**慎重填写**）发布到JCenter上的项目名字，必须填写，对应com.squareup.okhttp3:okhttp:3.4.1中的okhttp
+        userOrg = orgName //Bintray的组织id
+        //项目描述
+        desc = libraryDescription
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = allLicenses
+        publish = true
+        publicDownloadNumbers = true
+        version {
+            desc = libraryDescription
+            gpg {
+                sign = true //Determines whether to GPG sign the files. The default is false
+                passphrase = _passphrase
+                //Optional. The passphrase for GPG signing'
+            }
+        }
+    }
+}
+
+
+/**
+ * #!/usr/bin/env bash
+ * win:gradlew clean install bintrayUpload
+ * mac:./gradlew clean install bintrayUpload
+ */

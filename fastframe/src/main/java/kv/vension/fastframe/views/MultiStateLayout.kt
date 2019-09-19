@@ -292,7 +292,7 @@ class MultiStateLayout : FrameLayout{
     fun showContent() {
         mViewStatus = STATUS_CONTENT
         if (null == mContentView && mContentViewResId != NULL_RESOURCE_ID) {
-            mContentView = mInflater!!.inflate(mContentViewResId, null)
+            mContentView = mInflater.inflate(mContentViewResId, null)
             addView(mContentView, 0, DEFAULT_LAYOUT_PARAMS)
         }
         showContentView()

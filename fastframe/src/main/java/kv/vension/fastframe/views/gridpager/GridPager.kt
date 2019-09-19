@@ -331,7 +331,7 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
             val viewPagerParams = viewPager.layoutParams as LinearLayout.LayoutParams
             viewPagerParams.topMargin = verticalSpacing
             viewPagerParams.bottomMargin = verticalSpacing
-            viewPager!!.layoutParams = viewPagerParams
+            viewPager.layoutParams = viewPagerParams
         }
         viewPager.adapter = GridAdapter()
         viewPager.addOnPageChangeListener(this)
@@ -348,7 +348,7 @@ class GridPager @JvmOverloads constructor(context: Context, attrs: AttributeSet?
                 .setIndicatorCheckedChangeListener(object : GridPagerIndicator.IndicatorCheckedChangeListener {
                     override fun checkedChange(position: Int) {
                         if (position in 0 until page) {
-                            viewPager!!.currentItem = position
+                            viewPager.currentItem = position
                         }
                     }
                 })

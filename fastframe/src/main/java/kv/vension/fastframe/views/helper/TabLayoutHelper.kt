@@ -1,6 +1,5 @@
 package kv.vension.fastframe.views.helper
 
-import android.annotation.SuppressLint
 import android.os.Build
 import android.widget.LinearLayout
 import com.google.android.material.tabs.TabLayout
@@ -18,13 +17,12 @@ import java.lang.reflect.Field
 
 object TabLayoutHelper{
 
-    @SuppressLint("ObsoleteSdkInt")
     fun setUpIndicatorWidth(tabLayout: TabLayout) {
         val tabLayoutClass = tabLayout.javaClass
         var tabStrip: Field? = null
         try {
             tabStrip = tabLayoutClass.getDeclaredField("mTabStrip")
-            tabStrip!!.isAccessible = true
+            tabStrip.isAccessible = true
         } catch (e: NoSuchFieldException) {
             e.printStackTrace()
         }
@@ -38,7 +36,7 @@ object TabLayoutHelper{
                 val child = layout.getChildAt(i)
                 child.setPadding(0, 0, 0, 0)
                 val params = LinearLayout.LayoutParams(0, LinearLayout.LayoutParams.MATCH_PARENT, 1f)
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
                     params.marginStart = DensityUtil.dp2px(VFrame.getContext(), 50f)
                     params.marginEnd = DensityUtil.dp2px(VFrame.getContext(), 50f)
                 }

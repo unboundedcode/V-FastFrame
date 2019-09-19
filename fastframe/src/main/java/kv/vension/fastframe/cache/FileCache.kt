@@ -191,7 +191,7 @@ object FileCache {
      */
     fun formetFileSize(fileS: Long): String {
         val df = DecimalFormat("#.00")
-        var fileSizeString :String = ""
+        var fileSizeString :String
         val wrongSize = "0B"
         if (fileS == 0L) {
             return wrongSize

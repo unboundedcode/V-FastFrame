@@ -33,7 +33,7 @@ class ScrollAwareFABBehavior : FloatingActionButton.Behavior {
      */
     private var isShow = true
 
-    constructor(context: Context, attrs: AttributeSet) : super()
+    constructor(context: Context, attrs: AttributeSet) : super(context,attrs)
 
     override fun onStartNestedScroll(coordinatorLayout: CoordinatorLayout, child: FloatingActionButton,
                                      directTargetChild: View, target: View, axes: Int, type: Int): Boolean {

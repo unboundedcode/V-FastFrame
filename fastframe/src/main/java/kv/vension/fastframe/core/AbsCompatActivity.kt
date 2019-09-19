@@ -19,9 +19,9 @@ import com.wuhenzhizao.titlebar.utils.KeyboardConflictCompat
 import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kv.vension.fastframe.R
 import kv.vension.fastframe.VFrame
+import kv.vension.fastframe.bus.event.BaseEvent
 import kv.vension.fastframe.cache.PageCache
 import kv.vension.fastframe.dialog.LoadingDialog
-import kv.vension.fastframe.bus.event.BaseEvent
 import kv.vension.fastframe.receiver.NetworkChangeReceiver
 import kv.vension.fastframe.utils.KeyBoardUtil
 import kv.vension.fastframe.utils.PreferenceUtil
@@ -126,7 +126,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
 
     private fun initContentView(@LayoutRes layoutResID: Int) {
         if (layoutResID == 0){
-            return throw RuntimeException("layoutResID == -1 have u create your layout?")
+            throw RuntimeException("layoutResID == -1 have u create your layout?")
         }
         if (showToolBar() && getToolBarResId() > 0){
             //如果需要显示自定义toolbar,并且资源id存在的情况下，实例化rootView
@@ -249,7 +249,7 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
      *  CommonTitleBar.ACTION_CENTER_TEXT;      // 中间文字点击
      */
     open fun initToolBar(mCommonTitleBar: CommonTitleBar) {
-        mCommonTitleBar.setListener {_: View?, action: Int, extra: String? ->
+        mCommonTitleBar.setListener {_: View?, action: Int, _: String? ->
             if (action == CommonTitleBar.ACTION_LEFT_BUTTON || action == CommonTitleBar.ACTION_LEFT_TEXT) {
                 onBackPressed()
             }
@@ -335,10 +335,8 @@ abstract class AbsCompatActivity : AppCompatActivity(), IActivity {
             options = ActivityOptionsCompat.makeScaleUpAnimation(view, view.width / 2, view.height / 2, 0, 0).toBundle()
         }
         val mIntent = Intent(this, ProxyActivity::class.java)
-        bundle?.let {
-            it.putString(ProxyActivity.PROXY_FRAGMENT_CLASS_KEY, vClass.name) // com.project.app.activity.*
-            mIntent.putExtras(bundle)
-        }
+        bundle.putString(ProxyActivity.PROXY_FRAGMENT_CLASS_KEY, vClass.name) // com.project.app.activity.*
+        mIntent.putExtras(bundle)
         startActivityForResult(mIntent, requestCode, options)
     }
 

@@ -43,7 +43,7 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     api project(path: ':fastframe')
-//    api 'kv.vension:fastframe:1.0.0'
+//    api 'kv.vension:fastframe:0.0.1'
     //Arouter路由
     api'com.alibaba:arouter-api:1.5.0'
     kapt'com.alibaba:arouter-compiler:1.2.2'

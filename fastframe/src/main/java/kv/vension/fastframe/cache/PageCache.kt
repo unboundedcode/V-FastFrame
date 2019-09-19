@@ -94,7 +94,7 @@ open class PageCache<T : Any> internal constructor(){
             // 退出程序
             exitProcess(0)
             // 通知系统回收
-            System.gc()
+//            System.gc()
         }
     }
 
