@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.activity_main_news.*
 import kv.vension.fastframe.core.AbsCompatActivity
 import kv.vension.fastframe.core.adapter.BaseFragmentAdapter
 import kv.vension.fastframe.utils.StatusBarUtil
-import lib.vension.fastframe.common.RouterConfig
+import lib.vension.fastframe.common.router.RouterConfig
 import java.util.*
 
 /**

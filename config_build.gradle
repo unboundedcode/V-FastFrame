@@ -48,12 +48,16 @@ android {
 
     buildTypes {
         release {
-            buildConfigField "boolean", "LOG_DEBUG", "false"
+            buildConfigField "boolean", "IS_DEBUG", "false"// 是否是debug 不是
             minifyEnabled false
             shrinkResources false
             zipAlignEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+        }
+        debug{
+            //是否是debug 是
+            buildConfigField( "boolean", "IS_DEBUG", "true")
         }
     }
 

@@ -12,7 +12,6 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomnavigation.LabelVisibilityMode
 import com.google.android.material.navigation.NavigationView
-import kv.vension.fastframe.utils.PreferenceUtil
 import com.vension.fastframe.module_wan.Constant
 import com.vension.fastframe.module_wan.R
 import com.vension.fastframe.module_wan.event.LoginEvent
@@ -22,13 +21,15 @@ import com.vension.fastframe.module_wan.ui.fragment.*
 import com.vension.mvpforkotlin.sample.mvp.presenter.MainPresenter
 import com.vension.mvpforkotlin.sample.ui.fragment.MenuTabProjectFragment
 import com.vension.mvpforkotlin.sample.ui.fragment.MenuTabWeChatFragment
-import kv.vension.fastframe.utils.DialogUtil
 import kotlinx.android.synthetic.main.activity_main_wan.*
 import kotlinx.android.synthetic.main.layout_wan_toolbar_main.*
 import kv.vension.fastframe.core.mvp.AbsCompatMVPActivity
 import kv.vension.fastframe.ext.showToast
+import kv.vension.fastframe.utils.DialogUtil
+import kv.vension.fastframe.utils.PreferenceUtil
+import kv.vension.fastframe.utils.ToastHelper
 import kv.vension.fastframe.views.ShapeImageView
-import lib.vension.fastframe.common.RouterConfig
+import lib.vension.fastframe.common.router.RouterConfig
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -146,6 +147,8 @@ class WanMainActivity : AbsCompatMVPActivity<MainContract.View, MainContract.Pre
             mIndex = savedInstanceState.getInt("currTabIndex",0)
         }
         super.onCreate(savedInstanceState)
+        val msg = getBundleExtras().getString("msg")
+        ToastHelper.warning(msg.toString()).show()
     }
 
     override fun onSaveInstanceState(outState: Bundle) {

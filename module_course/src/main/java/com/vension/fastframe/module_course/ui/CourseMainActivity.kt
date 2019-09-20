@@ -20,8 +20,7 @@ import com.vension.fastframe.module_course.ui.fragment.TabHomeFragment
 import com.vension.fastframe.module_course.ui.fragment.TabMineFragment
 import kotlinx.android.synthetic.main.activity_main_course.*
 import kv.vension.fastframe.core.mvp.AbsCompatMVPActivity
-import kv.vension.fastframe.ext.Loge
-import lib.vension.fastframe.common.RouterConfig
+import lib.vension.fastframe.common.router.RouterConfig
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
 

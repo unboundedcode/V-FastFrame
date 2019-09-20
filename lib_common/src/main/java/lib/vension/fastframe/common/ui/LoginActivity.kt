@@ -6,10 +6,13 @@ import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
 import kotlinx.android.synthetic.main.activity_login.*
 import kv.vension.fastframe.core.mvp.AbsCompatMVPActivity
+import kv.vension.fastframe.utils.SPUtil
+import kv.vension.fastframe.utils.ToastHelper
+import lib.vension.fastframe.common.Constant
 import lib.vension.fastframe.common.R
-import lib.vension.fastframe.common.RouterConfig
 import lib.vension.fastframe.common.mvp.LoginContract
 import lib.vension.fastframe.common.mvp.LoginPresenter
+import lib.vension.fastframe.common.router.RouterConfig
 
 /**
  * ===================================================================
@@ -23,7 +26,7 @@ import lib.vension.fastframe.common.mvp.LoginPresenter
 @Route(path = RouterConfig.PATH_COMMON_LOGINACTIVITY)
 class LoginActivity : AbsCompatMVPActivity<LoginContract.View, LoginContract.Presenter>(),LoginContract.View {
 
-    var targetUrl: String? = null
+    private var targetUrl: String? = null
 
     override fun createPresenter(): LoginContract.Presenter {
         return LoginPresenter()
@@ -39,11 +42,15 @@ class LoginActivity : AbsCompatMVPActivity<LoginContract.View, LoginContract.Pre
 
     override fun loginSuccess(data: String) {
         //跳转到目标页
-        ARouter.getInstance()
-            .build(targetUrl)
-            .withString("data", data)
-            .navigation()
-        finish()
+        ToastHelper.success("登录成功",true).show()
+        SPUtil.put(Constant.IS_LOGIN,true)
+        targetUrl?.let {
+            ARouter.getInstance()
+                .build(it)
+                .withString("data", data)
+                .navigation()
+            finish()
+        }
     }
 
 

@@ -14,7 +14,7 @@ import com.vension.fastframe.module_course.widget.media.VideoPlayerView
 import com.vension.fastframe.module_course.widget.media.callback.VideoBackListener
 import kotlinx.android.synthetic.main.activity_wk_videp_play.*
 import kv.vension.fastframe.core.AbsCompatActivity
-import lib.vension.fastframe.common.RouterConfig
+import lib.vension.fastframe.common.router.RouterConfig
 import tv.danmaku.ijk.media.player.IMediaPlayer
 
 /**

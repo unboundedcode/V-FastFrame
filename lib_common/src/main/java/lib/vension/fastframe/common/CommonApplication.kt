@@ -3,6 +3,7 @@ package lib.vension.fastframe.common
 import com.alibaba.android.arouter.launcher.ARouter
 import kv.vension.fastframe.core.AbsApplication
 import kv.vension.fastframe.core.IApplication
+import lib.vension.fastframe.common.router.RouterConfig
 
 /**
  * ===================================================================

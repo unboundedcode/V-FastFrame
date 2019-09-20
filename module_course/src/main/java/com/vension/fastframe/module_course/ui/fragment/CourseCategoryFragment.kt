@@ -14,7 +14,7 @@ import com.vension.fastframe.module_course.mvp.presenter.CourseCategoryPresenter
 import com.vension.fastframe.module_course.ui.adapter.CourseCategoryAdapter
 import kv.vension.fastframe.VFrame
 import kv.vension.fastframe.core.mvp.AbsCompatMVPRefreshFragment
-import lib.vension.fastframe.common.RouterConfig
+import lib.vension.fastframe.common.router.RouterConfig
 
 /**
  * ===================================================================

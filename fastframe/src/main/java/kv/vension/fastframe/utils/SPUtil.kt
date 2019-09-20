@@ -238,7 +238,7 @@ object SPUtil {
      * @param value 值
      */
     fun put(key: String?, value: Boolean) {
-        sp.edit().putBoolean(key, value)
+        sp.edit().putBoolean(key, value).apply()
     }
 
 

@@ -12,7 +12,7 @@ import java.util.*
  */
 object Constant{
 
-
+     const val IS_LOGIN = "user login"
     /**
      * 随机获取图
      */

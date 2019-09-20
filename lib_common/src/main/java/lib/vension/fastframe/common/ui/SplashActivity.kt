@@ -20,7 +20,7 @@ import kv.vension.fastframe.utils.TimeUtil
 import kv.vension.fastframe.views.CircleCountDownView
 import lib.vension.fastframe.common.Constant
 import lib.vension.fastframe.common.R
-import lib.vension.fastframe.common.RouterConfig
+import lib.vension.fastframe.common.router.RouterConfig
 import java.util.concurrent.TimeUnit
 
 

@@ -13,7 +13,7 @@ import com.wuhenzhizao.titlebar.widget.CommonTitleBar
 import kotlinx.android.synthetic.main.view_activity_main_view.*
 import kv.vension.fastframe.core.AbsCompatActivity
 import kv.vension.fastframe.core.adapter.recy.decoration.GridItemDecoration
-import lib.vension.fastframe.common.RouterConfig
+import lib.vension.fastframe.common.router.RouterConfig
 import java.util.*
 
 

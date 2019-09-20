@@ -20,8 +20,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.layout_toolbar_main.*
 import kv.vension.fastframe.core.AbsCompatActivity
 import kv.vension.fastframe.ext.showToast
-import lib.vension.fastframe.common.RouterConfig
-import lib.vension.fastframe.common.test.TestFragment
+import lib.vension.fastframe.common.router.RouterConfig
 import lib.vension.fastframe.common.test.TestRefreshFragment
 
 
@@ -43,8 +42,7 @@ class MainActivity : AbsCompatActivity(){
         TabFragment_1.newInstance(),
         ImageLoaderFragment.newInstance(),
         BusManageFragmentA.newInstance(),
-        TestFragment.getInstance("发现"),
-        TestFragment.getInstance("我的")
+        TabMineFragment.newInstance()
     )
     private var mIndex = -1
 
